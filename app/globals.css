@@ -77,6 +77,123 @@ a {
   background-size: 32px 32px;
 }
 
+.primary-action {
+  color: #05070c !important;
+  background: linear-gradient(135deg, #ffffff 0%, #e8f0ff 55%, #dcecff 100%);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(138, 180, 255, 0.08);
+}
+
+.primary-action:hover {
+  box-shadow:
+    0 16px 44px rgba(0, 0, 0, 0.34),
+    0 0 28px rgba(138, 180, 255, 0.16);
+}
+
+.secondary-action {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--foreground);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+.secondary-action:hover {
+  border-color: var(--border-strong);
+  background: rgba(255, 255, 255, 0.075);
+}
+
+.interactive-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.interactive-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  background:
+    radial-gradient(
+      circle at 82% 16%,
+      rgba(138, 180, 255, 0.11),
+      transparent 28%
+    ),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.025), transparent 45%);
+  transition: opacity 220ms ease;
+}
+
+.interactive-card:hover::before {
+  opacity: 1;
+}
+
+.section-accent {
+  position: relative;
+}
+
+.section-accent::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: min(11rem, 45%);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(138, 180, 255, 0.75),
+    rgba(140, 224, 255, 0.2),
+    transparent
+  );
+}
+
+.tech-marquee {
+  display: flex;
+  width: max-content;
+  animation: tech-marquee 28s linear infinite;
+}
+
+.tech-marquee:hover {
+  animation-play-state: paused;
+}
+
+.status-pulse {
+  position: relative;
+}
+
+.status-pulse::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 999px;
+  border: 1px solid rgba(138, 180, 255, 0.45);
+  animation: status-pulse 2.2s ease-out infinite;
+}
+
+@keyframes tech-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes status-pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.7);
+  }
+  75%,
+  100% {
+    opacity: 0;
+    transform: scale(1.75);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -89,5 +206,9 @@ a {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .tech-marquee {
+    animation: none !important;
   }
 }
