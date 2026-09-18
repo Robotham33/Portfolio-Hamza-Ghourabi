@@ -8,11 +8,22 @@ export function SiteFooter() {
           <p className="font-medium text-[var(--foreground)]">Hamza Ghourabi</p>
           <p className="mt-1">Software Integration & Validation Engineer</p>
         </div>
-        <nav aria-label="Navigation secondaire" className="flex flex-wrap gap-x-6 gap-y-3">
-          <Link href="/experience" className="hover:text-[var(--foreground)]">Expérience</Link>
-          <Link href="/expertise" className="hover:text-[var(--foreground)]">Expertise</Link>
-          <Link href="/projects" className="hover:text-[var(--foreground)]">Projets</Link>
-          <Link href="/contact" className="hover:text-[var(--foreground)]">Contact</Link>
+        <nav
+          aria-label="Navigation secondaire"
+          className="flex flex-wrap gap-x-6 gap-y-3"
+        >
+          <Link href="/experience" className="hover:text-[var(--foreground)]">
+            Expérience
+          </Link>
+          <Link href="/expertise" className="hover:text-[var(--foreground)]">
+            Expertise
+          </Link>
+          <Link href="/projects" className="hover:text-[var(--foreground)]">
+            Projets
+          </Link>
+          <Link href="/contact" className="hover:text-[var(--foreground)]">
+            Contact
+          </Link>
         </nav>
       </div>
     </footer>

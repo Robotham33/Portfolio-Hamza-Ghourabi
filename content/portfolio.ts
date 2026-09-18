@@ -1,12 +1,19 @@
 export const career = {
   name: "Hamza Ghourabi",
   role: "Software Integration & Validation Engineer",
-  headline: "J’intègre, sécurise et valide des logiciels embarqués jusqu’à une release vérifiable.",
+  headline:
+    "J’intègre, sécurise et valide des logiciels embarqués jusqu’à une release vérifiable.",
   summary:
     "Ingénieur spécialisé en intégration logicielle, validation système et automatisation des tests. Mon parcours couvre des environnements MedTech et automobile, de l’analyse des exigences à l’intégration firmware/software, au CI/CD et à la validation fonctionnelle ou SIL.",
   years: "7+",
   domains: ["MedTech", "Automobile"],
-  core: ["Software Integration", "System Validation", "Embedded Systems", "Test Automation", "CI/CD"],
+  core: [
+    "Software Integration",
+    "System Validation",
+    "Embedded Systems",
+    "Test Automation",
+    "CI/CD",
+  ],
 } as const;
 
 export const experiences = [
@@ -38,7 +45,12 @@ export const experiences = [
       "Builds, tests d’intégration et sécurisation des livraisons",
       "Industrialisation et suivi d’intégration continue avec TeamCity",
     ],
-    tools: ["TeamCity", "Embedded Systems", "Functional Validation", "Integration"],
+    tools: [
+      "TeamCity",
+      "Embedded Systems",
+      "Functional Validation",
+      "Integration",
+    ],
   },
 ] as const;
 
@@ -107,6 +119,16 @@ export const caseStudies = [
 
 export const toolGroups = [
   { label: "CI/CD", items: ["Jenkins", "TeamCity"] },
-  { label: "Requirements & validation", items: ["DOORS", "SIL", "Functional Validation"] },
-  { label: "Engineering", items: ["Embedded Systems", "Firmware / Software Integration", "Test Automation"] },
+  {
+    label: "Requirements & validation",
+    items: ["DOORS", "SIL", "Functional Validation"],
+  },
+  {
+    label: "Engineering",
+    items: [
+      "Embedded Systems",
+      "Firmware / Software Integration",
+      "Test Automation",
+    ],
+  },
 ] as const;
