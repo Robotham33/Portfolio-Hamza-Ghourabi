@@ -10,7 +10,7 @@ export default function ProjectsPage() {
         <section className="px-5 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl border-t-4 border-[var(--ink)] bg-white p-7 sm:p-10 lg:p-12">
             <p className="tech-label text-[11px] font-bold text-[var(--accent)]">
-              Case studies
+              Études de cas
             </p>
             <h1 className="display-title mt-6 max-w-5xl text-5xl leading-[0.9] font-semibold tracking-[-0.065em] sm:text-6xl lg:text-7xl">
               La valeur n’est pas dans l’outil. Elle est dans la manière de
@@ -47,7 +47,7 @@ export default function ProjectsPage() {
                         : "text-[var(--muted-foreground)]"
                     }`}
                   >
-                    Case 0{index + 1}
+                    Cas 0{index + 1}
                   </p>
                   <p
                     className={`display-title mt-16 text-5xl font-semibold tracking-[-0.06em] ${
@@ -109,7 +109,7 @@ export default function ProjectsPage() {
 
             <section className="mt-16 bg-[var(--ink)] p-7 text-white sm:p-10 lg:p-12">
               <p className="tech-label text-[10px] font-bold text-white/40">
-                Personal initiative
+                Initiative personnelle
               </p>
               {personalProjects.map((project) => (
                 <div
