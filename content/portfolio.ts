@@ -1,5 +1,5 @@
 export const career = {
-  name: "Hamza Ghourabi",
+  name: "HGH.",
   role: "Software Integration & Validation Engineer",
   headline:
     "De la validation logicielle à l’intégration logicielle, avec une forte expertise en QA Automation.",
