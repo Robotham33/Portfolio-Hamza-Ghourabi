@@ -8,7 +8,7 @@ export const proofPoints = [
   {
     value: "02",
     label: "Domaines techniques",
-    detail: "MedTech + automobile",
+    detail: "Médical + automobile",
   },
   {
     value: "CI/CD",
