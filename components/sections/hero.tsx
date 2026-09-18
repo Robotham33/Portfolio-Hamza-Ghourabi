@@ -34,10 +34,6 @@ export function Hero() {
               </div>
             </Reveal>
 
-            <p className="mt-7 text-sm font-bold tracking-[0.14em] text-[var(--accent)] uppercase">
-              Hamza Ghourabi
-            </p>
-
             <h1 className="display-title mt-3 max-w-4xl text-[clamp(3rem,5.7vw,5.7rem)] leading-[0.9] font-semibold tracking-[-0.065em]">
               Fiabiliser le logiciel,
               <span className="block">de l’exigence jusqu’à</span>
