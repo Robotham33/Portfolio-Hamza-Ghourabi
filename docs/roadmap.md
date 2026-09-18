@@ -19,7 +19,7 @@
 - [x] Ajouter ESLint / Prettier
 - [x] Ajouter variables de thème
 - [x] Ajouter les scripts de qualité
-- [ ] Ajouter un lockfile reproductible
+- [x] Ajouter un lockfile reproductible
 
 ## Phase 2 — MVP
 
