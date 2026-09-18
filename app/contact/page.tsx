@@ -87,20 +87,16 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <div className="mt-auto pt-10">
-              <p className="mb-3 text-[9px] font-bold tracking-[0.16em] text-white/30 uppercase">
-                Personal note
-              </p>
-              <div className="overflow-hidden bg-[#f8fafb] p-2 shadow-[0_12px_32px_rgba(0,0,0,0.18)]">
-                <Image
-                  src={signatureDataUri}
-                  alt="Des systèmes fiables pour un monde plus sûr — Hamza Ghourabi"
-                  width={900}
-                  height={166}
-                  unoptimized
-                  className="h-auto w-full"
-                />
-              </div>
+            <div className="mt-auto pt-8">
+              <div className="mb-5 h-px w-full bg-white/12" />
+              <Image
+                src={signatureDataUri}
+                alt="Des systèmes fiables pour un monde plus sûr — Hamza Ghourabi"
+                width={1200}
+                height={400}
+                unoptimized
+                className="h-auto w-full object-contain"
+              />
             </div>
           </aside>
         </div>
