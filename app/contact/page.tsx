@@ -90,13 +90,10 @@ export default function ContactPage() {
               <p className="mb-3 text-[9px] font-bold tracking-[0.16em] text-white/30 uppercase">
                 Personal note
               </p>
-              <Image
+              <img
                 src="/signature-final.svg"
                 alt="Des systèmes fiables pour un monde plus sûr — Hamza Ghourabi"
-                width={1400}
-                height={350}
-                unoptimized
-                className="h-auto w-full"
+                className="block h-auto w-full"
               />
             </div>
           </aside>
