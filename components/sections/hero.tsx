@@ -20,7 +20,7 @@ export function Hero() {
         <div>
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2 text-xs text-[var(--muted-foreground)]">
-              <span className="size-1.5 rounded-full bg-[var(--accent)]" />
+              <span className="status-pulse size-1.5 rounded-full bg-[var(--accent)]" />
               {career.years} ans · Médical & automobile · systèmes embarqués
             </div>
           </Reveal>
@@ -45,18 +45,18 @@ export function Hero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/experience"
-              className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-[var(--foreground)] px-5 text-sm font-semibold text-[#05070c] transition hover:-translate-y-0.5"
+              className="primary-action inline-flex min-h-12 items-center justify-center rounded-2xl px-5 text-sm font-semibold transition duration-200 hover:-translate-y-0.5"
             >
-              Voir mon parcours{" "}
+              Voir mon parcours
               <span aria-hidden="true" className="ml-2">
                 →
               </span>
             </Link>
             <Link
               href="/projects"
-              className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 text-sm font-semibold transition hover:border-[var(--border-strong)] hover:bg-[var(--surface-strong)]"
+              className="secondary-action inline-flex min-h-12 items-center justify-center rounded-2xl px-5 text-sm font-semibold transition duration-200 hover:-translate-y-0.5"
             >
-              Voir mes cas concrets{" "}
+              Voir mes cas concrets
               <span aria-hidden="true" className="ml-2 text-[var(--accent)]">
                 ↗
               </span>
@@ -65,14 +65,16 @@ export function Hero() {
 
           <div className="mt-9 flex flex-wrap gap-x-5 gap-y-2 border-t border-[var(--border)] pt-5 text-xs text-[var(--muted-foreground)]">
             {career.core.map((item) => (
-              <span key={item}>{item}</span>
+              <span key={item} className="transition hover:text-[var(--foreground)]">
+                {item}
+              </span>
             ))}
           </div>
         </div>
 
         <Reveal delay={0.08} distance={20}>
-          <aside className="overflow-hidden rounded-[28px] border border-[var(--border-strong)] bg-[linear-gradient(145deg,rgba(255,255,255,0.065),rgba(255,255,255,0.018))] shadow-[0_32px_100px_rgba(0,0,0,0.38)]">
-            <div className="border-b border-[var(--border)] p-6 sm:p-7">
+          <aside className="interactive-card overflow-hidden rounded-[28px] border border-[var(--border-strong)] bg-[linear-gradient(145deg,rgba(255,255,255,0.065),rgba(255,255,255,0.018))] shadow-[0_32px_100px_rgba(0,0,0,0.38)]">
+            <div className="section-accent border-b border-[var(--border)] p-6 sm:p-7">
               <p className="text-xs font-semibold tracking-[0.18em] text-[var(--accent)] uppercase">
                 Ce que je fais
               </p>
@@ -88,9 +90,9 @@ export function Hero() {
               {quickCapabilities.map(([index, label, detail]) => (
                 <li
                   key={label}
-                  className="grid grid-cols-[38px_1fr] gap-3 rounded-2xl px-3 py-3.5 transition hover:bg-[var(--surface)]"
+                  className="group grid grid-cols-[38px_1fr_auto] items-center gap-3 rounded-2xl px-3 py-3.5 transition duration-200 hover:bg-[var(--surface)]"
                 >
-                  <span className="grid size-9 place-items-center rounded-xl border border-[var(--border)] bg-[#080d15] text-[10px] font-semibold text-[var(--accent)]">
+                  <span className="grid size-9 place-items-center rounded-xl border border-[var(--border)] bg-[#080d15] text-[10px] font-semibold text-[var(--accent)] transition group-hover:border-[var(--border-strong)]">
                     {index}
                   </span>
                   <span>
@@ -98,6 +100,12 @@ export function Hero() {
                     <span className="mt-1 block text-xs text-[var(--muted-foreground)]">
                       {detail}
                     </span>
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="translate-x-[-4px] text-xs text-[var(--muted-foreground)] opacity-0 transition duration-200 group-hover:translate-x-0 group-hover:text-[var(--accent)] group-hover:opacity-100"
+                  >
+                    →
                   </span>
                 </li>
               ))}
