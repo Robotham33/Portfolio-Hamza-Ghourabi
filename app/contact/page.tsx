@@ -87,12 +87,17 @@ export default function ContactPage() {
             </div>
 
             <div className="mt-7 border-t border-white/12 pt-6">
-              <p className="text-[9px] font-bold tracking-[0.16em] text-white/30 uppercase">
+              <p className="mb-3 text-[9px] font-bold tracking-[0.16em] text-white/30 uppercase">
                 Personal note
               </p>
-              <p className="mt-4 max-w-[280px] text-sm italic leading-6 text-white/45">
-                Des systèmes fiables pour un monde plus sûr.
-              </p>
+              <Image
+                src="/signature-final.svg"
+                alt="Des systèmes fiables pour un monde plus sûr — Hamza Ghourabi"
+                width={1400}
+                height={350}
+                unoptimized
+                className="h-auto w-full"
+              />
             </div>
           </aside>
         </div>
