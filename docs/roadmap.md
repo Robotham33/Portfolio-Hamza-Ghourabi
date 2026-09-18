@@ -5,21 +5,24 @@
 - [x] Créer la structure initiale
 - [x] Définir la vision produit
 - [x] Définir l'architecture
-- [x] Définir le design system
+- [x] Définir le design system initial
 - [ ] Préparer le contenu source
 
 ## Phase 1 — Setup technique
-- [ ] Initialiser Next.js proprement
-- [ ] Configurer TypeScript strict
-- [ ] Configurer Tailwind CSS
-- [ ] Installer shadcn/ui
-- [ ] Installer Motion
-- [ ] Ajouter ESLint / Prettier
-- [ ] Ajouter variables de thème
+- [x] Initialiser Next.js proprement
+- [x] Configurer TypeScript strict
+- [x] Configurer Tailwind CSS
+- [x] Préparer shadcn/ui
+- [x] Installer Motion
+- [x] Ajouter ESLint / Prettier
+- [x] Ajouter variables de thème
+- [x] Ajouter les scripts de qualité
+- [ ] Ajouter un lockfile reproductible
 
 ## Phase 2 — MVP
 - [ ] Navbar
 - [ ] Hero
+- [ ] KPI
 - [ ] About
 - [ ] Experience
 - [ ] Skills
