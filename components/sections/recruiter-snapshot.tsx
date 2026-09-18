@@ -6,7 +6,7 @@ const signals = [
     label: "ans d’expérience",
     detail: "validation + intégration",
   },
-  { value: "02", label: "domaines exigeants", detail: "MedTech + automobile" },
+  { value: "02", label: "domaines exigeants", detail: "Médical + automobile" },
   {
     value: "I→V",
     label: "vision bout-en-bout",
