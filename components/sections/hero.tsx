@@ -21,49 +21,42 @@ export function Hero() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.07}>
-            <h1 className="mt-7 max-w-4xl text-[clamp(3.15rem,7vw,5.5rem)] leading-[0.96] font-semibold tracking-[-0.062em] text-[var(--foreground)]">
-              De l’intégration logicielle à la{" "}
-              <span className="bg-[linear-gradient(120deg,#f7f9fc_15%,#9ec3ff_64%,#8ce0ff)] bg-clip-text text-transparent">
-                validation système.
+          <h1 className="mt-7 max-w-4xl text-[clamp(3.15rem,7vw,5.5rem)] leading-[0.96] font-semibold tracking-[-0.062em] text-[var(--foreground)]">
+            De l’intégration logicielle à la{" "}
+            <span className="bg-[linear-gradient(120deg,#f7f9fc_15%,#9ec3ff_64%,#8ce0ff)] bg-clip-text text-transparent">
+              validation système.
+            </span>
+          </h1>
+
+          <p className="mt-7 max-w-2xl text-base leading-7 text-[var(--muted-foreground)] sm:text-lg sm:leading-8">
+            Ingénieur Software Integration & Validation, spécialisé en systèmes
+            embarqués, intégration firmware / software, automatisation des tests
+            et CI/CD dans des environnements MedTech et automobile.
+          </p>
+
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <Link
+              href="/experience"
+              className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-[var(--foreground)] px-5 text-sm font-semibold text-[var(--background)] shadow-[0_12px_32px_rgba(0,0,0,0.24)] transition duration-200 hover:-translate-y-0.5 hover:bg-white focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] focus-visible:outline-none"
+            >
+              Explorer mon parcours
+              <span aria-hidden="true" className="ml-2">
+                →
               </span>
-            </h1>
-          </Reveal>
+            </Link>
 
-          <Reveal delay={0.14}>
-            <p className="mt-7 max-w-2xl text-base leading-7 text-[var(--muted-foreground)] sm:text-lg sm:leading-8">
-              Ingénieur Software Integration & Validation, spécialisé en
-              systèmes embarqués, intégration firmware / software,
-              automatisation des tests et CI/CD dans des environnements MedTech
-              et automobile.
-            </p>
-          </Reveal>
+            <Link
+              href="/projects"
+              className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 text-sm font-medium text-[var(--foreground)] transition duration-200 hover:-translate-y-0.5 hover:border-[var(--border-strong)] hover:bg-[var(--surface-strong)] focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] focus-visible:outline-none"
+            >
+              Voir mes projets
+              <span aria-hidden="true" className="ml-2 text-[var(--accent)]">
+                ↗
+              </span>
+            </Link>
+          </div>
 
-          <Reveal delay={0.21}>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link
-                href="/experience"
-                className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-[var(--foreground)] px-5 text-sm font-semibold text-[var(--background)] shadow-[0_12px_32px_rgba(0,0,0,0.24)] transition duration-200 hover:-translate-y-0.5 hover:bg-white focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] focus-visible:outline-none"
-              >
-                Explorer mon parcours
-                <span aria-hidden="true" className="ml-2">
-                  →
-                </span>
-              </Link>
-
-              <Link
-                href="/projects"
-                className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 text-sm font-medium text-[var(--foreground)] transition duration-200 hover:-translate-y-0.5 hover:border-[var(--border-strong)] hover:bg-[var(--surface-strong)] focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] focus-visible:outline-none"
-              >
-                Voir mes projets
-                <span aria-hidden="true" className="ml-2 text-[var(--accent)]">
-                  ↗
-                </span>
-              </Link>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.28}>
+          <Reveal delay={0.08}>
             <div className="mt-10 flex flex-wrap gap-x-5 gap-y-2 border-t border-[var(--border)] pt-5 text-xs text-[var(--muted-foreground)]">
               <span>Jenkins</span>
               <span>TeamCity</span>
@@ -74,7 +67,7 @@ export function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.18} distance={24} className="lg:pl-2">
+        <Reveal delay={0.12} distance={24} className="lg:pl-2">
           <HeroPipeline />
         </Reveal>
       </div>
