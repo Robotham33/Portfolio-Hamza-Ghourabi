@@ -92,10 +92,10 @@ export default function ContactPage() {
               </p>
               <div className="overflow-hidden bg-[#05080c]">
                 <Image
-                  src="/signature-contact.svg"
+                  src="/signature-generated.webp"
                   alt="Des systèmes fiables pour un monde plus sûr — Hamza Ghourabi"
-                  width={1200}
-                  height={360}
+                  width={1254}
+                  height={314}
                   unoptimized
                   className="h-auto w-full"
                 />
