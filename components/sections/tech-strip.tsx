@@ -10,7 +10,7 @@ const technologies = [
   "CAN",
   "OBD-II",
   "STM32",
-  "Test Automation",
+  "QA Automation",
 ] as const;
 
 export function TechStrip() {
@@ -19,15 +19,21 @@ export function TechStrip() {
   return (
     <section
       aria-label="Technologies principales"
-      className="overflow-hidden border-y border-[var(--border)] bg-[rgba(255,255,255,0.012)] py-3"
+      className="overflow-hidden border-y border-[var(--border)] bg-white py-3"
     >
-      <div className="tech-marquee gap-3 px-3">
+      <div className="tech-marquee gap-8 px-4">
         {repeated.map((item, index) => (
           <div
             key={`${item}-${index}`}
-            className="flex shrink-0 items-center gap-2 rounded-full border border-[var(--border)] bg-[#080d15] px-3 py-2 text-xs text-[#b8c6d9]"
+            className="flex shrink-0 items-center gap-3 text-xs font-semibold tracking-[0.08em] text-[#4c5966] uppercase"
           >
-            <span className="size-1.5 rounded-full bg-[var(--accent)] opacity-80" />
+            <span
+              className={`size-1.5 ${
+                index % 3 === 0
+                  ? "bg-[var(--automotive)]"
+                  : "bg-[var(--medical)]"
+              }`}
+            />
             {item}
           </div>
         ))}
