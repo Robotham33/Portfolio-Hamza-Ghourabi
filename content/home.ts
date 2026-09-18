@@ -25,14 +25,14 @@ export const proofPoints = [
 export const pipelineSteps = [
   {
     index: "01",
-    label: "Requirements",
+    label: "Exigences",
     detail: "DOORS",
     emphasis: false,
   },
   {
     index: "02",
-    label: "Integration",
-    detail: "Firmware + Software",
+    label: "Intégration",
+    detail: "Firmware + logiciel",
     emphasis: false,
   },
   {
@@ -44,13 +44,13 @@ export const pipelineSteps = [
   {
     index: "04",
     label: "Validation",
-    detail: "Functional · SIL",
+    detail: "Fonctionnel · SIL",
     emphasis: false,
   },
   {
     index: "05",
-    label: "Release",
-    detail: "Verified build",
+    label: "Livraison",
+    detail: "Version vérifiée",
     emphasis: false,
   },
 ] as const;
