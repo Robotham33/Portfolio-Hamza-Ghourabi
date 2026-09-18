@@ -23,9 +23,9 @@
 
 ## Phase 2 — MVP
 
-- [ ] Navbar
-- [ ] Hero
-- [ ] KPI
+- [x] Navbar
+- [x] Hero
+- [x] KPI
 - [ ] About
 - [ ] Experience
 - [ ] Skills
