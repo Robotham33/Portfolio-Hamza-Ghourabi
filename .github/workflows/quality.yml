@@ -7,7 +7,7 @@ on:
       - master
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   quality:
@@ -17,8 +17,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -28,20 +26,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-
-      - name: Format changed files
-        if: github.event_name == 'pull_request'
-        run: |
-          npx prettier --write components/layout/site-header.tsx components/sections/hero-pipeline.tsx components/sections/hero.tsx docs/design-system.md
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add components/layout/site-header.tsx components/sections/hero-pipeline.tsx components/sections/hero.tsx docs/design-system.md
-          if git diff --cached --quiet; then
-            echo "No formatting changes to commit."
-          else
-            git commit -m "style: normalize premium homepage formatting"
-            git push origin HEAD:${{ github.head_ref }}
-          fi
 
       - name: Run quality checks
         run: npm run check
