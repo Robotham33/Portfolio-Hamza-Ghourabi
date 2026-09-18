@@ -5,11 +5,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Hamza Ghourabi — Software Integration & Validation Engineer",
-    template: "%s — Hamza Ghourabi",
+    default: "HGH. — Software Integration & Validation Engineer",
+    template: "%s — HGH.",
   },
   description:
-    "Portfolio professionnel de Hamza Ghourabi, ingénieur en intégration logicielle, validation système et automatisation des tests.",
+    "Portfolio professionnel spécialisé en intégration logicielle, validation système et automatisation des tests.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
