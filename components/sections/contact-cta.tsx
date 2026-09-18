@@ -3,7 +3,7 @@ import Link from "next/link";
 export function ContactCta() {
   return (
     <section className="px-5 pt-8 pb-24 sm:px-6 lg:px-8 lg:pb-32">
-      <div className="mx-auto max-w-6xl overflow-hidden rounded-[30px] border border-[var(--border-strong)] bg-[radial-gradient(circle_at_80%_20%,rgba(102,151,255,0.16),transparent_32%),linear-gradient(135deg,#0b111c,#070b12)] p-7 sm:p-10 lg:p-14">
+      <div className="interactive-card mx-auto max-w-6xl overflow-hidden rounded-[30px] border border-[var(--border-strong)] bg-[radial-gradient(circle_at_80%_20%,rgba(102,151,255,0.16),transparent_32%),linear-gradient(135deg,#0b111c,#070b12)] p-7 sm:p-10 lg:p-14">
         <p className="text-xs font-semibold tracking-[0.2em] text-[var(--accent)] uppercase">
           Échangeons
         </p>
@@ -20,9 +20,9 @@ export function ContactCta() {
           </div>
           <Link
             href="/contact"
-            className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-[var(--foreground)] px-6 text-sm font-semibold text-[#05070c] transition hover:-translate-y-0.5"
+            className="primary-action inline-flex min-h-12 items-center justify-center rounded-2xl px-6 text-sm font-semibold transition duration-200 hover:-translate-y-0.5"
           >
-            Me contacter{" "}
+            Me contacter
             <span aria-hidden="true" className="ml-2">
               ↗
             </span>
