@@ -1,6 +1,6 @@
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
-import { experiences } from "@/content/portfolio";
+import { education, experiences } from "@/content/portfolio";
 
 export default function ExperiencePage() {
   return (
@@ -12,13 +12,15 @@ export default function ExperiencePage() {
             Parcours
           </p>
           <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-[-0.05em] sm:text-5xl lg:text-6xl">
-            De la validation fonctionnelle à l’intégration logicielle.
+            Validation, intégration, automatisation : un parcours construit sur des systèmes réels.
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--muted-foreground)]">
-            Mon fil conducteur : comprendre ce qui doit fonctionner, intégrer ce
-            qui a été livré, puis apporter une preuve exploitable que le système
-            se comporte comme attendu.
+            Mon parcours va de l’informatique industrielle et la robotique à la
+            validation système et l’intégration logicielle, avec un fil
+            conducteur constant : rendre les systèmes testables, fiables et
+            exploitables.
           </p>
+
           <div className="mt-16 space-y-8">
             {experiences.map((item) => (
               <article
@@ -30,6 +32,9 @@ export default function ExperiencePage() {
                     {item.period}
                   </p>
                   <p className="mt-3 text-sm text-[var(--muted-foreground)]">
+                    {item.location}
+                  </p>
+                  <p className="mt-1 text-xs tracking-[0.12em] text-[var(--muted-foreground)] uppercase">
                     {item.domain}
                   </p>
                 </div>
@@ -71,6 +76,30 @@ export default function ExperiencePage() {
               </article>
             ))}
           </div>
+
+          <section className="mt-20 border-t border-[var(--border)] pt-12">
+            <p className="text-xs font-semibold tracking-[0.2em] text-[var(--accent)] uppercase">
+              Formation
+            </p>
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              {education.map((item) => (
+                <article
+                  key={item.degree}
+                  className="rounded-[24px] border border-[var(--border)] bg-[#080d15] p-6"
+                >
+                  <p className="text-sm font-semibold text-[var(--accent)]">
+                    {item.year}
+                  </p>
+                  <h2 className="mt-4 text-xl font-semibold tracking-[-0.025em]">
+                    {item.degree}
+                  </h2>
+                  <p className="mt-2 text-sm text-[var(--muted-foreground)]">
+                    {item.school} · {item.location}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </section>
         </div>
       </main>
       <SiteFooter />
