@@ -19,14 +19,14 @@ export function ExpertisePreview() {
         <div className="mt-12 grid gap-4 md:grid-cols-2">
           {expertise.map((item, index) => (
             <Reveal key={item.title} delay={index * 0.05}>
-              <article className="h-full rounded-[24px] border border-[var(--border)] bg-[#080d15] p-6 sm:p-7">
+              <article className="interactive-card group h-full rounded-[24px] border border-[var(--border)] bg-[#080d15] p-6 transition duration-200 hover:-translate-y-1 hover:border-[var(--border-strong)] sm:p-7">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-semibold text-[var(--accent)]">
                     {item.index}
                   </span>
                   <span
                     aria-hidden="true"
-                    className="text-[var(--muted-foreground)]"
+                    className="text-[var(--muted-foreground)] transition duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[var(--accent)]"
                   >
                     ↗
                   </span>
@@ -41,7 +41,7 @@ export function ExpertisePreview() {
                   {item.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-lg bg-[var(--surface)] px-2.5 py-1.5 text-xs text-[#b7c5d8]"
+                      className="rounded-lg border border-transparent bg-[var(--surface)] px-2.5 py-1.5 text-xs text-[#b7c5d8] transition group-hover:border-[var(--border)]"
                     >
                       {tag}
                     </span>
