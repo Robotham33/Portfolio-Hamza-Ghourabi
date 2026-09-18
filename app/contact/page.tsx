@@ -91,7 +91,7 @@ export default function ContactPage() {
                 Personal note
               </p>
               <img
-                src="/signature-contact.png"
+                src="/signature-contact.jpg"
                 alt="Des systèmes fiables pour un monde plus sûr — Hamza Ghourabi"
                 className="block h-auto w-full"
               />
