@@ -1,6 +1,6 @@
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
-import { caseStudies } from "@/content/portfolio";
+import { caseStudies, personalProjects } from "@/content/portfolio";
 
 export default function ProjectsPage() {
   return (
@@ -19,6 +19,7 @@ export default function ProjectsPage() {
             Ils restent volontairement génériques pour préserver les
             informations confidentielles des projets clients.
           </p>
+
           <div className="mt-16 space-y-6">
             {caseStudies.map((item, index) => (
               <article
@@ -77,6 +78,52 @@ export default function ProjectsPage() {
               </article>
             ))}
           </div>
+
+          <section className="mt-20 border-t border-[var(--border)] pt-12">
+            <p className="text-xs font-semibold tracking-[0.2em] text-[var(--accent)] uppercase">
+              Projet personnel
+            </p>
+            {personalProjects.map((project) => (
+              <article
+                key={project.title}
+                className="mt-8 rounded-[28px] border border-[var(--border)] bg-[#080d15] p-7 sm:p-9"
+              >
+                <p className="text-sm font-semibold text-[var(--accent)]">
+                  {project.title}
+                </p>
+                <h2 className="mt-3 max-w-3xl text-2xl font-semibold tracking-[-0.035em] sm:text-3xl">
+                  {project.subtitle}
+                </h2>
+                <p className="mt-5 max-w-3xl text-base leading-7 text-[var(--muted-foreground)]">
+                  {project.summary}
+                </p>
+                <ul className="mt-7 grid gap-3 sm:grid-cols-2">
+                  {project.highlights.map((highlight) => (
+                    <li
+                      key={highlight}
+                      className="flex gap-3 text-sm leading-6 text-[#c4cede]"
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="mt-2 size-1.5 shrink-0 rounded-full bg-[var(--accent)]"
+                      />
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-7 flex flex-wrap gap-2">
+                  {project.tools.map((tool) => (
+                    <span
+                      key={tool}
+                      className="rounded-full border border-[var(--border)] px-3 py-1.5 text-xs text-[var(--muted-foreground)]"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </section>
         </div>
       </main>
       <SiteFooter />
