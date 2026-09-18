@@ -10,7 +10,8 @@ export function HeroPipeline() {
   return (
     <div
       className="relative overflow-hidden rounded-[28px] border border-[var(--border)] bg-[linear-gradient(145deg,rgba(255,255,255,0.065),rgba(255,255,255,0.018))] p-5 shadow-[0_30px_100px_rgba(0,0,0,0.42)] sm:p-6"
-      aria-label="Flux conceptuel d'intégration et de validation"
+      role="group"
+      aria-labelledby="integration-flow-title"
     >
       <div className="hero-grid pointer-events-none absolute inset-0 opacity-45" />
       <div className="pointer-events-none absolute -top-24 -right-24 size-64 rounded-full bg-[rgba(102,151,255,0.16)] blur-3xl" />
@@ -21,7 +22,10 @@ export function HeroPipeline() {
             <p className="text-[11px] font-medium tracking-[0.22em] text-[var(--accent)] uppercase">
               System flow
             </p>
-            <h2 className="mt-2 text-lg font-semibold tracking-[-0.025em] text-[var(--foreground)]">
+            <h2
+              id="integration-flow-title"
+              className="mt-2 text-lg font-semibold tracking-[-0.025em] text-[var(--foreground)]"
+            >
               Integration → Validation
             </h2>
           </div>
