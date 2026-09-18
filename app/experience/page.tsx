@@ -11,7 +11,7 @@ export default function ExperiencePage() {
           <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1fr_340px]">
             <div className="border-t-4 border-[var(--ink)] bg-white p-7 sm:p-10 lg:p-12">
               <p className="tech-label text-[11px] font-bold text-[var(--accent)]">
-                Career dossier
+                Parcours professionnel
               </p>
               <h1 className="display-title mt-6 max-w-5xl text-5xl leading-[0.9] font-semibold tracking-[-0.065em] sm:text-6xl lg:text-7xl">
                 Un parcours construit sur des systèmes qu’il faut prouver, pas
@@ -26,7 +26,7 @@ export default function ExperiencePage() {
             </div>
             <div className="ink-panel p-7 text-white sm:p-9">
               <p className="tech-label text-[10px] font-bold text-white/40">
-                Profile summary
+                Profil en bref
               </p>
               <p className="display-title mt-12 text-6xl font-semibold tracking-[-0.07em]">
                 7+
@@ -75,7 +75,7 @@ export default function ExperiencePage() {
                       <div className="flex flex-wrap items-end justify-between gap-4">
                         <div>
                           <p className="tech-label text-[10px] font-bold text-[var(--muted-foreground)]">
-                            Experience 0{index + 1}
+                            Expérience 0{index + 1}
                           </p>
                           <h2 className="display-title mt-3 text-4xl font-semibold tracking-[-0.055em]">
                             {item.company}
