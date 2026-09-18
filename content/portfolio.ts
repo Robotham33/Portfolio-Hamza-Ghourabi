@@ -161,7 +161,7 @@ export const expertise = [
     index: "01",
     title: "Intégration logicielle",
     text: "Assembler et fiabiliser les livraisons logicielles et firmware avant leur passage en validation.",
-    tags: ["Versions", "Firmware", "Logiciel", "Livraison"],
+    tags: ["Builds", "Firmware", "Software", "Release"],
   },
   {
     index: "02",
@@ -171,7 +171,7 @@ export const expertise = [
   },
   {
     index: "03",
-    title: "Qualité logicielle & automatisation des tests",
+    title: "QA & automatisation des tests",
     text: "Automatiser les campagnes, fiabiliser les environnements de test et accélérer l’analyse des résultats.",
     tags: ["Python", "Batch", "Automatisation", "Rapports"],
   },
@@ -190,10 +190,10 @@ export const caseStudies = [
     problem:
       "Plusieurs composants doivent être assemblés et vérifiés avant de pouvoir lancer la validation sur un système embarqué.",
     contribution:
-      "Réception des livraisons, génération des versions, installation, tests d’intégration et décision de passage vers les testeurs.",
+      "Réception des livraisons, construction des builds, installation, tests d’intégration et décision de passage vers les testeurs.",
     result:
-      "Un flux d’intégration plus lisible et reproductible, avec une frontière claire entre génération, intégration et validation.",
-    stack: ["TeamCity", "Firmware", "Logiciel", "Embarqué"],
+      "Un flux d’intégration plus lisible et reproductible, avec une frontière claire entre build, intégration et validation.",
+    stack: ["TeamCity", "Firmware", "Software", "Embedded"],
   },
   {
     eyebrow: "Automobile · validation",
