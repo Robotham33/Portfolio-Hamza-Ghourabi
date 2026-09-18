@@ -3,135 +3,131 @@ import Link from "next/link";
 import { Reveal } from "@/components/motion/reveal";
 import { career } from "@/content/portfolio";
 
-const quickCapabilities = [
-  ["01", "Intégration logicielle", "Firmware + software + builds"],
-  ["02", "Validation système", "Functional validation + SIL"],
-  ["03", "Test automation", "Tests répétables + analyse"],
-  ["04", "CI/CD", "Jenkins + TeamCity"],
+const flow = [
+  "Requirements",
+  "Validation",
+  "Integration",
+  "QA Automation",
+  "Release",
 ] as const;
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden px-5 pt-32 pb-16 sm:px-6 sm:pt-36 lg:px-8 lg:pt-40 lg:pb-24">
-      <div className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(circle_at_12%_15%,rgba(102,151,255,0.14),transparent_28rem),radial-gradient(circle_at_86%_20%,rgba(140,224,255,0.07),transparent_25rem)]" />
-      <div className="hero-grid pointer-events-none absolute inset-x-0 top-0 -z-10 h-[650px] [mask-image:linear-gradient(to_bottom,black,transparent)] opacity-15" />
+    <section className="px-5 pt-32 pb-16 sm:px-6 sm:pt-36 lg:px-8 lg:pt-40 lg:pb-24">
+      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
+        <div className="flex flex-col justify-between border-t-4 border-[var(--ink)] bg-[var(--paper)] p-6 sm:p-8 lg:p-10">
+          <div>
+            <Reveal>
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] font-bold tracking-[0.15em] text-[var(--muted-foreground)] uppercase">
+                <span>7+ ans d’expérience</span>
+                <span className="text-[var(--medical)]">Médical</span>
+                <span className="text-[var(--automotive)]">Automobile</span>
+              </div>
+            </Reveal>
 
-      <div className="mx-auto grid w-full max-w-6xl gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <div>
-          <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2 text-xs text-[var(--muted-foreground)]">
-              <span className="status-pulse size-1.5 rounded-full bg-[var(--accent)]" />
-              {career.years} ans · Médical & automobile · systèmes embarqués
-            </div>
-          </Reveal>
+            <p className="mt-10 text-sm font-bold tracking-[0.14em] text-[var(--accent)] uppercase">
+              Hamza Ghourabi
+            </p>
+            <h1 className="display-title mt-3 max-w-4xl text-[clamp(3.6rem,7vw,7.4rem)] leading-[0.82] font-semibold tracking-[-0.075em]">
+              Validation.
+              <span className="block">Integration.</span>
+              <span className="block text-[var(--accent)]">QA Automation.</span>
+            </h1>
 
-          <p className="mt-7 text-sm font-semibold tracking-[0.16em] text-[var(--accent)] uppercase">
-            Hamza Ghourabi
-          </p>
-          <h1 className="mt-3 max-w-4xl text-[clamp(3rem,6vw,5rem)] leading-[0.98] font-semibold tracking-[-0.06em] text-[var(--foreground)]">
-            Software Integration
-            <span className="block bg-[linear-gradient(110deg,#f7f9fc_10%,#9ec3ff_62%,#8ce0ff)] bg-clip-text text-transparent">
-              & Validation Engineer
-            </span>
-          </h1>
+            <p className="mt-8 max-w-2xl text-xl leading-8 font-medium text-[#1b2631]">
+              J’interviens sur des logiciels et systèmes embarqués complexes,
+              dans des environnements où la fiabilité, la traçabilité et la
+              qualité ne sont pas négociables.
+            </p>
+            <p className="mt-4 max-w-2xl text-base leading-7 text-[var(--muted-foreground)]">
+              De l’analyse des exigences aux campagnes automatisées, de
+              l’intégration software / firmware au diagnostic des anomalies.
+            </p>
+          </div>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 font-medium text-[#d7dfeb]">
-            {career.headline}
-          </p>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-[var(--muted-foreground)]">
-            {career.summary}
-          </p>
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/experience"
-              className="primary-action inline-flex min-h-12 items-center justify-center rounded-2xl px-5 text-sm font-semibold transition duration-200 hover:-translate-y-0.5"
+              className="primary-action inline-flex min-h-12 items-center justify-center px-5 text-sm font-semibold transition"
             >
-              Voir mon parcours
-              <span aria-hidden="true" className="ml-2">
-                →
-              </span>
+              Explorer mon parcours <span className="ml-2">→</span>
             </Link>
             <Link
               href="/projects"
-              className="secondary-action inline-flex min-h-12 items-center justify-center rounded-2xl px-5 text-sm font-semibold transition duration-200 hover:-translate-y-0.5"
+              className="secondary-action inline-flex min-h-12 items-center justify-center px-5 text-sm font-semibold transition"
             >
-              Voir mes cas concrets
-              <span aria-hidden="true" className="ml-2 text-[var(--accent)]">
-                ↗
-              </span>
+              Voir mes cas concrets <span className="ml-2">↗</span>
             </Link>
-          </div>
-
-          <div className="mt-9 flex flex-wrap gap-x-5 gap-y-2 border-t border-[var(--border)] pt-5 text-xs text-[var(--muted-foreground)]">
-            {career.core.map((item) => (
-              <span key={item} className="transition hover:text-[var(--foreground)]">
-                {item}
-              </span>
-            ))}
           </div>
         </div>
 
         <Reveal delay={0.08} distance={20}>
-          <aside className="interactive-card overflow-hidden rounded-[28px] border border-[var(--border-strong)] bg-[linear-gradient(145deg,rgba(255,255,255,0.065),rgba(255,255,255,0.018))] shadow-[0_32px_100px_rgba(0,0,0,0.38)]">
-            <div className="section-accent border-b border-[var(--border)] p-6 sm:p-7">
-              <p className="text-xs font-semibold tracking-[0.18em] text-[var(--accent)] uppercase">
-                Ce que je fais
-              </p>
-              <h2 className="mt-3 text-2xl font-semibold tracking-[-0.035em]">
-                Du requirement à une release vérifiable.
+          <aside className="ink-panel hero-scanline relative flex min-h-[600px] flex-col justify-between overflow-hidden p-6 sm:p-8 lg:p-10">
+            <div className="absolute top-0 right-0 h-2 w-24 bg-[var(--automotive)]" />
+            <div className="absolute top-0 right-24 h-2 w-24 bg-[var(--medical)]" />
+
+            <div>
+              <div className="flex items-center justify-between gap-4 text-[11px] font-bold tracking-[0.16em] text-white/45 uppercase">
+                <span>Mission-critical systems</span>
+                <span>Profile / HG-07</span>
+              </div>
+
+              <h2 className="display-title mt-16 max-w-lg text-4xl leading-[0.95] font-semibold tracking-[-0.055em] text-white sm:text-5xl">
+                Faire passer un système du “ça devrait fonctionner” au “on peut
+                le démontrer”.
               </h2>
-              <p className="mt-3 text-sm leading-6 text-[var(--muted-foreground)]">
-                Je travaille à l’interface entre système, développement et test
-                pour transformer une livraison en résultat exploitable.
-              </p>
             </div>
-            <ol className="p-3">
-              {quickCapabilities.map(([index, label, detail]) => (
-                <li
-                  key={label}
-                  className="group grid grid-cols-[38px_1fr_auto] items-center gap-3 rounded-2xl px-3 py-3.5 transition duration-200 hover:bg-[var(--surface)]"
-                >
-                  <span className="grid size-9 place-items-center rounded-xl border border-[var(--border)] bg-[#080d15] text-[10px] font-semibold text-[var(--accent)] transition group-hover:border-[var(--border-strong)]">
-                    {index}
-                  </span>
-                  <span>
-                    <span className="block text-sm font-semibold">{label}</span>
-                    <span className="mt-1 block text-xs text-[var(--muted-foreground)]">
-                      {detail}
-                    </span>
-                  </span>
-                  <span
-                    aria-hidden="true"
-                    className="translate-x-[-4px] text-xs text-[var(--muted-foreground)] opacity-0 transition duration-200 group-hover:translate-x-0 group-hover:text-[var(--accent)] group-hover:opacity-100"
+
+            <div className="mt-14">
+              <p className="text-[10px] font-bold tracking-[0.18em] text-white/40 uppercase">
+                Engineering flow
+              </p>
+              <ol className="mt-5 border-l border-white/15">
+                {flow.map((step, index) => (
+                  <li
+                    key={step}
+                    className="group grid grid-cols-[48px_1fr_auto] items-center gap-4 border-b border-white/10 py-4 pl-4"
                   >
-                    →
-                  </span>
-                </li>
-              ))}
-            </ol>
-            <div className="grid grid-cols-3 gap-px border-t border-[var(--border)] bg-[var(--border)]">
-              <div className="bg-[#080d15] p-4">
-                <p className="text-[10px] tracking-[0.14em] text-[var(--muted-foreground)] uppercase">
-                  Requirements
+                    <span className="text-xs font-bold text-white/35">
+                      0{index + 1}
+                    </span>
+                    <span className="text-sm font-semibold text-white">
+                      {step}
+                    </span>
+                    <span className="text-xs text-white/30 transition group-hover:translate-x-1 group-hover:text-white">
+                      →
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            <div className="mt-10 grid grid-cols-2 gap-px bg-white/10">
+              <div className="bg-[#0b1118] p-4">
+                <p className="text-[10px] tracking-[0.14em] text-white/40 uppercase">
+                  Medical
                 </p>
-                <p className="mt-1 text-xs font-medium">DOORS</p>
+                <p className="mt-2 text-sm font-semibold text-[#7eddf0]">
+                  Fiabilité · Validation
+                </p>
               </div>
-              <div className="bg-[#080d15] p-4">
-                <p className="text-[10px] tracking-[0.14em] text-[var(--muted-foreground)] uppercase">
-                  CI/CD
+              <div className="bg-[#0b1118] p-4">
+                <p className="text-[10px] tracking-[0.14em] text-white/40 uppercase">
+                  Automotive
                 </p>
-                <p className="mt-1 text-xs font-medium">Jenkins / TeamCity</p>
-              </div>
-              <div className="bg-[#080d15] p-4">
-                <p className="text-[10px] tracking-[0.14em] text-[var(--muted-foreground)] uppercase">
-                  Validation
+                <p className="mt-2 text-sm font-semibold text-[#ff8d50]">
+                  SIL · Regression
                 </p>
-                <p className="mt-1 text-xs font-medium">Functional / SIL</p>
               </div>
             </div>
           </aside>
         </Reveal>
+      </div>
+
+      <div className="mx-auto mt-5 flex max-w-7xl flex-wrap gap-x-6 gap-y-2 border-t border-[var(--border)] pt-4 text-xs font-medium text-[var(--muted-foreground)]">
+        {career.core.map((item) => (
+          <span key={item}>{item}</span>
+        ))}
       </div>
     </section>
   );
