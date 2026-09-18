@@ -10,7 +10,7 @@ export default function ExpertisePage() {
         <section className="px-5 sm:px-6 lg:px-8">
           <div className="ink-panel mx-auto max-w-7xl p-7 text-white sm:p-10 lg:p-14">
             <p className="tech-label text-[11px] font-bold text-white/42">
-              Capability map
+              Cartographie des compétences
             </p>
             <h1 className="display-title mt-7 max-w-5xl text-5xl leading-[0.9] font-semibold tracking-[-0.065em] sm:text-6xl lg:text-7xl">
               Comprendre. Intégrer. Tester. Automatiser.
@@ -67,7 +67,7 @@ export default function ExpertisePage() {
               <div className="flex items-end justify-between gap-6 border-b border-[var(--border-strong)] pb-6">
                 <div>
                   <p className="tech-label text-[10px] font-bold text-[var(--accent)]">
-                    Toolchain
+                    Outils & environnements
                   </p>
                   <h2 className="display-title mt-3 text-4xl font-semibold tracking-[-0.055em]">
                     Environnements & outils
