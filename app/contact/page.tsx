@@ -32,14 +32,14 @@ export default function ContactPage() {
               >
                 GitHub <span>↗</span>
               </a>
-              <div className="border border-[var(--border)] bg-[var(--paper)] px-5 py-4">
-                <p className="text-[10px] font-bold tracking-[0.12em] text-[var(--muted-foreground)] uppercase">
-                  LinkedIn
-                </p>
-                <p className="mt-1 text-sm font-semibold text-[#44515e]">
-                  Lien à renseigner
-                </p>
-              </div>
+              <a
+                href="https://www.linkedin.com/in/hamza-ghourabi-7a0566106/"
+                target="_blank"
+                rel="noreferrer"
+                className="secondary-action flex items-center justify-between px-5 py-4 text-sm font-semibold transition"
+              >
+                LinkedIn <span>↗</span>
+              </a>
             </div>
           </section>
 
@@ -87,19 +87,12 @@ export default function ContactPage() {
             </div>
 
             <div className="mt-7 border-t border-white/12 pt-6">
-              <p className="mb-3 text-[9px] font-bold tracking-[0.16em] text-white/30 uppercase">
+              <p className="text-[9px] font-bold tracking-[0.16em] text-white/30 uppercase">
                 Personal note
               </p>
-              <div className="overflow-hidden bg-[#05080c]">
-                <Image
-                  src="/signature-generated.webp"
-                  alt="Des systèmes fiables pour un monde plus sûr — Hamza Ghourabi"
-                  width={1254}
-                  height={314}
-                  unoptimized
-                  className="h-auto w-full"
-                />
-              </div>
+              <p className="mt-4 max-w-[280px] text-sm italic leading-6 text-white/45">
+                Des systèmes fiables pour un monde plus sûr.
+              </p>
             </div>
           </aside>
         </div>
