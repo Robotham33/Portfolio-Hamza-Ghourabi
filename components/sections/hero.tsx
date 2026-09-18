@@ -21,7 +21,7 @@ export function Hero() {
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2 text-xs text-[var(--muted-foreground)]">
               <span className="size-1.5 rounded-full bg-[var(--accent)]" />
-              {career.years} ans · MedTech & automobile · systèmes embarqués
+              {career.years} ans · Médical & automobile · systèmes embarqués
             </div>
           </Reveal>
 
