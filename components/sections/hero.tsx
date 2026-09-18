@@ -30,7 +30,7 @@ export function Hero() {
                 <span>7+ ans d’expérience</span>
                 <span>Validation logicielle</span>
                 <span>Intégration logicielle</span>
-                <span className="text-[var(--accent)]">QA Automation</span>
+                <span className="text-[var(--accent)]">Automatisation des tests</span>
               </div>
             </Reveal>
 
