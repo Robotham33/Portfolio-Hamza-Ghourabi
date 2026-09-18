@@ -1,6 +1,12 @@
+import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { ContactCta } from "@/components/sections/contact-cta";
+import { ExperiencePreview } from "@/components/sections/experience-preview";
+import { ExpertisePreview } from "@/components/sections/expertise-preview";
 import { Hero } from "@/components/sections/hero";
-import { ProofPoints } from "@/components/sections/proof-points";
+import { ProjectsPreview } from "@/components/sections/projects-preview";
+import { RecruiterSnapshot } from "@/components/sections/recruiter-snapshot";
+import { TechStrip } from "@/components/sections/tech-strip";
 
 export default function HomePage() {
   return (
@@ -8,8 +14,14 @@ export default function HomePage() {
       <SiteHeader />
       <main>
         <Hero />
-        <ProofPoints />
+        <RecruiterSnapshot />
+        <TechStrip />
+        <ExperiencePreview />
+        <ExpertisePreview />
+        <ProjectsPreview />
+        <ContactCta />
       </main>
+      <SiteFooter />
     </>
   );
 }
