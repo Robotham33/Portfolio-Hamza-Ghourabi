@@ -1,9 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { Reveal } from "@/components/motion/reveal";
 import { career } from "@/content/portfolio";
-import { portraitDataUri } from "@/content/portrait";
 
 const flow = [
   "Requirements",
@@ -64,67 +62,39 @@ export function Hero() {
         </div>
 
         <Reveal delay={0.08} distance={20}>
-          <aside className="ink-panel hero-scanline relative flex min-h-[520px] flex-col overflow-hidden p-6 text-white sm:p-7 lg:p-8">
+          <aside className="ink-panel hero-scanline relative flex min-h-[520px] flex-col justify-between overflow-hidden p-6 sm:p-7 lg:p-8">
             <div className="absolute top-0 right-0 h-2 w-20 bg-[var(--automotive)]" />
             <div className="absolute top-0 right-20 h-2 w-20 bg-[var(--medical)]" />
 
-            <div className="flex items-start justify-between gap-6">
-              <div className="max-w-[65%]">
-                <p className="text-[9px] font-bold tracking-[0.18em] text-white/38 uppercase">
-                  Mission-critical
-                </p>
-                <h2 className="display-title mt-2 text-4xl leading-[0.92] font-semibold tracking-[-0.055em] sm:text-[2.9rem]">
-                  Systems
-                </h2>
-                <p className="mt-4 max-w-sm text-xs leading-5 text-white/52">
-                  Intégrer, valider et automatiser pour transformer une
-                  livraison en preuve exploitable.
-                </p>
+            <div>
+              <div className="flex items-center justify-between gap-4 text-[10px] font-bold tracking-[0.16em] text-white/45 uppercase">
+                <span>Mission-critical systems</span>
+                <span>Profile / HG-07</span>
               </div>
 
-              <div className="w-[108px] shrink-0 sm:w-[124px]">
-                <div className="relative aspect-[4/5] overflow-hidden border border-white/14 bg-white/5 shadow-[0_14px_40px_rgba(0,0,0,0.28)]">
-                  <Image
-                    src={portraitDataUri}
-                    alt="Hamza Ghourabi"
-                    fill
-                    unoptimized
-                    priority
-                    sizes="124px"
-                    className="object-cover object-[center_16%]"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(5,8,12,0.72)_100%)]" />
-                </div>
-                <div className="mt-2 border-l border-white/18 pl-2">
-                  <p className="text-[10px] font-semibold text-white">
-                    Hamza Ghourabi
-                  </p>
-                  <p className="mt-0.5 text-[8px] font-bold tracking-[0.12em] text-white/38 uppercase">
-                    Profile / HG-07
-                  </p>
-                </div>
-              </div>
+              <h2 className="display-title mt-10 max-w-lg text-4xl leading-[0.95] font-semibold tracking-[-0.055em] text-white sm:text-[2.7rem]">
+                Faire passer un système du “ça devrait fonctionner” au “on peut
+                le démontrer”.
+              </h2>
             </div>
 
-            <div className="mt-7 h-px w-full bg-white/10" />
-
-            <div className="mt-5">
-              <p className="text-[9px] font-bold tracking-[0.18em] text-white/35 uppercase">
+            <div className="mt-9">
+              <p className="text-[10px] font-bold tracking-[0.18em] text-white/40 uppercase">
                 Engineering flow
               </p>
               <ol className="mt-3 border-l border-white/15">
                 {flow.map((step, index) => (
                   <li
                     key={step}
-                    className="group grid grid-cols-[38px_1fr_auto] items-center gap-3 border-b border-white/10 py-2.5 pl-3"
+                    className="group grid grid-cols-[42px_1fr_auto] items-center gap-3 border-b border-white/10 py-3 pl-3"
                   >
-                    <span className="text-[9px] font-bold text-white/30">
+                    <span className="text-[11px] font-bold text-white/35">
                       0{index + 1}
                     </span>
-                    <span className="text-xs font-semibold text-white">
+                    <span className="text-sm font-semibold text-white">
                       {step}
                     </span>
-                    <span className="text-[10px] text-white/25 transition group-hover:translate-x-1 group-hover:text-white/70">
+                    <span className="text-xs text-white/30 transition group-hover:translate-x-1 group-hover:text-white">
                       →
                     </span>
                   </li>
@@ -132,19 +102,23 @@ export function Hero() {
               </ol>
             </div>
 
-            <div className="mt-auto pt-6">
-              <div className="flex flex-wrap gap-2">
-                <span className="border border-[#397ec8] px-2 py-1 text-[9px] font-bold tracking-[0.1em] text-[#72c9ef] uppercase">
+            <div className="mt-7 grid grid-cols-2 gap-px bg-white/10">
+              <div className="bg-[#0b1118] p-3.5">
+                <p className="text-[9px] tracking-[0.14em] text-white/40 uppercase">
                   Medical
-                </span>
-                <span className="border border-[#b94c15] px-2 py-1 text-[9px] font-bold tracking-[0.1em] text-[#ff8d50] uppercase">
-                  Automotive
-                </span>
+                </p>
+                <p className="mt-1.5 text-xs font-semibold text-[#7eddf0]">
+                  Fiabilité · Validation
+                </p>
               </div>
-              <div className="mt-4 h-px w-full bg-white/10" />
-              <p className="mt-3 text-[9px] leading-4 font-bold tracking-[0.14em] text-white/28 uppercase">
-                Reliability · Traceability · Quality
-              </p>
+              <div className="bg-[#0b1118] p-3.5">
+                <p className="text-[9px] tracking-[0.14em] text-white/40 uppercase">
+                  Automotive
+                </p>
+                <p className="mt-1.5 text-xs font-semibold text-[#ff8d50]">
+                  SIL · Regression
+                </p>
+              </div>
             </div>
           </aside>
         </Reveal>
