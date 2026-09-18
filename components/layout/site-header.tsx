@@ -13,18 +13,16 @@ export function SiteHeader() {
         aria-label="Navigation principale"
         className="pointer-events-auto mx-auto flex max-w-7xl items-center justify-between border border-[var(--border)] bg-[rgba(248,250,251,0.9)] px-3 py-2.5 shadow-[0_10px_30px_rgba(10,16,23,0.08)] backdrop-blur-xl sm:px-4"
       >
-        <Link href="/" className="flex items-center gap-3">
-          <span className="grid size-9 place-items-center bg-[var(--ink)] text-xs font-bold text-white">
-            HG
-          </span>
-          <span className="hidden sm:block">
-            <span className="block text-sm font-semibold tracking-[-0.02em]">
-              Hamza Ghourabi
-            </span>
-            <span className="block text-[10px] tracking-[0.12em] text-[var(--muted-foreground)] uppercase">
-              Validation · Integration · QA
-            </span>
-          </span>
+        <Link
+          href="/"
+          aria-label="Accueil — Hamza Ghourabi"
+          className="flex items-center"
+        >
+          <img
+            src="/hgh-logo.png"
+            alt="HGH."
+            className="block h-auto w-[92px] sm:w-[108px]"
+          />
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
