@@ -2,11 +2,11 @@ export const career = {
   name: "Hamza Ghourabi",
   role: "Software Integration & Validation Engineer",
   headline:
-    "J’intègre, sécurise et valide des logiciels embarqués jusqu’à une release vérifiable.",
+    "De la validation logicielle à l’intégration logicielle, avec une forte expertise en QA Automation.",
   summary:
-    "Ingénieur spécialisé en intégration logicielle, validation système et automatisation des tests. Mon parcours couvre des environnements MedTech et automobile, de l’analyse des exigences à l’intégration firmware/software, au CI/CD et à la validation fonctionnelle ou SIL.",
+    "Ingénieur spécialisé en intégration logicielle, validation système et automatisation des tests. Mon parcours couvre des environnements médical et automobile, de l’analyse des exigences à l’intégration firmware/software, au CI/CD et à la validation fonctionnelle ou SIL.",
   years: "7+",
-  domains: ["MedTech", "Automobile"],
+  domains: ["Médical", "Automobile"],
   core: [
     "Software Integration",
     "System Validation",
@@ -35,7 +35,7 @@ export const experiences = [
   {
     period: "2019 — 2026",
     company: "Stago",
-    domain: "MedTech",
+    domain: "Médical",
     role: "Validation fonctionnelle → Intégration logicielle",
     summary:
       "Évolution de la validation fonctionnelle vers un rôle d’intégration logicielle sur des systèmes embarqués de diagnostic in vitro, au contact des équipes logiciel, firmware et système.",
@@ -83,7 +83,7 @@ export const expertise = [
 
 export const caseStudies = [
   {
-    eyebrow: "MedTech · intégration",
+    eyebrow: "Médical · intégration",
     title: "Sécuriser une chaîne d’intégration logiciel + firmware",
     problem:
       "Plusieurs composants doivent être assemblés et vérifiés avant de pouvoir lancer la validation sur un système embarqué.",
