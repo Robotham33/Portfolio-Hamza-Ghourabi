@@ -16,8 +16,8 @@ export const proofPoints = [
     detail: "Jenkins + TeamCity",
   },
   {
-    value: "E2E",
-    label: "Cycle couvert",
+    value: "I→V",
+    label: "Continuum métier",
     detail: "Intégration → validation",
   },
 ] as const;
