@@ -35,7 +35,7 @@ export default function ExperiencePage() {
               <div className="mt-10 space-y-4 border-t border-white/12 pt-6 text-sm text-white/62">
                 <p>Médical + automobile</p>
                 <p>Validation + intégration</p>
-                <p>QA Automation + CI/CD</p>
+                <p>Automatisation des tests + CI/CD</p>
                 <p>Systèmes embarqués</p>
               </div>
             </div>
@@ -136,7 +136,7 @@ export default function ExperiencePage() {
         <section className="bg-[var(--ink)] px-5 py-20 text-white sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <p className="tech-label text-[11px] font-bold text-white/45">
-              Education
+              Formation
             </p>
             <div className="mt-10 grid gap-px bg-white/12 md:grid-cols-2">
               {education.map((item) => (
