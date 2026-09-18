@@ -6,7 +6,7 @@ export function ContactCta() {
       <div className="mx-auto grid max-w-7xl overflow-hidden border border-[var(--border-strong)] lg:grid-cols-[1fr_250px]">
         <div className="bg-white p-7 sm:p-8 lg:p-10">
           <p className="tech-label text-[10px] font-bold text-[var(--accent)]">
-            Next mission
+            Prochaine mission
           </p>
           <h2 className="display-title mt-4 max-w-4xl text-4xl leading-[0.96] font-semibold tracking-[-0.055em] sm:text-[2.8rem] lg:text-5xl">
             Vous cherchez un profil capable de relier validation, intégration et
@@ -29,18 +29,18 @@ export function ContactCta() {
           <div className="absolute top-0 left-0 h-1.5 w-1/2 bg-[var(--medical)]" />
           <div className="absolute top-0 right-0 h-1.5 w-1/2 bg-[var(--automotive)]" />
           <p className="tech-label text-[9px] font-bold text-white/38">
-            Availability / Contact
+            Disponibilité / Contact
           </p>
           <div>
             <p className="display-title text-4xl font-semibold tracking-[-0.06em]">
               HG
             </p>
             <p className="mt-3 text-xs leading-5 text-white/55">
-              Software Integration
+              Intégration logicielle
               <br />
               Validation
               <br />
-              QA Automation
+              Automatisation des tests
             </p>
           </div>
         </div>

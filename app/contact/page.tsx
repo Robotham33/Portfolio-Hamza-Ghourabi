@@ -46,7 +46,7 @@ export default function ContactPage() {
           <aside className="ink-panel flex flex-col p-7 text-white sm:p-8">
             <div>
               <p className="tech-label text-[10px] font-bold text-white/38">
-                Profile signal
+                Profil en bref
               </p>
               <div className="signal-line mt-5 h-1.5 w-28" />
             </div>
@@ -76,7 +76,7 @@ export default function ContactPage() {
                   <br />
                   Intégration logicielle
                   <br />
-                  QA Automation
+                  Automatisation des tests
                   <br />
                   Médical & Automobile
                 </p>

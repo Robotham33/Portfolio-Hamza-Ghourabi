@@ -5,7 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "HGH. — Software Integration & Validation Engineer",
+    default: "HGH. — Ingénieur intégration & validation logicielle",
     template: "%s — HGH.",
   },
   description:

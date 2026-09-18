@@ -10,7 +10,7 @@ const technologies = [
   "CAN",
   "OBD-II",
   "STM32",
-  "QA Automation",
+  "Automatisation des tests",
 ] as const;
 
 export function TechStrip() {

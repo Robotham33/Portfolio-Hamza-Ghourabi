@@ -1,17 +1,17 @@
 export const career = {
   name: "HGH.",
-  role: "Software Integration & Validation Engineer",
+  role: "Ingénieur intégration & validation logicielle",
   headline:
-    "De la validation logicielle à l’intégration logicielle, avec une forte expertise en QA Automation.",
+    "De la validation logicielle à l’intégration logicielle, avec une forte expertise en automatisation des tests.",
   summary:
-    "Ingénieur spécialisé en validation système, intégration logicielle et automatisation des tests. Mon parcours couvre les secteurs médical et automobile, de l’analyse des exigences à l’intégration firmware/software, au CI/CD et à la validation fonctionnelle ou SIL.",
+    "Ingénieur spécialisé en validation système, intégration logicielle et automatisation des tests. Mon parcours couvre les secteurs médical et automobile, de l’analyse des exigences à l’intégration firmware et logiciel, au CI/CD et à la validation fonctionnelle ou SIL.",
   years: "7+",
   domains: ["Médical", "Automobile"],
   core: [
-    "Software Integration",
-    "System Validation",
-    "Embedded Systems",
-    "Test Automation",
+    "Intégration logicielle",
+    "Validation système",
+    "Systèmes embarqués",
+    "Automatisation des tests",
     "CI/CD",
   ],
 } as const;
@@ -29,7 +29,7 @@ export const experiences = [
       "Analyse des exigences sous DOORS et préparation de la couverture de test",
       "Rédaction et exécution de tests fonctionnels et d’intégration en simulation SIL",
       "Lancement des campagnes via Jenkins, analyse des résultats et diagnostic des anomalies",
-      "Suivi des anomalies et des corrections sous Jira avec les équipes software et système",
+      "Suivi des anomalies et des corrections sous Jira avec les équipes logiciel et système",
     ],
     tools: [
       "Python",
@@ -50,12 +50,12 @@ export const experiences = [
     domain: "Médical",
     role: "Ingénieur validation et intégration",
     summary:
-      "Validation fonctionnelle et tests d’intégration sur des produits médicaux critiques mêlant software et hardware, avec industrialisation des campagnes et intégration continue.",
+      "Validation fonctionnelle et tests d’intégration sur des produits médicaux critiques mêlant logiciel et matériel, avec industrialisation des campagnes et intégration continue.",
     highlights: [
       "Analyse des spécifications, définition des tests, rédaction et exécution des protocoles puis rapports de validation",
       "Automatisation des campagnes avec TeamCity et Git, maintien des environnements de test et simulateurs logiciels",
       "Configuration et utilisation de pipelines TeamCity pour l’exécution automatisée et le suivi des résultats",
-      "Root Cause Analysis, suivi des corrections et amélioration de la couverture de test",
+      "Analyse des causes racines, suivi des corrections et amélioration de la couverture de test",
       "Coordination transverse avec les équipes logiciel et spécifications en Agile/Scrum",
     ],
     tools: [
@@ -65,7 +65,7 @@ export const experiences = [
       "Git",
       "DOORS",
       "Mantis",
-      "Functional Validation",
+      "Validation fonctionnelle",
     ],
   },
   {
@@ -79,7 +79,7 @@ export const experiences = [
     highlights: [
       "Développement logiciel embarqué sous ROS",
       "Rédaction et exécution de protocoles de tests fonctionnels et d’intégration",
-      "Identification, diagnostic et reporting des anomalies",
+      "Identification, diagnostic et suivi des anomalies",
       "Mise en place de simulateurs et d’environnements de test",
       "Validation de la conformité du produit final",
     ],
@@ -159,26 +159,26 @@ export const personalProjects = [
 export const expertise = [
   {
     index: "01",
-    title: "Software Integration",
-    text: "Assembler et fiabiliser les livraisons software et firmware avant leur passage en validation.",
+    title: "Intégration logicielle",
+    text: "Assembler et fiabiliser les livraisons logicielles et firmware avant leur passage en validation.",
     tags: ["Builds", "Firmware", "Software", "Release"],
   },
   {
     index: "02",
-    title: "System & Software Validation",
+    title: "Validation système & logicielle",
     text: "Analyser les exigences, construire la couverture de test, exécuter les scénarios et investiguer les écarts.",
-    tags: ["DOORS", "SIL", "Functional", "Coverage"],
+    tags: ["DOORS", "SIL", "Fonctionnel", "Couverture"],
   },
   {
     index: "03",
-    title: "QA & Test Automation",
+    title: "QA & automatisation des tests",
     text: "Automatiser les campagnes, fiabiliser les environnements de test et accélérer l’analyse des résultats.",
-    tags: ["Python", "Batch", "Automation", "Reporting"],
+    tags: ["Python", "Batch", "Automatisation", "Rapports"],
   },
   {
     index: "04",
     title: "CI/CD & Industrialisation",
-    text: "Industrialiser l’exécution des campagnes et rendre les builds, résultats et artefacts plus reproductibles et traçables.",
+    text: "Industrialiser l’exécution des campagnes et rendre les versions, résultats et artefacts plus reproductibles et traçables.",
     tags: ["Jenkins", "TeamCity", "Git", "CI/CD"],
   },
 ] as const;
@@ -204,7 +204,7 @@ export const caseStudies = [
       "Croisement exigences, paramètres, traces et scénarios pour distinguer mise à jour de test et régression potentielle.",
     result:
       "Des diagnostics argumentés et des tests prêts à réintégrer dans les campagnes automatisées.",
-    stack: ["SIL", "DOORS", "Jenkins", "Regression"],
+    stack: ["SIL", "DOORS", "Jenkins", "Régression"],
   },
   {
     eyebrow: "CI/CD · industrialisation",
@@ -214,8 +214,8 @@ export const caseStudies = [
     contribution:
       "Structuration de pipelines pour déclencher les tests, centraliser les résultats et conserver les artefacts utiles à l’investigation.",
     result:
-      "Une boucle de feedback plus courte entre intégration, exécution, analyse et correction.",
-    stack: ["Jenkins", "TeamCity", "Artifacts", "Automation"],
+      "Une boucle de retour plus courte entre intégration, exécution, analyse et correction.",
+    stack: ["Jenkins", "TeamCity", "Artefacts", "Automatisation"],
   },
 ] as const;
 
@@ -229,7 +229,7 @@ export const toolGroups = [
     items: ["Git", "Jenkins", "TeamCity", "DOORS", "Jira", "Mantis"],
   },
   {
-    label: "Embedded & hardware",
+    label: "Systèmes embarqués & matériel",
     items: ["STM32", "ROS", "Raspberry Pi", "Arduino"],
   },
   {

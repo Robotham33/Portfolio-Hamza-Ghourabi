@@ -12,11 +12,11 @@ const roleSteps = [
 ] as const;
 
 const roleTags = [
-  "Requirements",
-  "Integration",
-  "Test Automation",
+  "Exigences",
+  "Intégration",
+  "Automatisation des tests",
   "CI/CD",
-  "Debug",
+  "Débogage",
 ] as const;
 
 export function Hero() {
@@ -30,7 +30,9 @@ export function Hero() {
                 <span>7+ ans d’expérience</span>
                 <span>Validation logicielle</span>
                 <span>Intégration logicielle</span>
-                <span className="text-[var(--accent)]">QA Automation</span>
+                <span className="text-[var(--accent)]">
+                  Automatisation des tests
+                </span>
               </div>
             </Reveal>
 
@@ -42,9 +44,9 @@ export function Hero() {
 
             <p className="mt-6 max-w-2xl text-lg leading-7 font-medium text-[#1b2631]">
               J’interviens sur l’ensemble du cycle de validation et
-              d’intégration : compréhension des exigences, intégration software
-              / firmware, automatisation des tests, CI/CD, analyse des anomalies
-              et sécurisation des releases.
+              d’intégration : compréhension des exigences, intégration
+              logicielle / firmware, automatisation des tests, CI/CD, analyse
+              des anomalies et sécurisation des livraisons.
             </p>
 
             <div className="mt-5 max-w-2xl border-l-2 border-[var(--accent)] pl-4">

@@ -20,7 +20,7 @@ export function ProjectsPreview() {
               <article className="card-lift flex h-full flex-col border border-[var(--border-strong)] bg-white p-6 sm:p-7">
                 <div className="flex items-start justify-between gap-5">
                   <p className="tech-label text-[10px] font-bold text-[var(--muted-foreground)]">
-                    Case 0{index + 1}
+                    Cas 0{index + 1}
                   </p>
                   <span
                     className={`h-2.5 w-2.5 ${
