@@ -6,14 +6,15 @@ export default function ProjectsPage() {
   return (
     <>
       <SiteHeader />
-      <main className="pb-24 pt-32 sm:pt-36">
+      <main className="pt-32 pb-24 sm:pt-36">
         <section className="px-5 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl border-t-4 border-[var(--ink)] bg-white p-7 sm:p-10 lg:p-12">
             <p className="tech-label text-[11px] font-bold text-[var(--accent)]">
               Case studies
             </p>
             <h1 className="display-title mt-6 max-w-5xl text-5xl leading-[0.9] font-semibold tracking-[-0.065em] sm:text-6xl lg:text-7xl">
-              La valeur n’est pas dans l’outil. Elle est dans la manière de résoudre le problème.
+              La valeur n’est pas dans l’outil. Elle est dans la manière de
+              résoudre le problème.
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-[var(--muted-foreground)]">
               Des cas volontairement génériques pour préserver les informations
@@ -41,7 +42,9 @@ export default function ProjectsPage() {
                 >
                   <p
                     className={`tech-label text-[10px] font-bold ${
-                      index === 1 ? "text-white/45" : "text-[var(--muted-foreground)]"
+                      index === 1
+                        ? "text-white/45"
+                        : "text-[var(--muted-foreground)]"
                     }`}
                   >
                     Case 0{index + 1}
@@ -109,9 +112,14 @@ export default function ProjectsPage() {
                 Personal initiative
               </p>
               {personalProjects.map((project) => (
-                <div key={project.title} className="mt-8 grid gap-10 lg:grid-cols-[1fr_0.8fr]">
+                <div
+                  key={project.title}
+                  className="mt-8 grid gap-10 lg:grid-cols-[1fr_0.8fr]"
+                >
                   <div>
-                    <p className="text-sm font-bold text-[#75ddf2]">{project.title}</p>
+                    <p className="text-sm font-bold text-[#75ddf2]">
+                      {project.title}
+                    </p>
                     <h2 className="display-title mt-4 text-4xl leading-[0.98] font-semibold tracking-[-0.055em]">
                       {project.subtitle}
                     </h2>
@@ -121,7 +129,10 @@ export default function ProjectsPage() {
                   </div>
                   <ul className="space-y-4 border-l border-white/12 pl-6">
                     {project.highlights.map((highlight) => (
-                      <li key={highlight} className="text-sm leading-6 text-white/68">
+                      <li
+                        key={highlight}
+                        className="text-sm leading-6 text-white/68"
+                      >
                         {highlight}
                       </li>
                     ))}

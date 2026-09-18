@@ -6,7 +6,7 @@ export default function ExpertisePage() {
   return (
     <>
       <SiteHeader />
-      <main className="pb-24 pt-32 sm:pt-36">
+      <main className="pt-32 pb-24 sm:pt-36">
         <section className="px-5 sm:px-6 lg:px-8">
           <div className="ink-panel mx-auto max-w-7xl p-7 text-white sm:p-10 lg:p-14">
             <p className="tech-label text-[11px] font-bold text-white/42">
@@ -86,7 +86,10 @@ export default function ExpertisePage() {
                     </p>
                     <div className="mt-6 space-y-2">
                       {group.items.map((item) => (
-                        <p key={item} className="text-sm font-semibold text-[#27333e]">
+                        <p
+                          key={item}
+                          className="text-sm font-semibold text-[#27333e]"
+                        >
                           {item}
                         </p>
                       ))}

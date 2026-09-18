@@ -9,7 +9,8 @@ export function ContactCta() {
             Next mission
           </p>
           <h2 className="display-title mt-6 max-w-4xl text-4xl leading-[0.96] font-semibold tracking-[-0.055em] sm:text-5xl lg:text-6xl">
-            Vous cherchez un profil capable de relier validation, intégration et automatisation ?
+            Vous cherchez un profil capable de relier validation, intégration et
+            automatisation ?
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-7 text-[var(--muted-foreground)]">
             Mon terrain de jeu : des systèmes exigeants, des équipes

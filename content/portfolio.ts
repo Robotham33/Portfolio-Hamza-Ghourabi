@@ -31,7 +31,17 @@ export const experiences = [
       "Lancement des campagnes via Jenkins, analyse des résultats et diagnostic des anomalies",
       "Suivi des anomalies et des corrections sous Jira avec les équipes software et système",
     ],
-    tools: ["Python", "C", "Batch", "Jenkins", "TeamCity", "Git", "DOORS", "Jira", "SIL"],
+    tools: [
+      "Python",
+      "C",
+      "Batch",
+      "Jenkins",
+      "TeamCity",
+      "Git",
+      "DOORS",
+      "Jira",
+      "SIL",
+    ],
   },
   {
     period: "10/2019 — 01/2026",
@@ -48,7 +58,15 @@ export const experiences = [
       "Root Cause Analysis, suivi des corrections et amélioration de la couverture de test",
       "Coordination transverse avec les équipes logiciel et spécifications en Agile/Scrum",
     ],
-    tools: ["Python", "Batch", "TeamCity", "Git", "DOORS", "Mantis", "Functional Validation"],
+    tools: [
+      "Python",
+      "Batch",
+      "TeamCity",
+      "Git",
+      "DOORS",
+      "Mantis",
+      "Functional Validation",
+    ],
   },
   {
     period: "03/2019 — 08/2019",
@@ -65,7 +83,17 @@ export const experiences = [
       "Mise en place de simulateurs et d’environnements de test",
       "Validation de la conformité du produit final",
     ],
-    tools: ["Linux", "ROS", "Python", "C++", "Raspberry Pi", "Arduino", "Rplidar", "Git", "Série"],
+    tools: [
+      "Linux",
+      "ROS",
+      "Python",
+      "C++",
+      "Raspberry Pi",
+      "Arduino",
+      "Rplidar",
+      "Git",
+      "Série",
+    ],
   },
   {
     period: "01/2016 — 06/2016",
@@ -82,7 +110,17 @@ export const experiences = [
       "Communication série entre la carte et l’application mobile",
       "Tests manuels et validation du fonctionnement de bout en bout",
     ],
-    tools: ["STM32F4", "C++", "Java", "Android Studio", "OBD-II", "CAN", "Bluetooth", "Keil", "IAR"],
+    tools: [
+      "STM32F4",
+      "C++",
+      "Java",
+      "Android Studio",
+      "OBD-II",
+      "CAN",
+      "Bluetooth",
+      "Keil",
+      "IAR",
+    ],
   },
 ] as const;
 
@@ -104,7 +142,8 @@ export const education = [
 export const personalProjects = [
   {
     title: "Blassa.fr",
-    subtitle: "Solution digitale pour améliorer la dépose des passagers en aéroport",
+    subtitle:
+      "Solution digitale pour améliorer la dépose des passagers en aéroport",
     summary:
       "Conception d’un service digital visant à fluidifier la dépose-minute, avec formalisation du besoin, parcours utilisateur, réflexion B2B2C et mise en ligne du site de présentation.",
     highlights: [

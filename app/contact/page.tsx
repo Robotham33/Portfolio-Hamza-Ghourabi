@@ -5,7 +5,7 @@ export default function ContactPage() {
   return (
     <>
       <SiteHeader />
-      <main className="px-5 pb-24 pt-32 sm:px-6 sm:pt-36 lg:px-8">
+      <main className="px-5 pt-32 pb-24 sm:px-6 sm:pt-36 lg:px-8">
         <div className="mx-auto grid max-w-7xl overflow-hidden border border-[var(--border-strong)] lg:grid-cols-[1fr_420px]">
           <section className="bg-white p-7 sm:p-10 lg:p-14">
             <p className="tech-label text-[11px] font-bold text-[var(--accent)]">
@@ -45,7 +45,7 @@ export default function ContactPage() {
               <p className="tech-label text-[10px] font-bold text-white/38">
                 Profile signal
               </p>
-              <div className="mt-10 h-1.5 w-24 signal-line" />
+              <div className="signal-line mt-10 h-1.5 w-24" />
             </div>
             <div className="mt-24">
               <p className="display-title text-7xl font-semibold tracking-[-0.07em]">

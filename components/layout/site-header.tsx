@@ -52,11 +52,18 @@ export function SiteHeader() {
             </summary>
             <div className="absolute top-[calc(100%+0.6rem)] right-0 w-56 border border-[var(--border)] bg-white p-2 shadow-xl">
               {navigation.map((item) => (
-                <Link key={item.href} href={item.href} className="block px-3 py-2.5 text-sm">
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block px-3 py-2.5 text-sm"
+                >
                   {item.label}
                 </Link>
               ))}
-              <Link href="/contact" className="mt-1 block bg-[var(--ink)] px-3 py-2.5 text-sm font-semibold text-white">
+              <Link
+                href="/contact"
+                className="mt-1 block bg-[var(--ink)] px-3 py-2.5 text-sm font-semibold text-white"
+              >
                 Me contacter
               </Link>
             </div>

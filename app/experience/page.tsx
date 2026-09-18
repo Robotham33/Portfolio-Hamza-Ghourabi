@@ -6,7 +6,7 @@ export default function ExperiencePage() {
   return (
     <>
       <SiteHeader />
-      <main className="pb-24 pt-32 sm:pt-36">
+      <main className="pt-32 pb-24 sm:pt-36">
         <section className="px-5 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1fr_340px]">
             <div className="border-t-4 border-[var(--ink)] bg-white p-7 sm:p-10 lg:p-12">
@@ -14,7 +14,8 @@ export default function ExperiencePage() {
                 Career dossier
               </p>
               <h1 className="display-title mt-6 max-w-5xl text-5xl leading-[0.9] font-semibold tracking-[-0.065em] sm:text-6xl lg:text-7xl">
-                Un parcours construit sur des systèmes qu’il faut prouver, pas simplement livrer.
+                Un parcours construit sur des systèmes qu’il faut prouver, pas
+                simplement livrer.
               </h1>
               <p className="mt-7 max-w-3xl text-lg leading-8 text-[var(--muted-foreground)]">
                 Informatique industrielle, robotique, validation fonctionnelle,

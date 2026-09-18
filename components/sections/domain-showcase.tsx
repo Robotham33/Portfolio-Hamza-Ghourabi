@@ -44,7 +44,10 @@ export function DomainShowcase() {
             </p>
             <ul className="mt-9 space-y-4">
               {medical.map((item) => (
-                <li key={item} className="flex gap-3 text-sm leading-6 text-[#24313d]">
+                <li
+                  key={item}
+                  className="flex gap-3 text-sm leading-6 text-[#24313d]"
+                >
                   <span className="mt-2 size-1.5 shrink-0 bg-[var(--medical)]" />
                   {item}
                 </li>
@@ -74,7 +77,10 @@ export function DomainShowcase() {
             </p>
             <ul className="mt-9 space-y-4">
               {automotive.map((item) => (
-                <li key={item} className="flex gap-3 text-sm leading-6 text-white/78">
+                <li
+                  key={item}
+                  className="flex gap-3 text-sm leading-6 text-white/78"
+                >
                   <span className="mt-2 size-1.5 shrink-0 bg-[var(--automotive)]" />
                   {item}
                 </li>

@@ -14,7 +14,9 @@ export function SectionHeading({
   return (
     <div className="max-w-4xl">
       <div className="flex items-center gap-3">
-        <span className={`h-px w-9 ${inverse ? "bg-white/45" : "bg-[var(--accent)]"}`} />
+        <span
+          className={`h-px w-9 ${inverse ? "bg-white/45" : "bg-[var(--accent)]"}`}
+        />
         <p
           className={`tech-label text-[11px] font-bold ${
             inverse ? "text-white/65" : "text-[var(--accent)]"

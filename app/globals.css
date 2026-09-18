@@ -119,20 +119,32 @@ a {
 
 .ink-panel {
   background:
-    radial-gradient(circle at 80% 10%, rgba(23, 105, 194, 0.18), transparent 32%),
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(23, 105, 194, 0.18),
+      transparent 32%
+    ),
     linear-gradient(145deg, #121b25 0%, #080d12 65%, #05080c 100%);
   color: #f7fafc;
 }
 
 .medical-panel {
   background:
-    radial-gradient(circle at 100% 0%, rgba(105, 216, 241, 0.28), transparent 34%),
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(105, 216, 241, 0.28),
+      transparent 34%
+    ),
     linear-gradient(145deg, #eef8ff 0%, #dfeffb 100%);
 }
 
 .automotive-panel {
   background:
-    radial-gradient(circle at 100% 0%, rgba(255, 106, 26, 0.22), transparent 34%),
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(255, 106, 26, 0.22),
+      transparent 34%
+    ),
     linear-gradient(145deg, #171b20 0%, #0e1217 100%);
   color: #f7fafc;
 }
