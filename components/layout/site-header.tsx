@@ -15,7 +15,7 @@ export function SiteHeader() {
       >
         <Link
           href="/"
-          aria-label="Accueil — Hamza Ghourabi"
+          aria-label="Accueil — HGH."
           data-brand="hgh"
           data-logo-version="1"
           className="flex items-center"
