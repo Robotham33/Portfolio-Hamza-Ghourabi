@@ -45,9 +45,9 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <Link
             href="/contact"
-            className="hidden rounded-xl bg-[var(--foreground)] px-4 py-2 text-sm font-semibold text-[#05070c] transition hover:-translate-y-0.5 sm:inline-flex"
+            className="primary-action hidden rounded-xl px-4 py-2 text-sm font-semibold transition duration-200 hover:-translate-y-0.5 sm:inline-flex"
           >
-            Me contacter{" "}
+            Me contacter
             <span aria-hidden="true" className="ml-2">
               ↗
             </span>
@@ -68,7 +68,7 @@ export function SiteHeader() {
               ))}
               <Link
                 href="/contact"
-                className="mt-1 block rounded-xl bg-[var(--foreground)] px-3 py-2.5 text-sm font-semibold text-[#05070c]"
+                className="primary-action mt-1 block rounded-xl px-3 py-2.5 text-sm font-semibold"
               >
                 Me contacter
               </Link>
