@@ -17,6 +17,7 @@ export function SiteHeader() {
           href="/"
           aria-label="Accueil — Hamza Ghourabi"
           data-brand="hgh"
+          data-logo-version="1"
           className="flex items-center"
         >
           <img
