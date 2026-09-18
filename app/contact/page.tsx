@@ -56,7 +56,7 @@ export default function ContactPage() {
                 <div className="relative aspect-[4/5] overflow-hidden border border-white/14 bg-white/5">
                   <Image
                     src={portraitDataUri}
-                    alt="Hamza Ghourabi"
+                    alt="Portrait professionnel"
                     fill
                     unoptimized
                     priority
@@ -65,14 +65,11 @@ export default function ContactPage() {
                   />
                   <div className="absolute inset-x-0 bottom-0 h-12 bg-[linear-gradient(180deg,transparent,rgba(5,8,12,0.7))]" />
                 </div>
-                <p className="mt-2 text-[9px] font-bold tracking-[0.12em] text-white/38 uppercase">
-                  Hamza Ghourabi
-                </p>
               </div>
 
               <div className="pb-1">
                 <p className="display-title text-4xl font-semibold tracking-[-0.07em]">
-                  HG
+                  HGH.
                 </p>
                 <p className="mt-3 text-[13px] leading-6 text-white/58">
                   Validation logicielle
@@ -84,17 +81,6 @@ export default function ContactPage() {
                   Médical & Automobile
                 </p>
               </div>
-            </div>
-
-            <div className="mt-7 border-t border-white/12 pt-6">
-              <p className="mb-3 text-[9px] font-bold tracking-[0.16em] text-white/30 uppercase">
-                Personal note
-              </p>
-              <img
-                src="/signature-contact.jpg"
-                alt="Des systèmes fiables pour un monde plus sûr — Hamza Ghourabi"
-                className="block h-auto w-full"
-              />
             </div>
           </aside>
         </div>
