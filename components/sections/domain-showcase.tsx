@@ -1,7 +1,7 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const medical = [
-  "Produits médicaux critiques mêlant software et hardware",
+  "Produits médicaux critiques mêlant logiciel et matériel",
   "Validation fonctionnelle et tests d’intégration",
   "Protocoles, rapports, couverture de test et RCA",
   "Automatisation TeamCity et environnements de test",
@@ -11,7 +11,7 @@ const automotive = [
   "Exigences système et couverture de test sous DOORS",
   "Tests fonctionnels et d’intégration en simulation SIL",
   "Campagnes Jenkins, diagnostic et qualification d’anomalies",
-  "Régressions, traces et collaboration software / système",
+  "Régressions, traces et collaboration logiciel / système",
 ] as const;
 
 export function DomainShowcase() {
@@ -29,7 +29,7 @@ export function DomainShowcase() {
             <div className="absolute top-0 left-0 h-1.5 w-full bg-[var(--medical)]" />
             <div className="flex items-center justify-between">
               <p className="tech-label text-[10px] font-bold text-[var(--medical)]">
-                Domain 01
+                Domaine 01
               </p>
               <span className="text-3xl font-semibold tracking-[-0.06em] text-[var(--medical)]">
                 +
@@ -62,7 +62,7 @@ export function DomainShowcase() {
             <div className="absolute top-0 left-0 h-1.5 w-full bg-[var(--automotive)]" />
             <div className="flex items-center justify-between">
               <p className="tech-label text-[10px] font-bold text-[#ff9c67]">
-                Domain 02
+                Domaine 02
               </p>
               <span className="text-3xl font-semibold tracking-[-0.06em] text-[#ff8d50]">
                 +
