@@ -1,0 +1,35 @@
+name: Import signature asset
+
+on:
+  push:
+    branches:
+      - feat/v4-portrait-hero
+    paths:
+      - .github/workflows/import-signature.yml
+
+permissions:
+  contents: write
+
+jobs:
+  import-signature:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/v4-portrait-hero
+
+      - name: Download exact signature PNG
+        run: |
+          mkdir -p public
+          curl -fL "https://at.adobe.com/grUikR1MZq6tKZOg" -o public/signature-contact.png
+          file public/signature-contact.png
+          test -s public/signature-contact.png
+
+      - name: Commit signature
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/signature-contact.png
+          git diff --cached --quiet && exit 0
+          git commit -m "feat(contact): import exact signature PNG"
+          git push origin HEAD:feat/v4-portrait-hero
