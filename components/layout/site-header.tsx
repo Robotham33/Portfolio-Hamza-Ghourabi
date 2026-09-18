@@ -16,6 +16,7 @@ export function SiteHeader() {
         <Link
           href="/"
           aria-label="Accueil — Hamza Ghourabi"
+          data-brand="hgh"
           className="flex items-center"
         >
           <img
