@@ -5,6 +5,7 @@ Portfolio professionnel premium de Hamza Ghourabi.
 ## Objectif
 
 Créer une vitrine moderne, rapide, crédible et haut de gamme pour présenter :
+
 - le profil professionnel ;
 - les expériences ;
 - les projets ;

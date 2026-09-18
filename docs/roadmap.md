@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Phase 0 — Fondations
+
 - [x] Créer le repository
 - [x] Créer la structure initiale
 - [x] Définir la vision produit
@@ -9,6 +10,7 @@
 - [ ] Préparer le contenu source
 
 ## Phase 1 — Setup technique
+
 - [x] Initialiser Next.js proprement
 - [x] Configurer TypeScript strict
 - [x] Configurer Tailwind CSS
@@ -20,6 +22,7 @@
 - [ ] Ajouter un lockfile reproductible
 
 ## Phase 2 — MVP
+
 - [ ] Navbar
 - [ ] Hero
 - [ ] KPI
@@ -30,6 +33,7 @@
 - [ ] Contact
 
 ## Phase 3 — Premium UX
+
 - [ ] Animations
 - [ ] Command palette
 - [ ] FR / EN
@@ -38,6 +42,7 @@
 - [ ] Analytics
 
 ## Phase 4 — Qualité
+
 - [ ] Responsive
 - [ ] Accessibilité
 - [ ] Performance
@@ -45,6 +50,7 @@
 - [ ] Tests
 
 ## Phase 5 — Production
+
 - [ ] Connecter Vercel
 - [ ] Configurer domaine
 - [ ] Déployer

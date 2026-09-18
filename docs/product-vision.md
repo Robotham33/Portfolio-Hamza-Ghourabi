@@ -14,6 +14,7 @@ Créer un portfolio professionnel premium qui fonctionne comme une véritable vi
 ## Promesse
 
 Permettre de comprendre rapidement :
+
 - qui est Hamza ;
 - son parcours ;
 - ses domaines d'expertise ;

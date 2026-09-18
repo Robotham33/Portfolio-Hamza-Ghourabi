@@ -2,7 +2,7 @@ export default function HomePage() {
   return (
     <main className="flex min-h-screen items-center justify-center px-6">
       <section className="mx-auto w-full max-w-5xl py-24">
-        <p className="mb-5 text-sm font-medium uppercase tracking-[0.28em] text-[var(--accent)]">
+        <p className="mb-5 text-sm font-medium tracking-[0.28em] text-[var(--accent)] uppercase">
           Portfolio — foundation build
         </p>
 
