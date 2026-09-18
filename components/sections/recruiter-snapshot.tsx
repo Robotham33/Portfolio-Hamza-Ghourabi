@@ -1,8 +1,8 @@
 const signals = [
   { value: "7+", label: "ans", detail: "validation & intégration" },
   { value: "02", label: "domaines critiques", detail: "médical + automobile" },
-  { value: "I→V", label: "continuum", detail: "requirements → release" },
-  { value: "CI/CD", label: "automation", detail: "Jenkins + TeamCity" },
+  { value: "I→V", label: "continuum", detail: "exigences → livraison" },
+  { value: "CI/CD", label: "automatisation", detail: "Jenkins + TeamCity" },
 ] as const;
 
 export function RecruiterSnapshot() {
