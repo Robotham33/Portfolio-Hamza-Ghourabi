@@ -6,6 +6,7 @@ import { ExpertisePreview } from "@/components/sections/expertise-preview";
 import { Hero } from "@/components/sections/hero";
 import { ProjectsPreview } from "@/components/sections/projects-preview";
 import { RecruiterSnapshot } from "@/components/sections/recruiter-snapshot";
+import { TechStrip } from "@/components/sections/tech-strip";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <RecruiterSnapshot />
+        <TechStrip />
         <ExperiencePreview />
         <ExpertisePreview />
         <ProjectsPreview />
