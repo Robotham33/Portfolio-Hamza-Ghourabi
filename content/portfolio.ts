@@ -4,7 +4,7 @@ export const career = {
   headline:
     "De la validation logicielle à l’intégration logicielle, avec une forte expertise en QA Automation.",
   summary:
-    "Ingénieur spécialisé en intégration logicielle, validation système et automatisation des tests. Mon parcours couvre des environnements médical et automobile, de l’analyse des exigences à l’intégration firmware/software, au CI/CD et à la validation fonctionnelle ou SIL.",
+    "Ingénieur spécialisé en intégration logicielle, validation système et automatisation des tests. Mon parcours couvre les secteurs médical et automobile, de l’analyse des exigences à l’intégration firmware/software, au CI/CD et à la validation fonctionnelle ou SIL.",
   years: "7+",
   domains: ["Médical", "Automobile"],
   core: [
