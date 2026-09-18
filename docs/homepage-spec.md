@@ -106,6 +106,7 @@ Navigation secondaire, disponibilité des langues et mentions utiles.
 - composants clients uniquement pour Motion et interactions ;
 - aucun WebGL dans le premier lot ;
 - pas d'image LCP lourde ;
+- le H1 et le résumé principal restent rendus immédiatement côté serveur, sans dépendre d'une animation ou de l'hydratation ;
 - animations transform / opacity ;
 - JS de homepage maintenu au strict nécessaire.
 
