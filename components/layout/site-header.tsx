@@ -66,9 +66,9 @@ export function SiteHeader() {
               ))}
               <Link
                 href="/contact"
-                className="mt-1 block bg-[var(--ink)] px-3 py-2.5 text-sm font-semibold text-white"
+                className="primary-action mt-1 flex items-center justify-between px-3 py-2.5 text-sm font-semibold transition"
               >
-                Me contacter
+                Me contacter <span className="ml-2">↗</span>
               </Link>
             </div>
           </details>
