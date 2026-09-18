@@ -27,11 +27,13 @@ export const pipelineSteps = [
     index: "01",
     label: "Requirements",
     detail: "DOORS",
+    emphasis: false,
   },
   {
     index: "02",
     label: "Integration",
     detail: "Firmware + Software",
+    emphasis: false,
   },
   {
     index: "03",
@@ -43,10 +45,12 @@ export const pipelineSteps = [
     index: "04",
     label: "Validation",
     detail: "Functional · SIL",
+    emphasis: false,
   },
   {
     index: "05",
     label: "Release",
     detail: "Verified build",
+    emphasis: false,
   },
 ] as const;
