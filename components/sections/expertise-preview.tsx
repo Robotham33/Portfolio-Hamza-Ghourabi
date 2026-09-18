@@ -8,40 +8,43 @@ export function ExpertisePreview() {
   return (
     <section
       id="expertise"
-      className="border-y border-[var(--border)] bg-[rgba(255,255,255,0.014)] px-5 py-24 sm:px-6 lg:px-8 lg:py-32"
+      className="bg-[var(--ink)] px-5 py-24 text-white sm:px-6 lg:px-8 lg:py-32"
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <SectionHeading
-          eyebrow="Expertise"
-          title="Ce que je peux prendre en charge."
-          description="Pas de jauges artificielles : des capacités concrètes, organisées autour du cycle réel d’un logiciel embarqué."
+          inverse
+          eyebrow="Core expertise"
+          title="Quatre briques. Un même objectif : rendre le logiciel maîtrisable."
+          description="Je ne me positionne pas sur une liste d’outils, mais sur un continuum de responsabilités : comprendre, intégrer, tester, automatiser et sécuriser la livraison."
         />
-        <div className="mt-12 grid gap-4 md:grid-cols-2">
+
+        <div className="mt-14 grid gap-px bg-white/12 md:grid-cols-2">
           {expertise.map((item, index) => (
             <Reveal key={item.title} delay={index * 0.05}>
-              <article className="interactive-card group h-full rounded-[24px] border border-[var(--border)] bg-[#080d15] p-6 transition duration-200 hover:-translate-y-1 hover:border-[var(--border-strong)] sm:p-7">
+              <article className="group h-full bg-[#0d151e] p-7 transition duration-200 hover:bg-[#131e29] sm:p-9">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold text-[var(--accent)]">
+                  <span className="display-title text-5xl font-semibold tracking-[-0.06em] text-white/14 transition group-hover:text-white/22">
                     {item.index}
                   </span>
                   <span
-                    aria-hidden="true"
-                    className="text-[var(--muted-foreground)] transition duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[var(--accent)]"
-                  >
-                    ↗
-                  </span>
+                    className={`h-2 w-2 ${
+                      index % 2 === 0
+                        ? "bg-[var(--medical)]"
+                        : "bg-[var(--automotive)]"
+                    }`}
+                  />
                 </div>
-                <h3 className="mt-8 text-xl font-semibold tracking-[-0.025em]">
+                <h3 className="mt-10 text-2xl font-semibold tracking-[-0.035em]">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-[var(--muted-foreground)]">
+                <p className="mt-4 max-w-xl text-sm leading-7 text-white/58">
                   {item.text}
                 </p>
-                <div className="mt-6 flex flex-wrap gap-2">
+                <div className="mt-7 flex flex-wrap gap-2">
                   {item.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-lg border border-transparent bg-[var(--surface)] px-2.5 py-1.5 text-xs text-[#b7c5d8] transition group-hover:border-[var(--border)]"
+                      className="border border-white/12 px-2.5 py-1.5 text-xs text-white/58"
                     >
                       {tag}
                     </span>
@@ -51,11 +54,12 @@ export function ExpertisePreview() {
             </Reveal>
           ))}
         </div>
+
         <Link
           href="/expertise"
-          className="mt-8 inline-flex items-center gap-2 text-sm font-semibold hover:text-[var(--accent)]"
+          className="mt-9 inline-flex border-b border-white/35 pb-1 text-sm font-semibold text-white transition hover:border-white"
         >
-          Explorer mes expertises <span aria-hidden="true">→</span>
+          Explorer l’expertise complète <span className="ml-2">→</span>
         </Link>
       </div>
     </section>
