@@ -16,10 +16,18 @@ export function ProjectsPreview() {
         <div className="mt-12 grid gap-4 lg:grid-cols-3">
           {caseStudies.map((item, index) => (
             <Reveal key={item.title} delay={index * 0.06}>
-              <article className="group flex h-full flex-col rounded-[26px] border border-[var(--border)] bg-[linear-gradient(160deg,rgba(255,255,255,0.05),rgba(255,255,255,0.015))] p-6 transition hover:-translate-y-1 hover:border-[var(--border-strong)]">
-                <p className="text-xs font-semibold tracking-[0.14em] text-[var(--accent)] uppercase">
-                  {item.eyebrow}
-                </p>
+              <article className="interactive-card group flex h-full flex-col rounded-[26px] border border-[var(--border)] bg-[linear-gradient(160deg,rgba(255,255,255,0.05),rgba(255,255,255,0.015))] p-6 transition duration-200 hover:-translate-y-1.5 hover:border-[var(--border-strong)] hover:shadow-[0_18px_55px_rgba(0,0,0,0.22)]">
+                <div className="flex items-center justify-between gap-4">
+                  <p className="text-xs font-semibold tracking-[0.14em] text-[var(--accent)] uppercase">
+                    {item.eyebrow}
+                  </p>
+                  <span
+                    aria-hidden="true"
+                    className="text-sm text-[var(--muted-foreground)] transition group-hover:text-[var(--accent)]"
+                  >
+                    0{index + 1}
+                  </span>
+                </div>
                 <h3 className="mt-5 text-xl leading-7 font-semibold tracking-[-0.03em]">
                   {item.title}
                 </h3>
@@ -27,9 +35,12 @@ export function ProjectsPreview() {
                   {item.contribution}
                 </p>
                 <div className="mt-auto pt-7">
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-x-3 gap-y-2">
                     {item.stack.map((tag) => (
-                      <span key={tag} className="text-xs text-[#afbdd0]">
+                      <span
+                        key={tag}
+                        className="text-xs text-[#afbdd0] transition group-hover:text-[#d7e1ef]"
+                      >
                         {tag}
                       </span>
                     ))}
