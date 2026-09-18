@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const navigation = [
@@ -20,9 +21,12 @@ export function SiteHeader() {
           data-logo-version="1"
           className="flex items-center"
         >
-          <img
+          <Image
             src="/hgh-logo.png"
             alt="HGH."
+            width={320}
+            height={110}
+            priority
             className="block h-auto w-[92px] sm:w-[108px]"
           />
         </Link>
