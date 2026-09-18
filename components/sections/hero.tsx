@@ -46,9 +46,9 @@ export function Hero() {
 
             <p className="mt-6 max-w-2xl text-lg leading-7 font-medium text-[#1b2631]">
               J’interviens sur l’ensemble du cycle de validation et
-              d’intégration : compréhension des exigences, intégration
-              software / firmware, automatisation des tests, CI/CD, analyse
-              des anomalies et sécurisation des releases.
+              d’intégration : compréhension des exigences, intégration software
+              / firmware, automatisation des tests, CI/CD, analyse des anomalies
+              et sécurisation des releases.
             </p>
 
             <div className="mt-5 max-w-2xl border-l-2 border-[var(--accent)] pl-4">
@@ -57,8 +57,8 @@ export function Hero() {
               </p>
               <p className="mt-1.5 text-sm leading-6 text-[var(--muted-foreground)] sm:text-base">
                 Le médical et l’automobile m’ont appris à travailler avec de
-                fortes exigences de fiabilité, de traçabilité et de qualité.
-                Des compétences que je souhaite aujourd’hui mettre au service
+                fortes exigences de fiabilité, de traçabilité et de qualité. Des
+                compétences que je souhaite aujourd’hui mettre au service
                 d’autres secteurs et de nouveaux défis techniques.
               </p>
             </div>
