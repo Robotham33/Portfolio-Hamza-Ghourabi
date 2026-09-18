@@ -8,8 +8,8 @@ export function SiteFooter() {
           <div>
             <p className="text-xl font-semibold tracking-[-0.03em]">HGH.</p>
             <p className="mt-2 max-w-md text-sm leading-6 text-white/60">
-              Validation logicielle, intégration logicielle et QA Automation pour
-              des systèmes complexes dans le médical et l’automobile.
+              Validation logicielle, intégration logicielle et QA Automation
+              pour des systèmes complexes dans le médical et l’automobile.
             </p>
           </div>
           <nav className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/65">
