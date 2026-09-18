@@ -8,10 +8,10 @@ export const career = {
   years: "7+",
   domains: ["Médical", "Automobile"],
   core: [
-    "Software Integration",
-    "System Validation",
-    "Embedded Systems",
-    "Test Automation",
+    "Intégration logicielle",
+    "Validation système",
+    "Systèmes embarqués",
+    "Automatisation des tests",
     "CI/CD",
   ],
 } as const;
