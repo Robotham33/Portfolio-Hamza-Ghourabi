@@ -13,7 +13,7 @@ export function ExpertisePreview() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           inverse
-          eyebrow="Core expertise"
+          eyebrow="Expertises clés"
           title="Quatre briques. Un même objectif : rendre le logiciel maîtrisable."
           description="Je ne me positionne pas sur une liste d’outils, mais sur un continuum de responsabilités : comprendre, intégrer, tester, automatiser et sécuriser la livraison."
         />
