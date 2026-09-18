@@ -1,6 +1,7 @@
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ContactCta } from "@/components/sections/contact-cta";
+import { DomainShowcase } from "@/components/sections/domain-showcase";
 import { ExperiencePreview } from "@/components/sections/experience-preview";
 import { ExpertisePreview } from "@/components/sections/expertise-preview";
 import { Hero } from "@/components/sections/hero";
@@ -15,6 +16,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <RecruiterSnapshot />
+        <DomainShowcase />
         <TechStrip />
         <ExperiencePreview />
         <ExpertisePreview />
