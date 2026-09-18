@@ -17,19 +17,19 @@ L'interface doit évoquer un produit logiciel haut de gamme plutôt qu'un CV dé
 
 ## Palette
 
-| Token | Valeur | Usage |
-| --- | --- | --- |
-| `--background` | `#05070c` | fond principal |
-| `--background-elevated` | `#0a0f18` | zones élevées |
-| `--foreground` | `#f7f9fc` | texte principal |
-| `--muted-foreground` | `#98a7bd` | texte secondaire |
-| `--accent` | `#8ab4ff` | accent principal |
-| `--accent-strong` | `#6697ff` | interaction / focus |
-| `--accent-cyan` | `#8ce0ff` | lumière secondaire ponctuelle |
-| `--surface` | `rgba(255,255,255,.045)` | cartes légères |
-| `--surface-strong` | `rgba(255,255,255,.075)` | hover / surface active |
-| `--border` | `rgba(255,255,255,.10)` | séparateurs |
-| `--border-strong` | `rgba(255,255,255,.17)` | focus / cartes prioritaires |
+| Token                   | Valeur                   | Usage                         |
+| ----------------------- | ------------------------ | ----------------------------- |
+| `--background`          | `#05070c`                | fond principal                |
+| `--background-elevated` | `#0a0f18`                | zones élevées                 |
+| `--foreground`          | `#f7f9fc`                | texte principal               |
+| `--muted-foreground`    | `#98a7bd`                | texte secondaire              |
+| `--accent`              | `#8ab4ff`                | accent principal              |
+| `--accent-strong`       | `#6697ff`                | interaction / focus           |
+| `--accent-cyan`         | `#8ce0ff`                | lumière secondaire ponctuelle |
+| `--surface`             | `rgba(255,255,255,.045)` | cartes légères                |
+| `--surface-strong`      | `rgba(255,255,255,.075)` | hover / surface active        |
+| `--border`              | `rgba(255,255,255,.10)`  | séparateurs                   |
+| `--border-strong`       | `rgba(255,255,255,.17)`  | focus / cartes prioritaires   |
 
 Les dégradés utilisent exclusivement les accents avec de faibles opacités. Aucun arc-en-ciel ni néon saturé.
 

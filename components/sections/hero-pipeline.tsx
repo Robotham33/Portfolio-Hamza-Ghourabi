@@ -12,8 +12,8 @@ export function HeroPipeline() {
       className="relative overflow-hidden rounded-[28px] border border-[var(--border)] bg-[linear-gradient(145deg,rgba(255,255,255,0.065),rgba(255,255,255,0.018))] p-5 shadow-[0_30px_100px_rgba(0,0,0,0.42)] sm:p-6"
       aria-label="Flux conceptuel d'intégration et de validation"
     >
-      <div className="pointer-events-none absolute inset-0 hero-grid opacity-45" />
-      <div className="pointer-events-none absolute -right-24 -top-24 size-64 rounded-full bg-[rgba(102,151,255,0.16)] blur-3xl" />
+      <div className="hero-grid pointer-events-none absolute inset-0 opacity-45" />
+      <div className="pointer-events-none absolute -top-24 -right-24 size-64 rounded-full bg-[rgba(102,151,255,0.16)] blur-3xl" />
 
       <div className="relative">
         <div className="mb-7 flex items-start justify-between gap-4">
@@ -36,12 +36,12 @@ export function HeroPipeline() {
         </div>
 
         <div className="relative">
-          <div className="absolute bottom-6 left-[17px] top-6 w-px bg-[linear-gradient(to_bottom,transparent,var(--border-strong)_12%,var(--border-strong)_88%,transparent)]" />
+          <div className="absolute top-6 bottom-6 left-[17px] w-px bg-[linear-gradient(to_bottom,transparent,var(--border-strong)_12%,var(--border-strong)_88%,transparent)]" />
 
           {!shouldReduceMotion && (
             <motion.span
               aria-hidden="true"
-              className="absolute left-[14px] top-4 z-20 size-[7px] rounded-full bg-[var(--accent-cyan)] shadow-[0_0_18px_rgba(140,224,255,0.8)]"
+              className="absolute top-4 left-[14px] z-20 size-[7px] rounded-full bg-[var(--accent-cyan)] shadow-[0_0_18px_rgba(140,224,255,0.8)]"
               animate={{
                 y: [0, 250],
                 opacity: [0, 1, 1, 0],

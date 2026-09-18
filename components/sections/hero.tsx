@@ -7,10 +7,10 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate overflow-hidden px-5 pb-16 pt-36 sm:px-6 sm:pb-20 sm:pt-40 lg:px-8 lg:pb-24 lg:pt-44"
+      className="relative isolate overflow-hidden px-5 pt-36 pb-16 sm:px-6 sm:pt-40 sm:pb-20 lg:px-8 lg:pt-44 lg:pb-24"
     >
       <div className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_18%,rgba(102,151,255,0.12),transparent_30%),radial-gradient(circle_at_78%_22%,rgba(140,224,255,0.08),transparent_26%)]" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[620px] hero-grid opacity-20 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
+      <div className="hero-grid pointer-events-none absolute inset-x-0 top-0 -z-10 h-[620px] [mask-image:linear-gradient(to_bottom,black,transparent)] opacity-20" />
 
       <div className="mx-auto grid min-h-[70svh] w-full max-w-6xl items-center gap-14 lg:grid-cols-[1.12fr_0.88fr] lg:gap-16">
         <div>
@@ -43,7 +43,7 @@ export function Hero() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
                 href="/experience"
-                className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-[var(--foreground)] px-5 text-sm font-semibold text-[var(--background)] shadow-[0_12px_32px_rgba(0,0,0,0.24)] transition duration-200 hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+                className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-[var(--foreground)] px-5 text-sm font-semibold text-[var(--background)] shadow-[0_12px_32px_rgba(0,0,0,0.24)] transition duration-200 hover:-translate-y-0.5 hover:bg-white focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] focus-visible:outline-none"
               >
                 Explorer mon parcours
                 <span aria-hidden="true" className="ml-2">
@@ -53,13 +53,10 @@ export function Hero() {
 
               <Link
                 href="/projects"
-                className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 text-sm font-medium text-[var(--foreground)] transition duration-200 hover:-translate-y-0.5 hover:border-[var(--border-strong)] hover:bg-[var(--surface-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+                className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 text-sm font-medium text-[var(--foreground)] transition duration-200 hover:-translate-y-0.5 hover:border-[var(--border-strong)] hover:bg-[var(--surface-strong)] focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] focus-visible:outline-none"
               >
                 Voir mes projets
-                <span
-                  aria-hidden="true"
-                  className="ml-2 text-[var(--accent)]"
-                >
+                <span aria-hidden="true" className="ml-2 text-[var(--accent)]">
                   ↗
                 </span>
               </Link>
