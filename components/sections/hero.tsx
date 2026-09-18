@@ -147,7 +147,7 @@ export function Hero() {
                     </span>
                   </div>
                   <div className="mt-4 h-px w-full bg-white/10" />
-                  <p className="mt-3 text-[9px] font-bold leading-4 tracking-[0.14em] text-white/28 uppercase">
+                  <p className="mt-3 text-[9px] leading-4 font-bold tracking-[0.14em] text-white/28 uppercase">
                     Reliability · Traceability · Quality
                   </p>
                 </div>
