@@ -7,6 +7,7 @@ Le portfolio doit contenir uniquement des informations professionnelles validée
 ## Expériences
 
 Pour chaque expérience :
+
 - entreprise ;
 - période ;
 - contexte ;
@@ -19,6 +20,7 @@ Pour chaque expérience :
 ## Projets
 
 Pour chaque projet :
+
 - problème ;
 - solution ;
 - contribution ;

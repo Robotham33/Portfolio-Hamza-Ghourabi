@@ -1,25 +1,31 @@
 # Roadmap
 
 ## Phase 0 — Fondations
+
 - [x] Créer le repository
 - [x] Créer la structure initiale
 - [x] Définir la vision produit
 - [x] Définir l'architecture
-- [x] Définir le design system
+- [x] Définir le design system initial
 - [ ] Préparer le contenu source
 
 ## Phase 1 — Setup technique
-- [ ] Initialiser Next.js proprement
-- [ ] Configurer TypeScript strict
-- [ ] Configurer Tailwind CSS
-- [ ] Installer shadcn/ui
-- [ ] Installer Motion
-- [ ] Ajouter ESLint / Prettier
-- [ ] Ajouter variables de thème
+
+- [x] Initialiser Next.js proprement
+- [x] Configurer TypeScript strict
+- [x] Configurer Tailwind CSS
+- [x] Préparer shadcn/ui
+- [x] Installer Motion
+- [x] Ajouter ESLint / Prettier
+- [x] Ajouter variables de thème
+- [x] Ajouter les scripts de qualité
+- [x] Ajouter un lockfile reproductible
 
 ## Phase 2 — MVP
+
 - [ ] Navbar
 - [ ] Hero
+- [ ] KPI
 - [ ] About
 - [ ] Experience
 - [ ] Skills
@@ -27,6 +33,7 @@
 - [ ] Contact
 
 ## Phase 3 — Premium UX
+
 - [ ] Animations
 - [ ] Command palette
 - [ ] FR / EN
@@ -35,6 +42,7 @@
 - [ ] Analytics
 
 ## Phase 4 — Qualité
+
 - [ ] Responsive
 - [ ] Accessibilité
 - [ ] Performance
@@ -42,6 +50,7 @@
 - [ ] Tests
 
 ## Phase 5 — Production
+
 - [ ] Connecter Vercel
 - [ ] Configurer domaine
 - [ ] Déployer
