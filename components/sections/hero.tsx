@@ -1,7 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { Reveal } from "@/components/motion/reveal";
 import { career } from "@/content/portfolio";
+import { portraitDataUri } from "@/content/portrait";
 
 const flow = [
   "Requirements",
@@ -62,62 +64,93 @@ export function Hero() {
         </div>
 
         <Reveal delay={0.08} distance={20}>
-          <aside className="ink-panel hero-scanline relative flex min-h-[520px] flex-col justify-between overflow-hidden p-6 sm:p-7 lg:p-8">
-            <div className="absolute top-0 right-0 h-2 w-20 bg-[var(--automotive)]" />
-            <div className="absolute top-0 right-20 h-2 w-20 bg-[var(--medical)]" />
+          <aside className="ink-panel relative min-h-[520px] overflow-hidden">
+            <div className="absolute top-0 right-0 z-20 h-2 w-20 bg-[var(--automotive)]" />
+            <div className="absolute top-0 right-20 z-20 h-2 w-20 bg-[var(--medical)]" />
 
-            <div>
-              <div className="flex items-center justify-between gap-4 text-[10px] font-bold tracking-[0.16em] text-white/45 uppercase">
-                <span>Mission-critical systems</span>
-                <span>Profile / HG-07</span>
+            <div className="grid min-h-[520px] md:grid-cols-[1.04fr_0.96fr]">
+              <div className="relative min-h-[330px] overflow-hidden md:min-h-full">
+                <Image
+                  src={portraitDataUri}
+                  alt="Hamza Ghourabi"
+                  fill
+                  unoptimized
+                  priority
+                  sizes="(max-width: 768px) 100vw, 28vw"
+                  className="object-cover object-[center_18%]"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,8,12,0.02)_45%,rgba(5,8,12,0.8)_100%)]" />
+                <div className="absolute inset-y-0 right-0 w-24 bg-[linear-gradient(90deg,transparent,rgba(5,8,12,0.75))] md:block" />
+
+                <div className="absolute top-5 left-5 text-[9px] font-bold tracking-[0.18em] text-white/60 uppercase">
+                  People · Technology
+                  <br />
+                  Safer systems
+                </div>
+
+                <div className="absolute right-5 bottom-5 left-5">
+                  <p className="text-lg font-semibold text-white">
+                    Hamza Ghourabi
+                  </p>
+                  <p className="mt-1 text-[10px] font-medium tracking-[0.12em] text-white/65 uppercase">
+                    Software Integration · Validation · QA
+                  </p>
+                </div>
               </div>
 
-              <h2 className="display-title mt-10 max-w-lg text-4xl leading-[0.95] font-semibold tracking-[-0.055em] text-white sm:text-[2.7rem]">
-                Faire passer un système du “ça devrait fonctionner” au “on peut
-                le démontrer”.
-              </h2>
-            </div>
+              <div className="hero-scanline flex flex-col justify-between bg-[#080d12] p-5 text-white sm:p-6">
+                <div>
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-[9px] font-bold tracking-[0.18em] text-white/38 uppercase">
+                        Mission-critical
+                      </p>
+                      <h2 className="display-title mt-2 text-3xl leading-[0.95] font-semibold tracking-[-0.055em]">
+                        Systems
+                      </h2>
+                    </div>
+                    <span className="text-[9px] font-bold tracking-[0.14em] text-white/30 uppercase">
+                      HG-07
+                    </span>
+                  </div>
 
-            <div className="mt-9">
-              <p className="text-[10px] font-bold tracking-[0.18em] text-white/40 uppercase">
-                Engineering flow
-              </p>
-              <ol className="mt-3 border-l border-white/15">
-                {flow.map((step, index) => (
-                  <li
-                    key={step}
-                    className="group grid grid-cols-[42px_1fr_auto] items-center gap-3 border-b border-white/10 py-3 pl-3"
-                  >
-                    <span className="text-[11px] font-bold text-white/35">
-                      0{index + 1}
-                    </span>
-                    <span className="text-sm font-semibold text-white">
-                      {step}
-                    </span>
-                    <span className="text-xs text-white/30 transition group-hover:translate-x-1 group-hover:text-white">
-                      →
-                    </span>
-                  </li>
-                ))}
-              </ol>
-            </div>
+                  <p className="mt-5 text-xs leading-5 text-white/52">
+                    Intégrer, valider et automatiser pour transformer une
+                    livraison en preuve exploitable.
+                  </p>
+                </div>
 
-            <div className="mt-7 grid grid-cols-2 gap-px bg-white/10">
-              <div className="bg-[#0b1118] p-3.5">
-                <p className="text-[9px] tracking-[0.14em] text-white/40 uppercase">
-                  Medical
-                </p>
-                <p className="mt-1.5 text-xs font-semibold text-[#7eddf0]">
-                  Fiabilité · Validation
-                </p>
-              </div>
-              <div className="bg-[#0b1118] p-3.5">
-                <p className="text-[9px] tracking-[0.14em] text-white/40 uppercase">
-                  Automotive
-                </p>
-                <p className="mt-1.5 text-xs font-semibold text-[#ff8d50]">
-                  SIL · Regression
-                </p>
+                <ol className="my-5 border-l border-white/15">
+                  {flow.map((step, index) => (
+                    <li
+                      key={step}
+                      className="grid grid-cols-[32px_1fr_auto] items-center gap-2 border-b border-white/10 py-2.5 pl-2.5"
+                    >
+                      <span className="text-[9px] font-bold text-white/30">
+                        0{index + 1}
+                      </span>
+                      <span className="text-xs font-semibold text-white">
+                        {step}
+                      </span>
+                      <span className="text-[10px] text-white/28">↓</span>
+                    </li>
+                  ))}
+                </ol>
+
+                <div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="border border-[#397ec8] px-2 py-1 text-[9px] font-bold tracking-[0.1em] text-[#72c9ef] uppercase">
+                      Medical
+                    </span>
+                    <span className="border border-[#b94c15] px-2 py-1 text-[9px] font-bold tracking-[0.1em] text-[#ff8d50] uppercase">
+                      Automotive
+                    </span>
+                  </div>
+                  <div className="mt-4 h-px w-full bg-white/10" />
+                  <p className="mt-3 text-[9px] font-bold leading-4 tracking-[0.14em] text-white/28 uppercase">
+                    Reliability · Traceability · Quality
+                  </p>
+                </div>
               </div>
             </div>
           </aside>
