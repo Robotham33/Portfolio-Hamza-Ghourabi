@@ -29,32 +29,12 @@ export const metadata: Metadata = {
     title: "Hamza GHOURABI — Ingénieur intégration & validation logicielle",
     description:
       "Portfolio professionnel de Hamza GHOURABI : intégration logicielle, validation système, QA, automatisation des tests et CI/CD.",
-    images: [
-      {
-        url: "/hgh-og-preview-v1.jpg",
-        width: 1200,
-        height: 630,
-        alt: "HGH. — Hamza GHOURABI",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Hamza GHOURABI — Ingénieur intégration & validation logicielle",
     description:
       "Portfolio professionnel de Hamza GHOURABI : intégration logicielle, validation système, QA, automatisation des tests et CI/CD.",
-    images: ["/hgh-og-preview-v1.jpg"],
-  },
-  icons: {
-    icon: [
-      {
-        url: "/hgh-favicon-v1.png",
-        type: "image/png",
-        sizes: "128x128",
-      },
-    ],
-    shortcut: "/hgh-favicon-v1.png",
-    apple: "/hgh-favicon-v1.png",
   },
   robots: {
     index: true,
