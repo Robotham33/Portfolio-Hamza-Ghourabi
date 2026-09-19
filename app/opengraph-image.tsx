@@ -18,7 +18,7 @@ export default function OpenGraphImage() {
       }}
     >
       <img
-        src="https://www.hamzaghourabi.fr/hgh-og-preview-v1.jpg"
+        src="https://www.hamzaghourabi.fr/hgh-logo.png"
         alt=""
         width={1200}
         height={630}
