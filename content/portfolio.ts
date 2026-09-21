@@ -2,16 +2,16 @@ export const career = {
   name: "HGH.",
   role: "Ingénieur intégration & validation logicielle",
   headline:
-    "De la validation logicielle à l’intégration logicielle, avec une forte expertise en automatisation des tests.",
+    "De l’embarqué aux interfaces web : intégrer, valider et automatiser avec la même exigence de fiabilité.",
   summary:
-    "Ingénieur spécialisé en validation système, intégration logicielle et automatisation des tests. Mon parcours couvre les secteurs médical et automobile, de l’analyse des exigences à l’intégration firmware et logiciel, au CI/CD et à la validation fonctionnelle ou SIL.",
+    "Ingénieur spécialisé en validation, intégration logicielle et automatisation des tests. Mon parcours couvre les systèmes embarqués, le logiciel et les interfaces web, de l’analyse des exigences au CI/CD, aux tests fonctionnels, SIL et end-to-end.",
   years: "7+",
   domains: ["Médical", "Automobile"],
   core: [
-    "Intégration logicielle",
-    "Validation système",
+    "Intégration & validation",
     "Systèmes embarqués",
-    "Automatisation des tests",
+    "Automatisation QA",
+    "Web & UI",
     "CI/CD",
   ],
 } as const;
@@ -141,6 +141,19 @@ export const education = [
 
 export const personalProjects = [
   {
+    title: "EyeeMee",
+    subtitle: "Projet personnel web orienté interface & automatisation",
+    summary:
+      "Un terrain d’expérimentation personnel pour concevoir une interface web, structurer les parcours utilisateur et automatiser des scénarios de validation end-to-end.",
+    highlights: [
+      "Conception et structuration d’une interface web",
+      "Validation de parcours utilisateur et scénarios end-to-end",
+      "Automatisation avec Playwright et Robot Framework",
+      "Projet utilisé pour approfondir les pratiques QA côté web",
+    ],
+    tools: ["Web", "UI", "Playwright", "Robot Framework"],
+  },
+  {
     title: "Blassa.fr",
     subtitle:
       "Solution digitale pour améliorer la dépose des passagers en aéroport",
@@ -159,27 +172,27 @@ export const personalProjects = [
 export const expertise = [
   {
     index: "01",
-    title: "Intégration logicielle",
-    text: "Assembler et fiabiliser les livraisons logicielles et firmware avant leur passage en validation.",
-    tags: ["Builds", "Firmware", "Software", "Release"],
+    title: "Intégration & validation logicielle",
+    text: "Relier exigences, composants logiciels et environnements de test pour sécuriser une livraison avant validation.",
+    tags: ["Firmware", "Software", "DOORS", "SIL"],
   },
   {
     index: "02",
-    title: "Validation système & logicielle",
-    text: "Analyser les exigences, construire la couverture de test, exécuter les scénarios et investiguer les écarts.",
-    tags: ["DOORS", "SIL", "Fonctionnel", "Couverture"],
+    title: "QA & automatisation",
+    text: "Transformer les contrôles répétitifs en scénarios fiables, maintenables et intégrables dans les campagnes de validation.",
+    tags: ["Robot Framework", "Playwright", "Python", "E2E"],
   },
   {
     index: "03",
-    title: "QA & automatisation des tests",
-    text: "Automatiser les campagnes, fiabiliser les environnements de test et accélérer l’analyse des résultats.",
-    tags: ["Python", "Batch", "Automatisation", "Rapports"],
+    title: "Web, UI & parcours utilisateurs",
+    text: "Appliquer les mêmes principes de qualité aux interfaces web : comportement, parcours critiques et validation end-to-end.",
+    tags: ["Web", "UI", "Playwright", "Tests fonctionnels"],
   },
   {
     index: "04",
-    title: "CI/CD & Industrialisation",
-    text: "Industrialiser l’exécution des campagnes et rendre les versions, résultats et artefacts plus reproductibles et traçables.",
-    tags: ["Jenkins", "TeamCity", "Git", "CI/CD"],
+    title: "CI/CD & qualité",
+    text: "Industrialiser l’exécution, tracer les résultats et travailler dans des environnements où qualité, conformité et maîtrise des changements sont structurantes.",
+    tags: ["Jenkins", "TeamCity", "CI/CD", "Traçabilité"],
   },
 ] as const;
 
@@ -221,28 +234,28 @@ export const caseStudies = [
 
 export const toolGroups = [
   {
-    label: "Programmation",
-    items: ["Python", "C", "C++", "Java", "Batch"],
+    label: "QA & automatisation",
+    items: ["Robot Framework", "Playwright", "Python", "Batch"],
   },
   {
-    label: "CI/CD & outils",
-    items: ["Git", "Jenkins", "TeamCity", "DOORS", "Jira", "Mantis"],
+    label: "CI/CD & ALM",
+    items: ["Jenkins", "TeamCity", "Git", "DOORS", "Jira"],
   },
   {
-    label: "Systèmes embarqués & matériel",
-    items: ["STM32", "ROS", "Raspberry Pi", "Arduino"],
+    label: "Web & interfaces",
+    items: ["Tests E2E", "Validation UI", "Parcours utilisateurs", "Web"],
   },
   {
-    label: "Réseaux & protocoles",
-    items: ["CAN", "OBD-II", "Bluetooth", "Série"],
+    label: "Systèmes embarqués",
+    items: ["C", "C++", "STM32", "ROS", "Raspberry Pi", "Arduino"],
   },
   {
-    label: "Méthodologies",
-    items: ["Agile/Scrum", "ISTQB", "Tests", "CI/CD"],
+    label: "Protocoles & simulation",
+    items: ["SIL", "CAN", "OBD-II", "Bluetooth", "Série"],
   },
   {
-    label: "Systèmes",
-    items: ["Windows", "Linux"],
+    label: "Méthodes & qualité",
+    items: ["Agile/Scrum", "ISTQB", "Traçabilité", "Validation", "CI/CD"],
   },
 ] as const;
 
