@@ -114,8 +114,8 @@ export default function ProjectsPage() {
                     Projets personnels
                   </p>
                   <p className="mt-2 max-w-xl text-sm leading-6 text-white/50">
-                    Des projets utilisés comme terrain d’expérimentation produit,
-                    web et automatisation.
+                    Des projets utilisés comme terrain d’expérimentation
+                    produit, web et automatisation.
                   </p>
                 </div>
               </div>

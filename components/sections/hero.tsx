@@ -43,10 +43,10 @@ export function Hero() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-7 font-medium text-[#1b2631]">
-              J’interviens sur l’ensemble du cycle de validation et d’intégration :
-              exigences, logiciel / firmware, automatisation des tests et CI/CD.
-              Cette approche s’étend aujourd’hui de l’embarqué aux interfaces web
-              et aux parcours utilisateur.
+              J’interviens sur l’ensemble du cycle de validation et
+              d’intégration : exigences, logiciel / firmware, automatisation des
+              tests et CI/CD. Cette approche s’étend aujourd’hui de l’embarqué
+              aux interfaces web et aux parcours utilisateur.
             </p>
 
             <div className="mt-5 max-w-2xl border-l-2 border-[var(--accent)] pl-4">
