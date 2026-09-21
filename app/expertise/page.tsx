@@ -16,9 +16,9 @@ export default function ExpertisePage() {
               Comprendre. Intégrer. Tester. Automatiser.
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-white/62">
-              Mon rôle se situe à l’interface entre système, développement et
-              validation — là où une livraison doit devenir un résultat
-              reproductible et exploitable.
+              Mon rôle se situe à l’interface entre système, logiciel, QA et
+              validation. De l’embarqué au web, l’objectif reste le même :
+              obtenir un résultat reproductible, traçable et exploitable.
             </p>
           </div>
         </section>
@@ -74,7 +74,7 @@ export default function ExpertisePage() {
                   </h2>
                 </div>
                 <p className="hidden text-sm text-[var(--muted-foreground)] md:block">
-                  Outils réellement présents dans mon parcours
+                  Outils & pratiques réellement utilisés
                 </p>
               </div>
 
