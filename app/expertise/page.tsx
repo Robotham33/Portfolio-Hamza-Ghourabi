@@ -17,8 +17,8 @@ export default function ExpertisePage() {
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-white/62">
               Mon rôle se situe à l’interface entre système, logiciel, QA et
-              validation. De l’embarqué au web, l’objectif reste le même :
-              obtenir un résultat reproductible, traçable et exploitable.
+              validation. L’objectif reste le même : transformer des exigences
+              en contrôles reproductibles, traçables et exploitables.
             </p>
           </div>
         </section>
