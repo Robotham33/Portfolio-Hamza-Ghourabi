@@ -2,17 +2,17 @@ export const career = {
   name: "HGH.",
   role: "Ingénieur intégration & validation logicielle",
   headline:
-    "De l’embarqué aux interfaces web : intégrer, valider et automatiser avec la même exigence de fiabilité.",
+    "Validation, intégration et automatisation : fiabiliser le logiciel de l’exigence jusqu’à la livraison.",
   summary:
-    "Ingénieur spécialisé en validation, intégration logicielle et automatisation des tests. Mon parcours couvre les systèmes embarqués, le logiciel et les interfaces web, de l’analyse des exigences au CI/CD, aux tests fonctionnels, SIL et end-to-end.",
+    "Ingénieur spécialisé en validation, intégration logicielle et automatisation des tests. J’interviens de l’analyse des exigences au CI/CD, aux tests fonctionnels, SIL et end-to-end, sur des produits logiciels et systèmes embarqués.",
   years: "7+",
   domains: ["Médical", "Automobile"],
   core: [
-    "Intégration & validation",
-    "Systèmes embarqués",
+    "Validation logicielle",
+    "Intégration logicielle",
     "Automatisation QA",
-    "Web & UI",
     "CI/CD",
+    "Systèmes complexes",
   ],
 } as const;
 
@@ -172,27 +172,27 @@ export const personalProjects = [
 export const expertise = [
   {
     index: "01",
-    title: "Intégration & validation logicielle",
-    text: "Relier exigences, composants logiciels et environnements de test pour sécuriser une livraison avant validation.",
-    tags: ["Firmware", "Software", "DOORS", "SIL"],
+    title: "Validation & QA",
+    text: "Analyser les exigences, construire la stratégie de test, exécuter les scénarios et qualifier les écarts avec une approche structurée et traçable.",
+    tags: ["DOORS", "SIL", "Fonctionnel", "Non-régression"],
   },
   {
     index: "02",
-    title: "QA & automatisation",
-    text: "Transformer les contrôles répétitifs en scénarios fiables, maintenables et intégrables dans les campagnes de validation.",
+    title: "Automatisation des tests",
+    text: "Automatiser les contrôles répétitifs et les parcours critiques pour rendre les campagnes plus fiables, rapides et maintenables.",
     tags: ["Robot Framework", "Playwright", "Python", "E2E"],
   },
   {
     index: "03",
-    title: "Web, UI & parcours utilisateurs",
-    text: "Appliquer les mêmes principes de qualité aux interfaces web : comportement, parcours critiques et validation end-to-end.",
-    tags: ["Web", "UI", "Playwright", "Tests fonctionnels"],
+    title: "Intégration & CI/CD",
+    text: "Assembler les livraisons, sécuriser les builds et intégrer les tests dans des chaînes d’exécution reproductibles.",
+    tags: ["Jenkins", "TeamCity", "Firmware", "Git"],
   },
   {
     index: "04",
-    title: "CI/CD & qualité",
-    text: "Industrialiser l’exécution, tracer les résultats et travailler dans des environnements où qualité, conformité et maîtrise des changements sont structurantes.",
-    tags: ["Jenkins", "TeamCity", "CI/CD", "Traçabilité"],
+    title: "Qualité & traçabilité",
+    text: "Travailler dans des environnements où maîtrise des changements, couverture de test, traçabilité et conformité structurent la validation.",
+    tags: ["ISO 13485", "ISO 26262", "ISTQB", "Traçabilité"],
   },
 ] as const;
 
@@ -234,7 +234,7 @@ export const caseStudies = [
 
 export const toolGroups = [
   {
-    label: "QA & automatisation",
+    label: "Automatisation",
     items: ["Robot Framework", "Playwright", "Python", "Batch"],
   },
   {
@@ -242,16 +242,16 @@ export const toolGroups = [
     items: ["Jenkins", "TeamCity", "Git", "DOORS", "Jira"],
   },
   {
-    label: "Web & interfaces",
-    items: ["Tests E2E", "Validation UI", "Parcours utilisateurs", "Web"],
+    label: "Validation",
+    items: ["Tests fonctionnels", "Tests E2E", "SIL", "Non-régression"],
   },
   {
     label: "Systèmes embarqués",
     items: ["C", "C++", "STM32", "ROS", "Raspberry Pi", "Arduino"],
   },
   {
-    label: "Protocoles & simulation",
-    items: ["SIL", "CAN", "OBD-II", "Bluetooth", "Série"],
+    label: "Protocoles & interfaces",
+    items: ["CAN", "OBD-II", "Bluetooth", "Série", "Web / UI"],
   },
   {
     label: "Référentiels & qualité",
