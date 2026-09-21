@@ -254,8 +254,8 @@ export const toolGroups = [
     items: ["SIL", "CAN", "OBD-II", "Bluetooth", "Série"],
   },
   {
-    label: "Méthodes & qualité",
-    items: ["Agile/Scrum", "ISTQB", "Traçabilité", "Validation", "CI/CD"],
+    label: "Référentiels & qualité",
+    items: ["ISO 13485", "ISO 26262", "ISTQB", "Traçabilité", "Validation"],
   },
 ] as const;
 
