@@ -2,16 +2,16 @@ import { SectionHeading } from "@/components/ui/section-heading";
 
 const medical = [
   "Produits médicaux critiques mêlant logiciel et matériel",
-  "Validation fonctionnelle et tests d’intégration",
-  "Protocoles, rapports, couverture de test et RCA",
-  "Automatisation TeamCity et environnements de test",
+  "Validation fonctionnelle, intégration et automatisation",
+  "Traçabilité, protocoles, rapports et analyse des anomalies",
+  "Environnement qualité structuré autour de l’ISO 13485",
 ] as const;
 
 const automotive = [
   "Exigences système et couverture de test sous DOORS",
   "Tests fonctionnels et d’intégration en simulation SIL",
   "Campagnes Jenkins, diagnostic et qualification d’anomalies",
-  "Régressions, traces et collaboration logiciel / système",
+  "Culture sûreté, traçabilité et référentiel ISO 26262",
 ] as const;
 
 export function DomainShowcase() {

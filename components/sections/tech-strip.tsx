@@ -1,16 +1,16 @@
 const technologies = [
   "Python",
-  "C / C++",
+  "Robot Framework",
+  "Playwright",
   "Jenkins",
   "TeamCity",
   "DOORS",
   "SIL",
   "Git",
-  "ROS",
-  "CAN",
-  "OBD-II",
-  "STM32",
-  "Automatisation des tests",
+  "Tests E2E",
+  "Non-régression",
+  "C / C++",
+  "CI/CD",
 ] as const;
 
 export function TechStrip() {
