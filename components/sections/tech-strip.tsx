@@ -7,10 +7,10 @@ const technologies = [
   "DOORS",
   "SIL",
   "Git",
-  "Web / UI",
   "Tests E2E",
+  "Non-régression",
   "C / C++",
-  "Automatisation QA",
+  "CI/CD",
 ] as const;
 
 export function TechStrip() {
