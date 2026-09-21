@@ -108,9 +108,17 @@ export default function ProjectsPage() {
             ))}
 
             <section className="mt-16 bg-[var(--ink)] p-7 text-white sm:p-10 lg:p-12">
-              <p className="tech-label text-[10px] font-bold text-white/40">
-                Initiative personnelle
-              </p>
+              <div className="flex flex-wrap items-end justify-between gap-4">
+                <div>
+                  <p className="tech-label text-[10px] font-bold text-white/40">
+                    Projets personnels
+                  </p>
+                  <p className="mt-2 max-w-xl text-sm leading-6 text-white/50">
+                    Des projets utilisés comme terrain d’expérimentation produit,
+                    web et automatisation.
+                  </p>
+                </div>
+              </div>
               {personalProjects.map((project) => (
                 <div
                   key={project.title}
@@ -126,6 +134,16 @@ export default function ProjectsPage() {
                     <p className="mt-5 text-base leading-7 text-white/58">
                       {project.summary}
                     </p>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {project.tools.map((tool) => (
+                        <span
+                          key={tool}
+                          className="border border-white/12 px-2.5 py-1 text-[11px] text-white/55"
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                   <ul className="space-y-4 border-l border-white/12 pl-6">
                     {project.highlights.map((highlight) => (
@@ -139,6 +157,15 @@ export default function ProjectsPage() {
                   </ul>
                 </div>
               ))}
+
+              <a
+                href="https://github.com/Robotham33"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-10 inline-flex border-b border-white/35 pb-1 text-sm font-semibold text-white transition hover:border-white"
+              >
+                Voir mes projets sur GitHub <span className="ml-2">↗</span>
+              </a>
             </section>
           </div>
         </section>
