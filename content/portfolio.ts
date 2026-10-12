@@ -90,7 +90,7 @@ export const experiences = [
       "C++",
       "Raspberry Pi",
       "Arduino",
-      "Rplidar",
+      "RPLIDAR",
       "Git",
       "Série",
     ],

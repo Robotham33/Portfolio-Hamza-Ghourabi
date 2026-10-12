@@ -1,8 +1,12 @@
+import { cn, fr } from "@/lib/utils";
+
 type SectionHeadingProps = {
   eyebrow: string;
   title: string;
   description?: string;
   inverse?: boolean;
+  index?: string;
+  className?: string;
 };
 
 export function SectionHeading({
@@ -10,35 +14,44 @@ export function SectionHeading({
   title,
   description,
   inverse = false,
+  index,
+  className,
 }: SectionHeadingProps) {
   return (
-    <div className="max-w-4xl">
-      <div className="flex items-center gap-3">
-        <span
-          className={`h-px w-9 ${inverse ? "bg-white/45" : "bg-[var(--accent)]"}`}
-        />
-        <p
-          className={`tech-label text-[11px] font-bold ${
-            inverse ? "text-white/65" : "text-[var(--accent)]"
-          }`}
-        >
-          {eyebrow}
-        </p>
-      </div>
-      <h2
-        className={`display-title mt-5 text-4xl leading-[0.98] font-semibold tracking-[-0.055em] sm:text-5xl lg:text-6xl ${
-          inverse ? "text-white" : "text-[var(--foreground)]"
-        }`}
+    <div className={cn("max-w-4xl", className)}>
+      <p
+        className={cn(
+          "flex items-center gap-3 font-mono text-[11px] tracking-[0.18em] uppercase",
+          inverse ? "text-white/55" : "text-medical",
+        )}
       >
-        {title}
+        {index ? (
+          <span className={inverse ? "text-white/30" : "text-muted/70"}>
+            {index}
+          </span>
+        ) : null}
+        <span
+          aria-hidden="true"
+          className={cn("h-px w-8", inverse ? "bg-white/30" : "bg-medical/50")}
+        />
+        {eyebrow}
+      </p>
+      <h2
+        className={cn(
+          "mt-5 text-[clamp(2.1rem,4.6vw,3.8rem)] leading-[1.02] font-semibold tracking-[-0.045em] text-balance",
+          inverse ? "text-white" : "text-ink",
+        )}
+      >
+        {fr(title)}
       </h2>
       {description ? (
         <p
-          className={`mt-6 max-w-3xl text-base leading-7 sm:text-lg ${
-            inverse ? "text-white/62" : "text-[var(--muted-foreground)]"
-          }`}
+          className={cn(
+            "mt-6 max-w-3xl text-base leading-7 text-pretty sm:text-lg sm:leading-8",
+            inverse ? "text-white/60" : "text-muted",
+          )}
         >
-          {description}
+          {fr(description)}
         </p>
       ) : null}
     </div>

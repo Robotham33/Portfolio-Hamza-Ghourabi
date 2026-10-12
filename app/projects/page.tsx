@@ -1,176 +1,207 @@
-import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
+import type { Metadata } from "next";
+
+import { PageHero } from "@/components/layout/page-hero";
+import { Reveal } from "@/components/motion/reveal";
+import { ContactCta } from "@/components/sections/contact-cta";
+import { ArrowRight, ArrowUpRight, GitHubIcon } from "@/components/ui/icons";
+import { externalLinks } from "@/content/links";
 import { caseStudies, personalProjects } from "@/content/portfolio";
+import { cn, fr } from "@/lib/utils";
+
+export const metadata: Metadata = {
+  title: "Cas concrets",
+  description:
+    "Études de cas de Hamza GHOURABI : chaîne d’intégration logiciel + firmware, qualification de régressions SIL, industrialisation de campagnes de tests. Projets personnels EyeeMee et Blassa.fr.",
+  alternates: {
+    canonical: "/projects",
+  },
+};
+
+const caseAccents = [
+  { bar: "bg-medical", text: "text-medical" },
+  { bar: "bg-auto", text: "text-[#b14608]" },
+  { bar: "bg-ink", text: "text-medical" },
+] as const;
 
 export default function ProjectsPage() {
   return (
-    <>
-      <SiteHeader />
-      <main className="pt-32 pb-24 sm:pt-36">
-        <section className="px-5 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-7xl border-t-4 border-[var(--ink)] bg-white p-7 sm:p-10 lg:p-12">
-            <p className="tech-label text-[11px] font-bold text-[var(--accent)]">
-              Études de cas
-            </p>
-            <h1 className="display-title mt-6 max-w-5xl text-5xl leading-[0.9] font-semibold tracking-[-0.065em] sm:text-6xl lg:text-7xl">
-              La valeur n’est pas dans l’outil. Elle est dans la manière de
-              résoudre le problème.
-            </h1>
-            <p className="mt-7 max-w-3xl text-lg leading-8 text-[var(--muted-foreground)]">
-              Des cas volontairement génériques pour préserver les informations
-              confidentielles, mais suffisamment précis pour montrer ma méthode
-              de travail.
-            </p>
-          </div>
-        </section>
+    <main id="contenu">
+      <PageHero
+        eyebrow="Études de cas"
+        title="La valeur n’est pas dans l’outil. Elle est dans la manière de résoudre le problème."
+        description="Des cas volontairement génériques pour préserver les informations confidentielles, mais suffisamment précis pour montrer ma méthode de travail."
+      />
 
-        <section className="px-5 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <div className="mx-auto max-w-7xl space-y-6">
-            {caseStudies.map((item, index) => (
-              <article
-                key={item.title}
-                className="grid overflow-hidden border border-[var(--border-strong)] bg-white lg:grid-cols-[180px_1fr]"
-              >
-                <div
-                  className={`flex flex-col justify-between p-6 ${
-                    index === 0
-                      ? "medical-panel"
-                      : index === 1
-                        ? "automotive-panel"
-                        : "bg-[#e9edf1]"
-                  }`}
+      <section className="px-5 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div className="mx-auto max-w-7xl space-y-6">
+          {caseStudies.map((item, index) => {
+            const steps = [
+              { label: "Problème", text: item.problem },
+              { label: "Contribution", text: item.contribution },
+              { label: "Valeur", text: item.result },
+            ];
+
+            return (
+              <Reveal key={item.title}>
+                <article
+                  id={`cas-0${index + 1}`}
+                  className="border-line bg-paper relative scroll-mt-28 overflow-hidden rounded-3xl border"
                 >
-                  <p
-                    className={`tech-label text-[10px] font-bold ${
-                      index === 1
-                        ? "text-white/45"
-                        : "text-[var(--muted-foreground)]"
-                    }`}
-                  >
-                    Cas 0{index + 1}
-                  </p>
-                  <p
-                    className={`display-title mt-16 text-5xl font-semibold tracking-[-0.06em] ${
-                      index === 1 ? "text-white" : "text-[var(--ink)]"
-                    }`}
-                  >
-                    0{index + 1}
-                  </p>
-                </div>
-
-                <div className="p-7 sm:p-9 lg:p-11">
-                  <p className="text-xs font-bold tracking-[0.12em] text-[var(--accent)] uppercase">
-                    {item.eyebrow}
-                  </p>
-                  <h2 className="display-title mt-4 max-w-4xl text-4xl leading-[0.98] font-semibold tracking-[-0.055em]">
-                    {item.title}
-                  </h2>
-
-                  <div className="mt-10 grid gap-7 lg:grid-cols-3">
+                  <span
+                    aria-hidden="true"
+                    className={cn(
+                      "absolute inset-x-0 top-0 h-1",
+                      caseAccents[index].bar,
+                    )}
+                  />
+                  <div className="grid gap-6 p-7 sm:p-10 lg:grid-cols-[200px_1fr] lg:gap-12 lg:p-12">
                     <div>
-                      <p className="tech-label text-[10px] font-bold text-[var(--muted-foreground)]">
-                        Problème
+                      <p className="text-muted font-mono text-[11px] tracking-[0.16em] uppercase">
+                        Cas 0{index + 1}
                       </p>
-                      <p className="mt-3 text-sm leading-7 text-[#44515e]">
-                        {item.problem}
+                      <p className="mt-3 text-7xl font-semibold tracking-[-0.06em] text-[#e2e6ea]">
+                        0{index + 1}
                       </p>
                     </div>
-                    <div>
-                      <p className="tech-label text-[10px] font-bold text-[var(--muted-foreground)]">
-                        Contribution
-                      </p>
-                      <p className="mt-3 text-sm leading-7 text-[#44515e]">
-                        {item.contribution}
-                      </p>
-                    </div>
-                    <div>
-                      <p className="tech-label text-[10px] font-bold text-[var(--muted-foreground)]">
-                        Valeur
-                      </p>
-                      <p className="mt-3 text-sm leading-7 text-[#44515e]">
-                        {item.result}
-                      </p>
-                    </div>
-                  </div>
 
-                  <div className="mt-8 flex flex-wrap gap-2">
-                    {item.stack.map((tag) => (
-                      <span
-                        key={tag}
-                        className="border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1.5 text-xs font-medium text-[#53606c]"
+                    <div>
+                      <p
+                        className={cn(
+                          "font-mono text-[11px] tracking-[0.14em] uppercase",
+                          caseAccents[index].text,
+                        )}
                       >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </article>
-            ))}
+                        {item.eyebrow}
+                      </p>
+                      <h2 className="mt-4 max-w-3xl text-3xl leading-[1.06] font-semibold tracking-[-0.04em] text-balance sm:text-[2.6rem]">
+                        {item.title}
+                      </h2>
 
-            <section className="mt-16 bg-[var(--ink)] p-7 text-white sm:p-10 lg:p-12">
-              <div className="flex flex-wrap items-end justify-between gap-4">
-                <div>
-                  <p className="tech-label text-[10px] font-bold text-white/40">
-                    Projets personnels
-                  </p>
-                  <p className="mt-2 max-w-xl text-sm leading-6 text-white/50">
-                    Des projets utilisés comme terrain d’expérimentation
-                    produit, web et automatisation.
-                  </p>
-                </div>
-              </div>
-              {personalProjects.map((project) => (
-                <div
-                  key={project.title}
-                  className="mt-8 grid gap-10 lg:grid-cols-[1fr_0.8fr]"
-                >
-                  <div>
-                    <p className="text-sm font-bold text-[#75ddf2]">
-                      {project.title}
-                    </p>
-                    <h2 className="display-title mt-4 text-4xl leading-[0.98] font-semibold tracking-[-0.055em]">
-                      {project.subtitle}
-                    </h2>
-                    <p className="mt-5 text-base leading-7 text-white/58">
-                      {project.summary}
-                    </p>
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      {project.tools.map((tool) => (
-                        <span
-                          key={tool}
-                          className="border border-white/12 px-2.5 py-1 text-[11px] text-white/55"
-                        >
-                          {tool}
-                        </span>
-                      ))}
+                      <ol className="mt-10 grid gap-4 lg:grid-cols-3">
+                        {steps.map((step, stepIndex) => (
+                          <li
+                            key={step.label}
+                            className={cn(
+                              "relative rounded-2xl border p-5 sm:p-6",
+                              stepIndex === 2
+                                ? "border-[#15a46c]/25 bg-[#f1fbf6]"
+                                : "border-line bg-canvas/60",
+                            )}
+                          >
+                            <div className="flex items-center justify-between">
+                              <p className="text-muted font-mono text-[11px] tracking-[0.14em] uppercase">
+                                {step.label}
+                              </p>
+                              <span
+                                className={cn(
+                                  "font-mono text-[11px]",
+                                  stepIndex === 2
+                                    ? "text-[#0f7a50]"
+                                    : "text-muted/60",
+                                )}
+                              >
+                                0{stepIndex + 1}
+                              </span>
+                            </div>
+                            <p className="mt-3 text-[15px] leading-7 text-pretty text-[#2c3844]">
+                              {fr(step.text)}
+                            </p>
+                            {stepIndex < 2 ? (
+                              <ArrowRight
+                                aria-hidden="true"
+                                className="border-line bg-paper text-muted absolute top-1/2 -right-[22px] z-10 hidden -translate-y-1/2 rounded-full border p-1 text-[22px] lg:block"
+                              />
+                            ) : null}
+                          </li>
+                        ))}
+                      </ol>
+
+                      <ul className="mt-8 flex flex-wrap gap-1.5">
+                        {item.stack.map((tag) => (
+                          <li
+                            key={tag}
+                            className="border-line bg-canvas rounded-md border px-2.5 py-1 font-mono text-[11px] text-[#4a5763]"
+                          >
+                            {tag}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
-                  <ul className="space-y-4 border-l border-white/12 pl-6">
+                </article>
+              </Reveal>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="bg-ink relative isolate overflow-hidden px-5 py-20 text-white sm:px-6 lg:px-8 lg:py-28">
+        <div aria-hidden="true" className="blueprint absolute inset-0 -z-10" />
+        <div className="mx-auto max-w-7xl">
+          <p className="flex items-center gap-3 font-mono text-[11px] tracking-[0.18em] text-white/55 uppercase">
+            <span aria-hidden="true" className="h-px w-8 bg-white/30" />
+            Projets personnels
+          </p>
+          <p className="mt-5 max-w-xl text-base leading-7 text-pretty text-white/60">
+            Des projets utilisés comme terrain d’expérimentation produit, web et
+            automatisation.
+          </p>
+
+          <div className="mt-12 grid gap-5 lg:grid-cols-2">
+            {personalProjects.map((project) => (
+              <Reveal key={project.title}>
+                <article className="flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.03] p-7 sm:p-9">
+                  <p className="text-medical-bright font-mono text-sm font-medium">
+                    {project.title}
+                  </p>
+                  <h2 className="mt-4 text-3xl leading-[1.08] font-semibold tracking-[-0.04em] text-balance">
+                    {project.subtitle}
+                  </h2>
+                  <p className="mt-5 text-base leading-7 text-pretty text-white/60">
+                    {fr(project.summary)}
+                  </p>
+                  <ul className="mt-7 space-y-3 border-t border-white/10 pt-6">
                     {project.highlights.map((highlight) => (
                       <li
                         key={highlight}
-                        className="text-sm leading-6 text-white/68"
+                        className="flex gap-3 text-[15px] leading-6 text-white/75"
                       >
+                        <span className="bg-medical-bright mt-[9px] size-1.5 shrink-0 rounded-full" />
                         {highlight}
                       </li>
                     ))}
                   </ul>
-                </div>
-              ))}
-
-              <a
-                href="https://github.com/Robotham33"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-10 inline-flex border-b border-white/35 pb-1 text-sm font-semibold text-white transition hover:border-white"
-              >
-                Voir mes projets sur GitHub <span className="ml-2">↗</span>
-              </a>
-            </section>
+                  <ul className="mt-auto flex flex-wrap gap-1.5 pt-8">
+                    {project.tools.map((tool) => (
+                      <li
+                        key={tool}
+                        className="rounded-md border border-white/10 px-2.5 py-1 font-mono text-[11px] text-white/60"
+                      >
+                        {tool}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              </Reveal>
+            ))}
           </div>
-        </section>
-      </main>
-      <SiteFooter />
-    </>
+
+          <a
+            href={externalLinks.github.href}
+            target="_blank"
+            rel="noreferrer"
+            className="group mt-10 inline-flex min-h-12 items-center gap-2.5 rounded-xl border border-white/15 px-5 text-sm font-semibold transition hover:border-white/35 hover:bg-white/[0.04]"
+          >
+            <GitHubIcon className="text-base" />
+            Voir mes projets sur GitHub
+            <ArrowUpRight className="text-white/50 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white" />
+          </a>
+        </div>
+      </section>
+
+      <div className="pt-24 lg:pt-32">
+        <ContactCta />
+      </div>
+    </main>
   );
 }

@@ -1,66 +1,69 @@
 import Link from "next/link";
 
 import { Reveal } from "@/components/motion/reveal";
+import { Spotlight } from "@/components/motion/spotlight";
+import { ArrowRight } from "@/components/ui/icons";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { expertise } from "@/content/portfolio";
+import { fr } from "@/lib/utils";
 
 export function ExpertisePreview() {
   return (
     <section
       id="expertise"
-      className="bg-[var(--ink)] px-5 py-18 text-white sm:px-6 lg:px-8 lg:py-24"
+      className="bg-ink relative isolate overflow-hidden px-5 py-24 text-white sm:px-6 lg:px-8 lg:py-32"
     >
+      <div aria-hidden="true" className="blueprint absolute inset-0 -z-10" />
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           inverse
+          index="03"
           eyebrow="Expertises clés"
           title="Quatre briques. Un même objectif : rendre le logiciel maîtrisable."
           description="Je ne me positionne pas sur une liste d’outils, mais sur un continuum de responsabilités : comprendre, intégrer, tester, automatiser et sécuriser la livraison."
         />
 
-        <div className="mt-10 grid gap-px bg-white/12 md:grid-cols-2">
+        <div className="mt-14 grid gap-4 md:grid-cols-2">
           {expertise.map((item, index) => (
-            <Reveal key={item.title} delay={index * 0.05}>
-              <article className="group h-full bg-[#0d151e] p-6 transition duration-200 hover:bg-[#131e29] sm:p-7">
+            <Reveal key={item.title} delay={(index % 2) * 0.06}>
+              <Spotlight className="h-full rounded-3xl border border-white/10 bg-white/[0.025] p-7 transition-colors duration-300 hover:border-white/20 sm:p-8">
                 <div className="flex items-center justify-between">
-                  <span className="display-title text-4xl font-semibold tracking-[-0.06em] text-white/14 transition group-hover:text-white/22">
+                  <span className="font-mono text-sm text-white/35">
                     {item.index}
                   </span>
                   <span
-                    className={
-                      "h-2 w-2 " +
-                      (index % 2 === 0
-                        ? "bg-[var(--medical)]"
-                        : "bg-[var(--automotive)]")
-                    }
+                    className={`h-px w-12 ${
+                      index % 2 === 0 ? "bg-medical-bright" : "bg-auto"
+                    }`}
                   />
                 </div>
-                <h3 className="mt-6 text-xl font-semibold tracking-[-0.035em]">
+                <h3 className="mt-10 text-2xl font-semibold tracking-[-0.03em] sm:text-[1.7rem]">
                   {item.title}
                 </h3>
-                <p className="mt-3 max-w-xl text-sm leading-6 text-white/58">
-                  {item.text}
+                <p className="mt-4 max-w-xl text-[15px] leading-7 text-pretty text-white/60">
+                  {fr(item.text)}
                 </p>
-                <div className="mt-5 flex flex-wrap gap-2">
+                <ul className="mt-7 flex flex-wrap gap-1.5">
                   {item.tags.map((tag) => (
-                    <span
+                    <li
                       key={tag}
-                      className="border border-white/12 px-2.5 py-1 text-[11px] text-white/58"
+                      className="rounded-md border border-white/10 px-2.5 py-1 font-mono text-[11px] text-white/65"
                     >
                       {tag}
-                    </span>
+                    </li>
                   ))}
-                </div>
-              </article>
+                </ul>
+              </Spotlight>
             </Reveal>
           ))}
         </div>
 
         <Link
           href="/expertise"
-          className="mt-7 inline-flex border-b border-white/35 pb-1 text-sm font-semibold text-white transition hover:border-white"
+          className="group mt-10 inline-flex min-h-12 items-center gap-2 rounded-xl border border-white/15 px-5 text-sm font-semibold transition hover:border-white/35 hover:bg-white/[0.04]"
         >
-          Explorer l’expertise complète <span className="ml-2">→</span>
+          Explorer l’expertise complète
+          <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
         </Link>
       </div>
     </section>

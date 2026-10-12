@@ -1,7 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { Reveal } from "@/components/motion/reveal";
+import { ValidationRun } from "@/components/sections/validation-run";
+import { ArrowRight, GitHubIcon, LinkedInIcon } from "@/components/ui/icons";
+import { externalLinks } from "@/content/links";
 import { career } from "@/content/portfolio";
+import { portraitDataUri } from "@/content/portrait";
+import { fr } from "@/lib/utils";
 
 const roleSteps = [
   "Comprendre les exigences",
@@ -19,125 +25,187 @@ const roleTags = [
   "Débogage",
 ] as const;
 
+const highlights = [
+  "7+ ans d’expérience",
+  "Validation logicielle",
+  "Intégration logicielle",
+  "Automatisation des tests",
+] as const;
+
+const signals = [
+  { value: "7+", label: "ans", detail: "validation & intégration" },
+  { value: "02", label: "domaines critiques", detail: "médical + automobile" },
+  { value: "I→V", label: "continuum", detail: "exigences → livraison" },
+  { value: "CI/CD", label: "automatisation", detail: "Jenkins + TeamCity" },
+] as const;
+
 export function Hero() {
   return (
-    <section className="px-5 pt-28 pb-10 sm:px-6 sm:pt-32 lg:px-8 lg:pt-36 lg:pb-14">
-      <div className="mx-auto grid max-w-7xl gap-7 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
-        <div className="flex flex-col justify-between border-t-4 border-[var(--ink)] bg-[var(--paper)] p-6 sm:p-7 lg:p-8">
-          <div>
-            <Reveal>
-              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] font-bold tracking-[0.15em] text-[var(--muted-foreground)] uppercase">
-                <span>7+ ans d’expérience</span>
-                <span>Validation logicielle</span>
-                <span>Intégration logicielle</span>
-                <span className="text-[var(--accent)]">
-                  Automatisation des tests
-                </span>
-              </div>
-            </Reveal>
+    <section
+      aria-labelledby="hero-title"
+      className="bg-ink relative isolate overflow-hidden text-white"
+    >
+      <div aria-hidden="true" className="blueprint absolute inset-0 -z-10" />
+      <div
+        aria-hidden="true"
+        className="absolute -top-56 right-[-12%] -z-10 size-[760px] rounded-full bg-[radial-gradient(circle,rgba(23,105,194,0.42),transparent_62%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute bottom-[-30%] left-[-15%] -z-10 size-[620px] rounded-full bg-[radial-gradient(circle,rgba(255,106,26,0.12),transparent_60%)]"
+      />
 
-            <h1 className="display-title mt-3 max-w-4xl text-[clamp(3rem,5.7vw,5.7rem)] leading-[0.9] font-semibold tracking-[-0.065em]">
-              Fiabiliser le logiciel,
-              <span className="block">de l’exigence jusqu’à</span>
-              <span className="block text-[var(--accent)]">la validation.</span>
-            </h1>
-
-            <p className="mt-6 max-w-2xl text-lg leading-7 font-medium text-[#1b2631]">
-              J’interviens sur l’ensemble du cycle de validation et
-              d’intégration : exigences, logiciel / firmware, automatisation des
-              tests et CI/CD. Cette approche s’étend aujourd’hui de l’embarqué
-              aux interfaces web et aux parcours utilisateur.
-            </p>
-
-            <div className="mt-5 max-w-2xl border-l-2 border-[var(--accent)] pl-4">
-              <p className="text-sm font-semibold text-[#1b2631] sm:text-base">
-                Une expertise construite dans des environnements exigeants.
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 pt-28 pb-14 sm:px-6 sm:pt-36 lg:grid-cols-[1.12fr_0.88fr] lg:items-center lg:gap-14 lg:px-8 lg:pt-36 lg:pb-20">
+        <div>
+          <div className="flex items-center gap-4">
+            <div className="relative size-14 shrink-0 overflow-hidden rounded-full ring-1 ring-white/20 sm:size-16">
+              <Image
+                src={portraitDataUri}
+                alt="Portrait de Hamza Ghourabi"
+                fill
+                unoptimized
+                priority
+                sizes="64px"
+                className="object-cover object-[center_20%]"
+              />
+            </div>
+            <div>
+              <p className="text-lg font-semibold tracking-[-0.02em] sm:text-xl">
+                Hamza Ghourabi
               </p>
-              <p className="mt-1.5 text-sm leading-6 text-[var(--muted-foreground)] sm:text-base">
-                Le médical et l’automobile m’ont appris à travailler avec de
-                fortes exigences de fiabilité, de traçabilité et de qualité. Des
-                compétences que je souhaite aujourd’hui mettre au service
-                d’autres secteurs et de nouveaux défis techniques.
-              </p>
+              <p className="text-sm text-white/60">{career.role}</p>
             </div>
           </div>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+          <ul className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1.5 font-mono text-[11px] tracking-[0.08em] text-white/50 uppercase">
+            {highlights.map((item, index) => (
+              <li key={item} className="flex items-center gap-3">
+                {index > 0 ? (
+                  <span
+                    aria-hidden="true"
+                    className="size-1 rounded-full bg-white/25"
+                  />
+                ) : null}
+                <span
+                  className={
+                    index === highlights.length - 1 ? "text-medical-bright" : ""
+                  }
+                >
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <h1
+            id="hero-title"
+            className="mt-6 max-w-4xl text-[clamp(2.6rem,5.3vw,4.9rem)] leading-[0.96] font-semibold tracking-[-0.05em]"
+          >
+            Fiabiliser le logiciel,{" "}
+            <span className="text-white/50">de l’exigence jusqu’à</span>{" "}
+            <span className="text-gradient">la validation.</span>
+          </h1>
+
+          <p className="mt-6 max-w-2xl text-[17px] leading-7 text-pretty text-white/75 sm:text-lg sm:leading-8">
+            {fr(
+              "J’interviens sur l’ensemble du cycle de validation et d’intégration : exigences, logiciel / firmware, automatisation des tests et CI/CD. Cette approche s’étend aujourd’hui de l’embarqué aux interfaces web et aux parcours utilisateur.",
+            )}
+          </p>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href="/experience"
-              className="primary-action inline-flex min-h-11 items-center justify-center px-5 text-sm font-semibold transition"
+              className="group text-ink inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 text-sm font-semibold shadow-[0_12px_40px_rgba(90,166,255,0.25)] transition hover:bg-white/90"
             >
-              Explorer mon parcours <span className="ml-2">→</span>
+              Explorer mon parcours
+              <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
             </Link>
             <Link
               href="/projects"
-              className="secondary-action inline-flex min-h-11 items-center justify-center px-5 text-sm font-semibold transition"
+              className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/15 px-6 text-sm font-semibold text-white transition hover:border-white/35 hover:bg-white/[0.04]"
             >
-              Voir mes cas concrets <span className="ml-2">↗</span>
+              Voir mes cas concrets
+              <ArrowRight className="text-white/50 transition-transform group-hover:translate-x-0.5" />
             </Link>
+            <div className="flex gap-2 sm:ml-2">
+              <a
+                href={externalLinks.linkedin.href}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex size-12 items-center justify-center rounded-xl border border-white/10 text-lg text-white/60 transition hover:border-white/30 hover:text-white"
+              >
+                <LinkedInIcon />
+                <span className="sr-only">LinkedIn (nouvel onglet)</span>
+              </a>
+              <a
+                href={externalLinks.github.href}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex size-12 items-center justify-center rounded-xl border border-white/10 text-lg text-white/60 transition hover:border-white/30 hover:text-white"
+              >
+                <GitHubIcon />
+                <span className="sr-only">GitHub (nouvel onglet)</span>
+              </a>
+            </div>
+          </div>
+
+          <div className="border-medical-bright/60 mt-10 max-w-2xl border-l pl-4">
+            <p className="text-sm font-semibold text-white sm:text-base">
+              Une expertise construite dans des environnements exigeants.
+            </p>
+            <p className="mt-1.5 text-sm leading-6 text-pretty text-white/55 sm:text-[15px]">
+              Le médical et l’automobile m’ont appris à travailler avec de
+              fortes exigences de fiabilité, de traçabilité et de qualité. Des
+              compétences que je souhaite aujourd’hui mettre au service d’autres
+              secteurs et de nouveaux défis techniques.
+            </p>
           </div>
         </div>
 
-        <Reveal delay={0.08} distance={20}>
-          <aside className="ink-panel hero-scanline relative flex min-h-[520px] flex-col justify-between overflow-hidden p-6 sm:p-7 lg:p-8">
-            <div className="absolute top-0 right-0 h-2 w-20 bg-[var(--automotive)]" />
-            <div className="absolute top-0 right-20 h-2 w-20 bg-[var(--medical)]" />
-
-            <div>
-              <p className="text-[10px] font-bold tracking-[0.18em] text-white/45 uppercase">
-                Mon rôle dans un projet
-              </p>
-
-              <h2 className="display-title mt-8 max-w-lg text-4xl leading-[0.95] font-semibold tracking-[-0.055em] text-white sm:text-[2.7rem]">
-                Relier le besoin, l’intégration et la validation pour sécuriser
-                la livraison logicielle.
-              </h2>
-            </div>
-
-            <div className="mt-9">
-              <ol className="border-l border-white/15">
-                {roleSteps.map((step, index) => (
-                  <li
-                    key={step}
-                    className="group grid grid-cols-[42px_1fr_auto] items-center gap-3 border-b border-white/10 py-3 pl-3"
-                  >
-                    <span className="text-[11px] font-bold text-white/35">
-                      0{index + 1}
-                    </span>
-                    <span className="text-sm font-semibold text-white">
-                      {step}
-                    </span>
-                    <span className="text-xs text-white/30 transition group-hover:translate-x-1 group-hover:text-white">
-                      →
-                    </span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-
-            <div className="mt-7">
-              <p className="text-[10px] font-bold tracking-[0.18em] text-white/40 uppercase">
-                Outils & pratiques
-              </p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {roleTags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-[10px] font-semibold tracking-[0.08em] text-white/70 uppercase"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </aside>
+        <Reveal delay={0.1} distance={24}>
+          <ValidationRun
+            eyebrow="Mon rôle dans un projet"
+            title="Relier le besoin, l’intégration et la validation pour sécuriser la livraison logicielle."
+            steps={roleSteps}
+            tagsLabel="Outils & pratiques"
+            tags={roleTags}
+          />
         </Reveal>
       </div>
 
-      <div className="mx-auto mt-4 flex max-w-7xl flex-wrap gap-x-5 gap-y-2 border-t border-[var(--border)] pt-3 text-[11px] font-medium text-[var(--muted-foreground)]">
-        {career.core.map((item) => (
-          <span key={item}>{item}</span>
-        ))}
+      <div className="border-t border-white/10">
+        <ul
+          aria-label="Profil en un coup d’œil"
+          className="mx-auto grid max-w-7xl grid-cols-2 lg:grid-cols-4"
+        >
+          {signals.map((item, index) => (
+            <li
+              key={item.label}
+              className={`px-5 py-7 sm:px-6 lg:px-8 ${
+                index % 2 === 1 ? "border-l border-white/10" : ""
+              } ${index > 1 ? "border-t border-white/10 lg:border-t-0" : ""} ${
+                index === 2 ? "lg:border-l" : ""
+              }`}
+            >
+              <p className="text-4xl font-semibold tracking-[-0.05em] sm:text-5xl">
+                {item.value}
+              </p>
+              <p className="mt-3 text-sm font-semibold">{item.label}</p>
+              <p className="mt-0.5 text-xs text-white/45">{item.detail}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="border-t border-white/10 bg-white/[0.02]">
+        <ul className="mx-auto flex max-w-7xl flex-wrap gap-x-6 gap-y-2 px-5 py-4 font-mono text-[11px] tracking-[0.06em] text-white/45 uppercase sm:px-6 lg:px-8">
+          {career.core.map((item) => (
+            <li key={item} className="flex items-center gap-2">
+              <span className="bg-medical-bright size-1 rounded-full" />
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

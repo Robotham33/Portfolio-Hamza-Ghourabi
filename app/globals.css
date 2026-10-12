@@ -1,175 +1,151 @@
 @import "tailwindcss";
 
-:root {
-  --background: #f2f4f6;
-  --background-elevated: #ffffff;
-  --foreground: #0a1017;
-  --muted-foreground: #66717f;
-  --accent: #1769c2;
-  --accent-strong: #0e5aa8;
-  --accent-cyan: #69d8f1;
-  --signal: #ff6a1a;
-  --signal-soft: #ffe2d2;
-  --surface: rgba(10, 16, 23, 0.035);
-  --surface-strong: rgba(10, 16, 23, 0.07);
-  --border: rgba(10, 16, 23, 0.12);
-  --border-strong: rgba(10, 16, 23, 0.22);
-  --ink: #0a1017;
-  --paper: #f8fafb;
-  --medical: #1769c2;
-  --automotive: #ff6a1a;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  background: var(--background);
-  scroll-behavior: smooth;
-}
-
-body {
-  min-height: 100vh;
-  margin: 0;
-  overflow-x: hidden;
-  background:
-    linear-gradient(rgba(10, 16, 23, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10, 16, 23, 0.025) 1px, transparent 1px),
-    var(--background);
-  background-size: 40px 40px;
-  color: var(--foreground);
-  font-family:
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
+@theme {
+  --font-sans:
+    var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     sans-serif;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+  --font-mono:
+    var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-ink: #070b10;
+  --color-ink-2: #0d141c;
+  --color-ink-3: #131c26;
+  --color-canvas: #f3f4f6;
+  --color-paper: #ffffff;
+  --color-muted: #5b6774;
+  --color-line: rgba(7, 11, 16, 0.1);
+  --color-line-strong: rgba(7, 11, 16, 0.18);
+  --color-medical: #1769c2;
+  --color-medical-bright: #5aa6ff;
+  --color-medical-soft: #e6f1fc;
+  --color-auto: #ff6a1a;
+  --color-auto-bright: #ff8f52;
+  --color-auto-soft: #ffeadf;
+  --color-pass: #34d399;
+
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-button,
-input,
-textarea,
-select {
-  font: inherit;
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    background: var(--color-ink);
+    scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  ::selection {
+    background: rgba(23, 105, 194, 0.22);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-medical-bright);
+    outline-offset: 3px;
+  }
 }
 
-::selection {
-  background: rgba(23, 105, 194, 0.2);
-  color: var(--foreground);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.display-title {
-  font-family:
-    Arial Narrow,
-    "Helvetica Neue Condensed",
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    sans-serif;
-  font-stretch: condensed;
-}
-
-.tech-label {
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.hero-scanline {
-  background-image: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.035) 0,
-    rgba(255, 255, 255, 0.035) 1px,
-    transparent 1px,
-    transparent 10px
+/* Fond technique : grille fine qui s'estompe vers les bords. */
+.blueprint {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(
+    ellipse 80% 70% at 50% 30%,
+    #000 30%,
+    transparent 75%
   );
 }
 
-.primary-action {
-  background: var(--ink);
-  color: #ffffff !important;
-  border: 1px solid var(--ink);
-  box-shadow: 0 12px 28px rgba(10, 16, 23, 0.14);
+.blueprint-light {
+  background-image:
+    linear-gradient(rgba(7, 11, 16, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7, 11, 16, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(
+    ellipse 70% 80% at 80% 0%,
+    #000 20%,
+    transparent 70%
+  );
 }
 
-.primary-action:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 36px rgba(10, 16, 23, 0.2);
+.text-gradient {
+  background: linear-gradient(100deg, #5aa6ff 0%, #9fd3ff 55%, #5aa6ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
-.secondary-action {
-  background: #ffffff;
-  color: var(--ink) !important;
-  border: 1px solid var(--border-strong);
+/* Halo qui suit le pointeur sur les cartes d'expertise. */
+.spotlight {
+  position: relative;
+  isolation: isolate;
 }
 
-.secondary-action:hover {
-  transform: translateY(-2px);
-  border-color: var(--ink);
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(
+    420px circle at var(--x, 50%) var(--y, 0%),
+    rgba(90, 166, 255, 0.14),
+    transparent 45%
+  );
+  opacity: 0;
+  transition: opacity 260ms ease;
 }
 
-.ink-panel {
-  background:
-    radial-gradient(
-      circle at 80% 10%,
-      rgba(23, 105, 194, 0.18),
-      transparent 32%
-    ),
-    linear-gradient(145deg, #121b25 0%, #080d12 65%, #05080c 100%);
-  color: #f7fafc;
+.spotlight:hover::before {
+  opacity: 1;
 }
 
-.medical-panel {
-  background:
-    radial-gradient(
-      circle at 100% 0%,
-      rgba(105, 216, 241, 0.28),
-      transparent 34%
-    ),
-    linear-gradient(145deg, #eef8ff 0%, #dfeffb 100%);
-}
-
-.automotive-panel {
-  background:
-    radial-gradient(
-      circle at 100% 0%,
-      rgba(255, 106, 26, 0.22),
-      transparent 34%
-    ),
-    linear-gradient(145deg, #171b20 0%, #0e1217 100%);
-  color: #f7fafc;
-}
-
-.signal-line {
-  background: linear-gradient(90deg, var(--medical), var(--signal));
-}
-
-.card-lift {
-  transition:
-    transform 220ms ease,
-    box-shadow 220ms ease,
-    border-color 220ms ease;
-}
-
-.card-lift:hover {
-  transform: translateY(-5px);
-  border-color: var(--border-strong);
-  box-shadow: 0 24px 60px rgba(10, 16, 23, 0.11);
+.marquee-mask {
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
 }
 
 .tech-marquee {
   display: flex;
   width: max-content;
-  animation: tech-marquee 32s linear infinite;
+  animation: tech-marquee 40s linear infinite;
 }
 
 .tech-marquee:hover {
@@ -183,6 +159,34 @@ a {
   to {
     transform: translateX(-50%);
   }
+}
+
+/* Barre de progression de lecture, uniquement si le navigateur sait la piloter au défilement. */
+.scroll-progress {
+  display: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    display: block;
+    transform-origin: 0 50%;
+    animation: scroll-progress linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+@keyframes scroll-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+dialog::backdrop {
+  background: rgba(7, 11, 16, 0.55);
+  backdrop-filter: blur(6px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -201,5 +205,26 @@ a {
 
   .tech-marquee {
     animation: none !important;
+    flex-wrap: wrap;
+    width: auto;
+  }
+
+  .marquee-duplicate {
+    display: none !important;
+  }
+
+  .scroll-progress {
+    display: none;
+  }
+}
+
+@media print {
+  html,
+  body {
+    background: #fff;
+  }
+
+  .no-print {
+    display: none !important;
   }
 }
