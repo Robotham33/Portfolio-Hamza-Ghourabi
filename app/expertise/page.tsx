@@ -5,15 +5,14 @@ import { Reveal } from "@/components/motion/reveal";
 import { ContactCta } from "@/components/sections/contact-cta";
 import { expertise, toolGroups } from "@/content/portfolio";
 import { cn, fr } from "@/lib/utils";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Expertise",
   description:
     "Expertise de Hamza GHOURABI : validation & QA, automatisation des tests, intégration & CI/CD, qualité et traçabilité en environnements normés.",
-  alternates: {
-    canonical: "/expertise",
-  },
-};
+  path: "/expertise",
+});
 
 export default function ExpertisePage() {
   return (

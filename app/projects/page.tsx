@@ -7,15 +7,14 @@ import { ArrowRight, ArrowUpRight, GitHubIcon } from "@/components/ui/icons";
 import { externalLinks } from "@/content/links";
 import { caseStudies, personalProjects } from "@/content/portfolio";
 import { cn, fr } from "@/lib/utils";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Cas concrets",
   description:
     "Études de cas de Hamza GHOURABI : chaîne d’intégration logiciel + firmware, qualification de régressions SIL, industrialisation de campagnes de tests. Projets personnels EyeeMee et Blassa.fr.",
-  alternates: {
-    canonical: "/projects",
-  },
-};
+  path: "/projects",
+});
 
 const caseAccents = [
   { bar: "bg-medical", text: "text-medical" },

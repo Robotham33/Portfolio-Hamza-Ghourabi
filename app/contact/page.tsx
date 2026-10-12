@@ -11,15 +11,14 @@ import {
 } from "@/components/ui/icons";
 import { email, externalLinks } from "@/content/links";
 import { portraitDataUri } from "@/content/portrait";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Contact",
   description:
     "Contacter Hamza GHOURABI pour une mission, une opportunité ou un besoin d’intégration et de validation logicielle.",
-  alternates: {
-    canonical: "/contact",
-  },
-};
+  path: "/contact",
+});
 
 const channels = [
   { ...externalLinks.linkedin, Icon: LinkedInIcon },

@@ -6,15 +6,14 @@ import { CareerTimeline } from "@/components/sections/career-timeline";
 import { ContactCta } from "@/components/sections/contact-cta";
 import { education, experiences } from "@/content/portfolio";
 import { cn, fr, slugify } from "@/lib/utils";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Parcours",
   description:
     "Parcours de Hamza GHOURABI : validation système chez Astemo, validation et intégration chez Stago, robotique chez QENVI Robotics, diagnostic automobile chez Green Control.",
-  alternates: {
-    canonical: "/experience",
-  },
-};
+  path: "/experience",
+});
 
 const brief = [
   "Médical + automobile",

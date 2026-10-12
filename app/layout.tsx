@@ -90,6 +90,7 @@ const structuredData = {
       "@id": `${siteUrl}/#website`,
       url: siteUrl,
       name: "Hamza GHOURABI",
+      alternateName: "HGH.",
       inLanguage: "fr-FR",
       publisher: {
         "@id": `${siteUrl}/#person`,
