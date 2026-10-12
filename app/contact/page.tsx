@@ -1,91 +1,146 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 
-import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
+import { Logo } from "@/components/brand/logo";
+import { CopyEmail } from "@/components/ui/copy-email";
+import {
+  ArrowUpRight,
+  GitHubIcon,
+  LinkedInIcon,
+  Mail,
+} from "@/components/ui/icons";
+import { email, externalLinks } from "@/content/links";
 import { portraitDataUri } from "@/content/portrait";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Contacter Hamza GHOURABI pour une mission, une opportunité ou un besoin d’intégration et de validation logicielle.",
+  alternates: {
+    canonical: "/contact",
+  },
+};
+
+const channels = [
+  { ...externalLinks.linkedin, Icon: LinkedInIcon },
+  { ...externalLinks.github, Icon: GitHubIcon },
+] as const;
 
 export default function ContactPage() {
   return (
-    <>
-      <SiteHeader />
-      <main className="px-5 pt-32 pb-24 sm:px-6 sm:pt-36 lg:px-8">
-        <div className="mx-auto grid max-w-7xl overflow-hidden border border-[var(--border-strong)] lg:grid-cols-[1fr_390px]">
-          <section className="bg-white p-7 sm:p-10 lg:p-12">
-            <p className="tech-label text-[11px] font-bold text-[var(--accent)]">
-              Contact
-            </p>
-            <h1 className="display-title mt-6 max-w-4xl text-5xl leading-[0.9] font-semibold tracking-[-0.065em] sm:text-6xl lg:text-[4.75rem]">
-              Parlons du système, du test ou du problème à résoudre.
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--muted-foreground)]">
-              Mission freelance, opportunité, besoin d’intégration ou de
-              validation : je peux présenter mon parcours et ma manière de
-              travailler.
-            </p>
+    <main
+      id="contenu"
+      className="bg-ink relative isolate overflow-hidden text-white"
+    >
+      <div aria-hidden="true" className="blueprint absolute inset-0 -z-10" />
+      <div
+        aria-hidden="true"
+        className="absolute -top-56 right-[-10%] -z-10 size-[720px] rounded-full bg-[radial-gradient(circle,rgba(23,105,194,0.4),transparent_62%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute bottom-[-25%] left-[-15%] -z-10 size-[560px] rounded-full bg-[radial-gradient(circle,rgba(255,106,26,0.12),transparent_60%)]"
+      />
 
-            <div className="mt-9 grid gap-3 sm:grid-cols-2">
-              <a
-                href="https://github.com/Robotham33"
-                target="_blank"
-                rel="noreferrer"
-                className="secondary-action flex items-center justify-between px-5 py-4 text-sm font-semibold transition"
-              >
-                GitHub <span>↗</span>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/hamza-ghourabi-7a0566106/"
-                target="_blank"
-                rel="noreferrer"
-                className="secondary-action flex items-center justify-between px-5 py-4 text-sm font-semibold transition"
-              >
-                LinkedIn <span>↗</span>
-              </a>
-            </div>
-          </section>
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 pt-32 pb-24 sm:px-6 sm:pt-40 lg:grid-cols-[1fr_380px] lg:items-center lg:gap-16 lg:px-8 lg:pb-32">
+        <section>
+          <p className="text-medical-bright flex items-center gap-3 font-mono text-[11px] tracking-[0.18em] uppercase">
+            <span
+              aria-hidden="true"
+              className="bg-medical-bright/60 h-px w-8"
+            />
+            Contact
+          </p>
+          <h1 className="mt-7 max-w-4xl text-[clamp(2.5rem,6vw,5rem)] leading-[0.98] font-semibold tracking-[-0.05em] text-balance">
+            Parlons du système, du test ou du problème à résoudre.
+          </h1>
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-pretty text-white/65">
+            Mission freelance, opportunité, besoin d’intégration ou de
+            validation&nbsp;: je peux présenter mon parcours et ma manière de
+            travailler.
+          </p>
 
-          <aside className="ink-panel flex flex-col p-7 text-white sm:p-8">
-            <div>
-              <p className="tech-label text-[10px] font-bold text-white/38">
+          <div className="mt-10 flex flex-col gap-4 rounded-2xl border border-white/15 bg-white/[0.06] p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+            <a
+              href={email.href}
+              className="group flex min-w-0 items-center gap-4"
+            >
+              <span className="bg-medical-bright text-ink grid size-12 shrink-0 place-items-center rounded-xl text-xl">
+                <Mail />
+              </span>
+              <span className="min-w-0">
+                <span className="block font-mono text-[11px] tracking-[0.14em] text-white/50 uppercase">
+                  {email.label}
+                </span>
+                <span className="block truncate text-lg font-semibold underline-offset-4 group-hover:underline sm:text-xl">
+                  {email.address}
+                </span>
+              </span>
+            </a>
+            <CopyEmail className="shrink-0" />
+          </div>
+
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            {channels.map(({ Icon, ...channel }) => (
+              <li key={channel.href}>
+                <a
+                  href={channel.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition hover:border-white/30 hover:bg-white/[0.07]"
+                >
+                  <span className="text-ink grid size-12 shrink-0 place-items-center rounded-xl bg-white text-xl">
+                    <Icon />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-base font-semibold">
+                      {channel.label}
+                    </span>
+                    <span className="block truncate font-mono text-xs text-white/50">
+                      {channel.handle}
+                    </span>
+                  </span>
+                  <ArrowUpRight className="shrink-0 text-lg text-white/40 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white" />
+                  <span className="sr-only">(nouvel onglet)</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <aside className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-3 backdrop-blur-sm">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+            <Image
+              src={portraitDataUri}
+              alt="Portrait professionnel de Hamza Ghourabi"
+              fill
+              unoptimized
+              priority
+              sizes="(min-width: 1024px) 360px, 100vw"
+              className="object-cover object-[center_20%]"
+            />
+            <div className="from-ink via-ink/60 absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-5">
+              <p className="font-mono text-[10px] tracking-[0.18em] text-white/55 uppercase">
                 Profil en bref
               </p>
-              <div className="signal-line mt-5 h-1.5 w-28" />
+              <Logo className="mt-3 text-4xl" />
             </div>
-
-            <div className="mt-6 grid grid-cols-[118px_1fr] items-end gap-5">
-              <div>
-                <div className="relative aspect-[4/5] overflow-hidden border border-white/14 bg-white/5">
-                  <Image
-                    src={portraitDataUri}
-                    alt="Portrait professionnel"
-                    fill
-                    unoptimized
-                    priority
-                    sizes="118px"
-                    className="object-cover object-[center_16%]"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 h-12 bg-[linear-gradient(180deg,transparent,rgba(5,8,12,0.7))]" />
-                </div>
-              </div>
-
-              <div className="pb-1">
-                <p className="display-title text-4xl font-semibold tracking-[-0.07em]">
-                  HGH.
-                </p>
-                <p className="mt-3 text-[13px] leading-6 text-white/58">
-                  Validation logicielle
-                  <br />
-                  Intégration logicielle
-                  <br />
-                  Automatisation des tests
-                  <br />
-                  Médical & Automobile
-                </p>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </main>
-      <SiteFooter />
-    </>
+          </div>
+          <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-white/10 text-[13px] text-white/70">
+            {[
+              "Validation logicielle",
+              "Intégration logicielle",
+              "Automatisation des tests",
+              "Médical & Automobile",
+            ].map((item) => (
+              <li key={item} className="bg-ink-2 px-3.5 py-3">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </aside>
+      </div>
+    </main>
   );
 }

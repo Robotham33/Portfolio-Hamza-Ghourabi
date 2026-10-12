@@ -1,35 +1,84 @@
 import Link from "next/link";
 
+import { Logo } from "@/components/brand/logo";
+import { ArrowUp, ArrowUpRight } from "@/components/ui/icons";
+import { email, externalLinks, siteNavigation } from "@/content/links";
+
 export function SiteFooter() {
   return (
-    <footer className="bg-[var(--ink)] px-5 py-10 text-white sm:px-6 lg:px-8">
+    <footer className="no-print bg-ink relative overflow-hidden px-5 pt-16 pb-8 text-white sm:px-6 lg:px-8">
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
+      />
       <div className="mx-auto max-w-7xl">
-        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <p className="text-xl font-semibold tracking-[-0.03em]">HGH.</p>
-            <p className="mt-2 max-w-md text-sm leading-6 text-white/60">
+            <Logo className="text-3xl" />
+            <p className="mt-5 max-w-md text-sm leading-6 text-white/55">
               Validation logicielle, intégration logicielle et QA Automation
               pour des systèmes complexes dans le médical et l’automobile.
             </p>
           </div>
-          <nav className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/65">
-            <Link href="/experience" className="hover:text-white">
-              Parcours
-            </Link>
-            <Link href="/expertise" className="hover:text-white">
-              Expertise
-            </Link>
-            <Link href="/projects" className="hover:text-white">
-              Projets
-            </Link>
-            <Link href="/contact" className="hover:text-white">
-              Contact
-            </Link>
+
+          <nav aria-label="Pied de page">
+            <p className="font-mono text-[10px] tracking-[0.18em] text-white/35 uppercase">
+              Navigation
+            </p>
+            <ul className="mt-4 space-y-1">
+              {[...siteNavigation, { label: "Contact", href: "/contact" }].map(
+                (item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="inline-flex min-h-9 items-center text-sm text-white/70 transition-colors hover:text-white"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ),
+              )}
+            </ul>
           </nav>
+
+          <div>
+            <p className="font-mono text-[10px] tracking-[0.18em] text-white/35 uppercase">
+              Me joindre
+            </p>
+            <ul className="mt-4 space-y-1">
+              <li>
+                <a
+                  href={email.href}
+                  className="inline-flex min-h-9 items-center text-sm text-white/70 transition-colors hover:text-white"
+                >
+                  {email.address}
+                </a>
+              </li>
+              {Object.values(externalLinks).map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group inline-flex min-h-9 items-center gap-2 text-sm text-white/70 transition-colors hover:text-white"
+                  >
+                    {link.label}
+                    <ArrowUpRight className="text-white/30 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <div className="mt-8 border-t border-white/10 pt-5 text-xs text-white/40">
-          © 2026 HGH. Tous droits réservés.
+        <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/40">
+          <p>© {new Date().getFullYear()} HGH. Tous droits réservés.</p>
+          <a
+            href="#top"
+            className="inline-flex min-h-9 items-center gap-2 transition-colors hover:text-white"
+          >
+            Haut de page <ArrowUp />
+          </a>
         </div>
       </div>
     </footer>

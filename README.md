@@ -37,6 +37,7 @@ Un lien vers le profil GitHub permet d’accéder aux projets publics disponible
 - TypeScript
 - Tailwind CSS
 - Motion
+- Geist (typographies servies localement)
 - Vercel
 - Vercel Web Analytics
 - Vercel Speed Insights

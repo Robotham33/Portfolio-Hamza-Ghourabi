@@ -1,79 +1,165 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
-const navigation = [
-  { label: "Parcours", href: "/experience" },
-  { label: "Expertise", href: "/expertise" },
-  { label: "Cas concrets", href: "/projects" },
-] as const;
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+
+import { Logo } from "@/components/brand/logo";
+import { openCommandPalette } from "@/components/layout/command-palette";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Close,
+  Mail,
+  Menu,
+  Search,
+} from "@/components/ui/icons";
+import { email, externalLinks, siteNavigation } from "@/content/links";
+import { useIsApplePlatform } from "@/lib/use-platform";
+import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
+  const pathname = usePathname();
+  const isApple = useIsApplePlatform();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6">
+    <header className="no-print fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6 sm:pt-4">
       <nav
         aria-label="Navigation principale"
-        className="pointer-events-auto mx-auto flex max-w-7xl items-center justify-between border border-[var(--border)] bg-[rgba(248,250,251,0.9)] px-3 py-2.5 shadow-[0_10px_30px_rgba(10,16,23,0.08)] backdrop-blur-xl sm:px-4"
+        className="bg-ink/80 relative mx-auto flex max-w-7xl items-center justify-between gap-4 overflow-hidden rounded-2xl border border-white/10 py-1.5 pr-1.5 pl-4 text-white shadow-[0_18px_50px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:pl-5"
       >
         <Link
           href="/"
-          aria-label="Accueil — HGH."
-          data-brand="hgh"
-          data-logo-version="1"
-          className="flex items-center"
+          onClick={closeMenu}
+          aria-label="Accueil — Hamza Ghourabi"
+          className="flex min-h-11 items-center gap-3"
         >
-          <Image
-            src="/hgh-logo.png"
-            alt="HGH."
-            width={320}
-            height={110}
-            priority
-            className="block h-auto w-[92px] sm:w-[108px]"
-          />
+          <Logo className="text-[1.5rem]" />
+          <span className="hidden border-l border-white/15 pl-3 text-[13px] font-medium text-white/70 sm:block">
+            Hamza Ghourabi
+          </span>
         </Link>
 
-        <div className="hidden items-center gap-8 md:flex">
-          {navigation.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-[#34404c] transition hover:text-[var(--ink)]"
-            >
-              {item.label}
-            </Link>
-          ))}
+        <div className="hidden items-center gap-1 md:flex">
+          {siteNavigation.map((item) => {
+            const active = pathname.startsWith(item.href);
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+                className={cn(
+                  "relative inline-flex min-h-10 items-center rounded-lg px-3.5 text-sm font-medium transition-colors",
+                  active ? "text-white" : "text-white/60 hover:text-white",
+                )}
+              >
+                {item.label}
+                {active ? (
+                  <span className="bg-medical-bright absolute inset-x-3.5 -bottom-px h-px" />
+                ) : null}
+              </Link>
+            );
+          })}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5">
+          <button
+            type="button"
+            onClick={openCommandPalette}
+            className="hidden min-h-10 items-center gap-2 rounded-lg border border-white/10 px-3 text-xs text-white/55 transition-colors hover:border-white/20 hover:text-white md:inline-flex"
+          >
+            <Search className="text-sm" />
+            <span className="sr-only">Ouvrir la navigation rapide</span>
+            <kbd className="font-mono text-[11px] tracking-wide">
+              {isApple ? "⌘ K" : "Ctrl K"}
+            </kbd>
+          </button>
           <Link
             href="/contact"
-            className="primary-action hidden px-4 py-2 text-sm font-semibold transition sm:inline-flex"
+            className="text-ink hidden min-h-10 items-center gap-2 rounded-xl bg-white px-4 text-sm font-semibold transition hover:bg-white/90 sm:inline-flex"
           >
-            Me contacter <span className="ml-2">↗</span>
+            Me contacter <ArrowRight className="text-[15px]" />
           </Link>
-          <details className="relative md:hidden">
-            <summary className="cursor-pointer list-none border border-[var(--border)] bg-white px-3 py-2 text-sm font-semibold [&::-webkit-details-marker]:hidden">
-              Menu
-            </summary>
-            <div className="absolute top-[calc(100%+0.6rem)] right-0 w-56 border border-[var(--border)] bg-white p-2 shadow-xl">
-              {navigation.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="block px-3 py-2.5 text-sm"
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <Link
-                href="/contact"
-                className="primary-action mt-1 flex items-center justify-between px-3 py-2.5 text-sm font-semibold transition"
-              >
-                Me contacter <span className="ml-2">↗</span>
-              </Link>
-            </div>
-          </details>
+          <button
+            type="button"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-expanded={menuOpen}
+            aria-controls="menu-mobile"
+            className="inline-flex size-11 items-center justify-center rounded-xl border border-white/10 text-xl text-white md:hidden"
+          >
+            {menuOpen ? <Close /> : <Menu />}
+            <span className="sr-only">
+              {menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            </span>
+          </button>
         </div>
+
+        <span
+          aria-hidden="true"
+          className="scroll-progress from-medical-bright via-medical-bright to-auto absolute inset-x-0 bottom-0 h-px bg-gradient-to-r"
+        />
       </nav>
+
+      <div
+        id="menu-mobile"
+        hidden={!menuOpen}
+        className="bg-ink/95 mx-auto mt-2 max-w-7xl rounded-2xl border border-white/10 p-2 text-white shadow-[0_24px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl md:hidden"
+      >
+        {siteNavigation.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            onClick={closeMenu}
+            aria-current={pathname.startsWith(item.href) ? "page" : undefined}
+            className="flex min-h-12 items-center justify-between rounded-xl px-4 text-base font-medium text-white/85 aria-[current=page]:bg-white/[0.06] aria-[current=page]:text-white"
+          >
+            {item.label}
+            <ArrowRight className="text-white/35" />
+          </Link>
+        ))}
+        <Link
+          href="/contact"
+          onClick={closeMenu}
+          className="text-ink mt-1 flex min-h-12 items-center justify-between rounded-xl bg-white px-4 text-base font-semibold"
+        >
+          Me contacter <ArrowRight />
+        </Link>
+        <a
+          href={email.href}
+          onClick={closeMenu}
+          className="mt-2 flex min-h-11 items-center justify-center gap-2 rounded-xl border border-white/10 text-sm text-white/80"
+        >
+          <Mail className="text-white/50" /> {email.address}
+        </a>
+        <div className="mt-2 grid grid-cols-2 gap-2">
+          {Object.values(externalLinks).map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+              className="flex min-h-11 items-center justify-center gap-2 rounded-xl border border-white/10 text-sm text-white/70"
+            >
+              {link.label} <ArrowUpRight className="text-white/40" />
+            </a>
+          ))}
+        </div>
+      </div>
     </header>
   );
 }

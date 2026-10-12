@@ -1,81 +1,88 @@
 import Link from "next/link";
 
 import { Reveal } from "@/components/motion/reveal";
+import { CareerTimeline } from "@/components/sections/career-timeline";
+import { ArrowRight } from "@/components/ui/icons";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { experiences } from "@/content/portfolio";
+import { cn, fr, slugify } from "@/lib/utils";
 
 export function ExperiencePreview() {
-  const featuredExperiences = experiences.slice(0, 2);
-
   return (
-    <section id="experience" className="px-5 py-18 sm:px-6 lg:px-8 lg:py-24">
+    <section id="experience" className="px-5 py-24 sm:px-6 lg:px-8 lg:py-32">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
-          <div className="lg:sticky lg:top-28">
-            <SectionHeading
-              eyebrow="Parcours"
-              title="De la validation terrain à l’intégration industrialisée."
-              description="Une progression construite sur des systèmes réels, des campagnes réelles et des contraintes de qualité réelles."
-            />
-            <Link
-              href="/experience"
-              className="secondary-action mt-6 inline-flex px-4 py-2.5 text-sm font-semibold transition"
-            >
-              Voir tout le parcours <span className="ml-2">→</span>
-            </Link>
-          </div>
+        <div className="flex flex-wrap items-end justify-between gap-8">
+          <SectionHeading
+            index="02"
+            eyebrow="Parcours"
+            title="De la validation terrain à l’intégration industrialisée."
+            description="Une progression construite sur des systèmes réels, des campagnes réelles et des contraintes de qualité réelles."
+          />
+          <Link
+            href="/experience"
+            className="group border-line-strong bg-paper hover:border-ink inline-flex min-h-12 items-center gap-2 rounded-xl border px-5 text-sm font-semibold transition"
+          >
+            Voir tout le parcours
+            <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
+          </Link>
+        </div>
 
-          <div className="border-t border-[var(--border-strong)]">
-            {featuredExperiences.map((item, index) => (
-              <Reveal key={item.company} delay={index * 0.05}>
-                <article className="group grid gap-5 border-b border-[var(--border)] py-6 sm:grid-cols-[128px_1fr] sm:py-7">
-                  <div>
-                    <p className="text-[11px] font-bold tracking-[0.13em] text-[var(--muted-foreground)] uppercase">
+        <Reveal className="mt-14">
+          <CareerTimeline />
+        </Reveal>
+
+        <div className="mt-5 grid gap-5 md:grid-cols-2">
+          {experiences.map((item, index) => {
+            const isMedical = item.domain.includes("Médical");
+
+            return (
+              <Reveal key={item.company} delay={(index % 2) * 0.06}>
+                <Link
+                  href={`/experience#${slugify(item.company)}`}
+                  className="group border-line bg-paper hover:border-line-strong flex h-full flex-col rounded-3xl border p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(7,11,16,0.25)] sm:p-7"
+                >
+                  <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+                    <p className="text-muted font-mono text-[11px] tracking-[0.08em] whitespace-nowrap">
                       {item.period}
                     </p>
-                    <div
-                      className={
-                        "mt-3 h-1.5 w-10 " +
-                        (item.domain.includes("Médical")
-                          ? "bg-[var(--medical)]"
-                          : "bg-[var(--automotive)]")
-                      }
-                    />
+                    <span
+                      className={cn(
+                        "rounded-full px-2.5 py-1 font-mono text-[10px] tracking-[0.08em] uppercase",
+                        isMedical
+                          ? "bg-medical-soft text-medical"
+                          : "bg-auto-soft text-[#b14608]",
+                      )}
+                    >
+                      {item.domain}
+                    </span>
                   </div>
-                  <div>
-                    <div className="flex flex-wrap items-baseline justify-between gap-3">
-                      <div>
-                        <h3 className="display-title text-[1.7rem] font-semibold tracking-[-0.045em]">
-                          {item.company}
-                        </h3>
-                        <p className="mt-1 text-sm font-medium text-[#44515e]">
-                          {item.role}
-                        </p>
-                      </div>
-                      <span className="text-[11px] text-[var(--muted-foreground)]">
-                        {item.location}
-                      </span>
-                    </div>
-
-                    <p className="mt-4 max-w-3xl text-sm leading-6 text-[var(--muted-foreground)] sm:text-base">
-                      {item.summary}
-                    </p>
-
-                    <div className="mt-4 flex flex-wrap gap-2">
+                  <h3 className="mt-6 text-3xl font-semibold tracking-[-0.04em]">
+                    {item.company}
+                  </h3>
+                  <p className="mt-1 text-[15px] font-medium text-[#34404c]">
+                    {item.role}
+                    <span className="text-muted"> · {item.location}</span>
+                  </p>
+                  <p className="text-muted mt-4 text-[15px] leading-7 text-pretty">
+                    {fr(item.summary)}
+                  </p>
+                  <div className="mt-auto flex items-end justify-between gap-4 pt-6">
+                    <ul className="flex flex-wrap gap-1.5">
                       {item.tools.slice(0, 5).map((tool) => (
-                        <span
+                        <li
                           key={tool}
-                          className="border border-[var(--border)] bg-white px-2.5 py-1 text-[11px] font-medium text-[#53606c]"
+                          className="border-line bg-canvas rounded-md border px-2 py-1 text-[11px] font-medium text-[#4a5763]"
                         >
                           {tool}
-                        </span>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
+                    <ArrowRight className="text-muted group-hover:text-ink shrink-0 text-lg transition group-hover:translate-x-0.5" />
                   </div>
-                </article>
+                </Link>
               </Reveal>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>
