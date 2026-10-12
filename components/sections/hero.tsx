@@ -12,7 +12,7 @@ import {
 import { email, externalLinks } from "@/content/links";
 import { career } from "@/content/portfolio";
 import { portraitDataUri } from "@/content/portrait";
-import { fr } from "@/lib/utils";
+import { cn, fr } from "@/lib/utils";
 
 // Chaque étape est reliée à l'outil réellement utilisé dans le parcours.
 const roleSteps = [
@@ -44,6 +44,11 @@ const signals = [
   { value: "02", label: "domaines critiques", detail: "médical + automobile" },
   { value: "Bac+5", label: "Master Mécatronique", detail: "Polytech Orléans" },
   { value: "CI/CD", label: "automatisation", detail: "Jenkins + TeamCity" },
+  {
+    value: "ISTQB",
+    label: "référentiel de test",
+    detail: "bonnes pratiques appliquées",
+  },
 ] as const;
 
 export function Hero() {
@@ -181,7 +186,6 @@ export function Hero() {
             eyebrow="Mon rôle dans un projet"
             title="Relier le besoin, l’intégration et la validation pour sécuriser la livraison logicielle."
             steps={roleSteps}
-            outcome="Version vérifiée"
             tagsLabel="Outils & pratiques"
             tags={roleTags}
           />
@@ -191,18 +195,23 @@ export function Hero() {
       <div className="border-t border-white/10">
         <ul
           aria-label="Profil en un coup d’œil"
-          className="mx-auto grid max-w-7xl grid-cols-2 lg:grid-cols-4"
+          className="mx-auto grid max-w-7xl grid-cols-2 lg:grid-cols-5"
         >
           {signals.map((item, index) => (
             <li
               key={item.label}
-              className={`px-5 py-7 sm:px-6 lg:px-8 ${
-                index % 2 === 1 ? "border-l border-white/10" : ""
-              } ${index > 1 ? "border-t border-white/10 lg:border-t-0" : ""} ${
-                index === 2 ? "lg:border-l" : ""
-              }`}
+              className={cn(
+                "border-white/10 px-5 py-7 sm:px-6 lg:px-7",
+                // Grille 2 colonnes sur mobile, une ligne sur ordinateur.
+                index % 2 === 1 && "border-l",
+                index > 0 && "lg:border-l",
+                index > 1 && "border-t lg:border-t-0",
+                index === signals.length - 1 &&
+                  signals.length % 2 === 1 &&
+                  "col-span-2 lg:col-span-1",
+              )}
             >
-              <p className="text-4xl font-semibold tracking-[-0.05em] sm:text-5xl">
+              <p className="text-4xl font-semibold tracking-[-0.05em] sm:text-5xl lg:text-[2.6rem] xl:text-5xl">
                 {item.value}
               </p>
               <p className="mt-3 text-sm font-semibold">{item.label}</p>

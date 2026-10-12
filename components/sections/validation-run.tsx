@@ -16,7 +16,6 @@ type ValidationRunProps = {
   eyebrow: string;
   title: string;
   steps: readonly Step[];
-  outcome: string;
   tagsLabel: string;
   tags: readonly string[];
 };
@@ -32,7 +31,6 @@ export function ValidationRun({
   eyebrow,
   title,
   steps,
-  outcome,
   tagsLabel,
   tags,
 }: ValidationRunProps) {
@@ -86,7 +84,9 @@ export function ValidationRun({
             ) : null}
             <span className="relative inline-flex size-1.5 rounded-full bg-current" />
           </span>
-          {complete ? outcome : `Étape ${Math.min(passed + 1, total)}/${total}`}
+          {complete
+            ? `${total}/${total} étapes`
+            : `Étape ${Math.min(passed + 1, total)}/${total}`}
         </span>
       </div>
 
@@ -178,7 +178,7 @@ export function ValidationRun({
           </button>
         </div>
         <p aria-live="polite" className="sr-only">
-          {complete ? `Les ${total} étapes sont terminées : ${outcome}.` : ""}
+          {complete ? `Les ${total} étapes sont terminées.` : ""}
         </p>
       </div>
 
