@@ -161,6 +161,31 @@
   }
 }
 
+/* Étape en cours dans le déroulé du hero. */
+.scan-bar {
+  animation: scan 1.1s ease-in-out infinite;
+}
+
+@keyframes scan {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes proof-in {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Barre de progression de lecture, uniquement si le navigateur sait la piloter au défilement. */
 .scroll-progress {
   display: none;

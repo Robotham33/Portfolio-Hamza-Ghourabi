@@ -46,6 +46,7 @@ export default async function OpenGraphImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "flex-end" }}>
+          {/* Le carré bleu repose sur la ligne de base des lettres. */}
           <span
             style={{
               fontSize: 52,
@@ -58,10 +59,10 @@ export default async function OpenGraphImage() {
           </span>
           <span
             style={{
-              width: 14,
-              height: 14,
-              marginLeft: 6,
-              marginBottom: 4,
+              width: 10,
+              height: 10,
+              marginLeft: 4,
+              marginBottom: 8,
               background: "#5aa6ff",
             }}
           />

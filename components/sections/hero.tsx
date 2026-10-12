@@ -14,12 +14,14 @@ import { career } from "@/content/portfolio";
 import { portraitDataUri } from "@/content/portrait";
 import { fr } from "@/lib/utils";
 
+// Chaque étape est reliée à l'outil réellement utilisé dans le parcours.
 const roleSteps = [
-  "Comprendre les exigences",
-  "Intégrer les composants",
-  "Automatiser les contrôles",
-  "Analyser les anomalies",
-  "Sécuriser la validation",
+  { label: "Comprendre les exigences", proof: "DOORS" },
+  { label: "Intégrer les composants", proof: "Firmware + logiciel" },
+  { label: "Automatiser les contrôles", proof: "Jenkins · TeamCity" },
+  { label: "Analyser les anomalies", proof: "Jira · Mantis" },
+  { label: "Sécuriser la validation", proof: "Fonctionnel · SIL" },
+  { label: "Documenter et livrer les rapports", proof: "Traçabilité" },
 ] as const;
 
 const roleTags = [
@@ -40,7 +42,7 @@ const highlights = [
 const signals = [
   { value: "7+", label: "ans", detail: "validation & intégration" },
   { value: "02", label: "domaines critiques", detail: "médical + automobile" },
-  { value: "I→V", label: "continuum", detail: "exigences → livraison" },
+  { value: "Bac+5", label: "Master Mécatronique", detail: "Polytech Orléans" },
   { value: "CI/CD", label: "automatisation", detail: "Jenkins + TeamCity" },
 ] as const;
 
@@ -179,6 +181,7 @@ export function Hero() {
             eyebrow="Mon rôle dans un projet"
             title="Relier le besoin, l’intégration et la validation pour sécuriser la livraison logicielle."
             steps={roleSteps}
+            outcome="Version vérifiée"
             tagsLabel="Outils & pratiques"
             tags={roleTags}
           />
