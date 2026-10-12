@@ -62,6 +62,15 @@ const structuredData = {
       url: siteUrl,
       jobTitle: "Ingénieur intégration & validation logicielle",
       email: "contact@hamzaghourabi.fr",
+      hasCredential: {
+        "@type": "EducationalOccupationalCredential",
+        name: "ISTQB Certified Tester Foundation Level (CTFL)",
+        credentialCategory: "certification",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "ISTQB",
+        },
+      },
       sameAs: [
         "https://www.linkedin.com/in/hamza-ghourabi-7a0566106/",
         "https://github.com/Robotham33",

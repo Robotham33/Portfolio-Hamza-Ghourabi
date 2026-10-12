@@ -46,8 +46,8 @@ const signals = [
   { value: "CI/CD", label: "automatisation", detail: "Jenkins + TeamCity" },
   {
     value: "ISTQB",
-    label: "référentiel de test",
-    detail: "bonnes pratiques appliquées",
+    label: "certifié Foundation",
+    detail: "Certified Tester · CTFL",
   },
 ] as const;
 
