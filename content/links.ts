@@ -1,3 +1,9 @@
+export const email = {
+  label: "E-mail",
+  address: "contact@hamzaghourabi.fr",
+  href: "mailto:contact@hamzaghourabi.fr",
+} as const;
+
 export const externalLinks = {
   linkedin: {
     label: "LinkedIn",

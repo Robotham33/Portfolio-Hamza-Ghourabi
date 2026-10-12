@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Logo } from "@/components/brand/logo";
-import { ArrowRight, LinkedInIcon } from "@/components/ui/icons";
-import { externalLinks } from "@/content/links";
+import { ArrowRight, LinkedInIcon, Mail } from "@/components/ui/icons";
+import { email, externalLinks } from "@/content/links";
 import { portraitDataUri } from "@/content/portrait";
 
 export function ContactCta() {
@@ -39,13 +39,20 @@ export function ContactCta() {
               <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
             </Link>
             <a
+              href={email.href}
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/15 px-6 text-sm font-semibold transition hover:border-white/35 hover:bg-white/[0.04]"
+            >
+              <Mail className="text-base text-white/70" />
+              {email.address}
+            </a>
+            <a
               href={externalLinks.linkedin.href}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/15 px-6 text-sm font-semibold transition hover:border-white/35 hover:bg-white/[0.04]"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/15 px-4 text-sm font-semibold transition hover:border-white/35 hover:bg-white/[0.04] sm:w-12 sm:px-0"
             >
               <LinkedInIcon className="text-base text-white/70" />
-              LinkedIn
+              <span className="sm:sr-only">LinkedIn</span>
             </a>
           </div>
         </div>

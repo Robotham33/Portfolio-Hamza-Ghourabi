@@ -10,10 +10,11 @@ import {
   ArrowRight,
   ArrowUpRight,
   Close,
+  Mail,
   Menu,
   Search,
 } from "@/components/ui/icons";
-import { externalLinks, siteNavigation } from "@/content/links";
+import { email, externalLinks, siteNavigation } from "@/content/links";
 import { useIsApplePlatform } from "@/lib/use-platform";
 import { cn } from "@/lib/utils";
 
@@ -138,6 +139,13 @@ export function SiteHeader() {
         >
           Me contacter <ArrowRight />
         </Link>
+        <a
+          href={email.href}
+          onClick={closeMenu}
+          className="mt-2 flex min-h-11 items-center justify-center gap-2 rounded-xl border border-white/10 text-sm text-white/80"
+        >
+          <Mail className="text-white/50" /> {email.address}
+        </a>
         <div className="mt-2 grid grid-cols-2 gap-2">
           {Object.values(externalLinks).map((link) => (
             <a

@@ -61,6 +61,7 @@ const structuredData = {
       name: "Hamza GHOURABI",
       url: siteUrl,
       jobTitle: "Ingénieur intégration & validation logicielle",
+      email: "contact@hamzaghourabi.fr",
       sameAs: [
         "https://www.linkedin.com/in/hamza-ghourabi-7a0566106/",
         "https://github.com/Robotham33",

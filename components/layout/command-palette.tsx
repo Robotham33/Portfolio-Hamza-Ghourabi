@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 
 import { ArrowRight, ArrowUpRight, Search } from "@/components/ui/icons";
-import { externalLinks, siteNavigation } from "@/content/links";
+import { email, externalLinks, siteNavigation } from "@/content/links";
 import { caseStudies, experiences } from "@/content/portfolio";
 import { cn, slugify } from "@/lib/utils";
 
@@ -42,6 +42,12 @@ const entries: Entry[] = [
     hint: item.eyebrow,
     href: `/projects#cas-0${index + 1}`,
   })),
+  {
+    group: "Liens",
+    label: email.label,
+    hint: email.address,
+    href: email.href,
+  },
   ...Object.values(externalLinks).map((link) => ({
     group: "Liens",
     label: link.label,
@@ -116,6 +122,8 @@ export function CommandPalette() {
     setOpen(false);
     if (entry.external) {
       window.open(entry.href, "_blank", "noopener,noreferrer");
+    } else if (entry.href.startsWith("mailto:")) {
+      window.location.href = entry.href;
     } else {
       router.push(entry.href);
     }

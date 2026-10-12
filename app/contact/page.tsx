@@ -2,8 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 import { Logo } from "@/components/brand/logo";
-import { ArrowUpRight, GitHubIcon, LinkedInIcon } from "@/components/ui/icons";
-import { externalLinks } from "@/content/links";
+import { CopyEmail } from "@/components/ui/copy-email";
+import {
+  ArrowUpRight,
+  GitHubIcon,
+  LinkedInIcon,
+  Mail,
+} from "@/components/ui/icons";
+import { email, externalLinks } from "@/content/links";
 import { portraitDataUri } from "@/content/portrait";
 
 export const metadata: Metadata = {
@@ -54,7 +60,27 @@ export default function ContactPage() {
             travailler.
           </p>
 
-          <ul className="mt-10 grid gap-3 sm:grid-cols-2">
+          <div className="mt-10 flex flex-col gap-4 rounded-2xl border border-white/15 bg-white/[0.06] p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+            <a
+              href={email.href}
+              className="group flex min-w-0 items-center gap-4"
+            >
+              <span className="bg-medical-bright text-ink grid size-12 shrink-0 place-items-center rounded-xl text-xl">
+                <Mail />
+              </span>
+              <span className="min-w-0">
+                <span className="block font-mono text-[11px] tracking-[0.14em] text-white/50 uppercase">
+                  {email.label}
+                </span>
+                <span className="block truncate text-lg font-semibold underline-offset-4 group-hover:underline sm:text-xl">
+                  {email.address}
+                </span>
+              </span>
+            </a>
+            <CopyEmail className="shrink-0" />
+          </div>
+
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
             {channels.map(({ Icon, ...channel }) => (
               <li key={channel.href}>
                 <a

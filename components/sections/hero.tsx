@@ -3,8 +3,13 @@ import Link from "next/link";
 
 import { Reveal } from "@/components/motion/reveal";
 import { ValidationRun } from "@/components/sections/validation-run";
-import { ArrowRight, GitHubIcon, LinkedInIcon } from "@/components/ui/icons";
-import { externalLinks } from "@/content/links";
+import {
+  ArrowRight,
+  GitHubIcon,
+  LinkedInIcon,
+  Mail,
+} from "@/components/ui/icons";
+import { email, externalLinks } from "@/content/links";
 import { career } from "@/content/portfolio";
 import { portraitDataUri } from "@/content/portrait";
 import { fr } from "@/lib/utils";
@@ -128,6 +133,13 @@ export function Hero() {
               <ArrowRight className="text-white/50 transition-transform group-hover:translate-x-0.5" />
             </Link>
             <div className="flex gap-2 sm:ml-2">
+              <a
+                href={email.href}
+                className="inline-flex size-12 items-center justify-center rounded-xl border border-white/10 text-lg text-white/60 transition hover:border-white/30 hover:text-white"
+              >
+                <Mail />
+                <span className="sr-only">E-mail : {email.address}</span>
+              </a>
               <a
                 href={externalLinks.linkedin.href}
                 target="_blank"

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { Logo } from "@/components/brand/logo";
 import { ArrowUp, ArrowUpRight } from "@/components/ui/icons";
-import { externalLinks, siteNavigation } from "@/content/links";
+import { email, externalLinks, siteNavigation } from "@/content/links";
 
 export function SiteFooter() {
   return (
@@ -43,9 +43,17 @@ export function SiteFooter() {
 
           <div>
             <p className="font-mono text-[10px] tracking-[0.18em] text-white/35 uppercase">
-              Profils
+              Me joindre
             </p>
             <ul className="mt-4 space-y-1">
+              <li>
+                <a
+                  href={email.href}
+                  className="inline-flex min-h-9 items-center text-sm text-white/70 transition-colors hover:text-white"
+                >
+                  {email.address}
+                </a>
+              </li>
               {Object.values(externalLinks).map((link) => (
                 <li key={link.href}>
                   <a
