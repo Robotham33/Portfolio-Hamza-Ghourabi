@@ -15,6 +15,8 @@ const fontDir = join(process.cwd(), "node_modules/geist/dist/fonts");
 
 // Le moteur d'image espace mal certains mots avec Geist : les espaces
 // insécables donnent un espacement régulier (chaque ligne tient sans retour).
+// LinkedIn affiche l'image deux fois plus petite et la recompresse : textes
+// gros et contrastés, peu d'éléments.
 const nb = (text: string) => text.replace(/ /g, " ");
 
 export default async function OpenGraphImage() {
@@ -50,7 +52,7 @@ export default async function OpenGraphImage() {
         <div style={{ display: "flex", alignItems: "flex-end" }}>
           <span
             style={{
-              fontSize: 40,
+              fontSize: 48,
               fontWeight: 600,
               letterSpacing: "-0.07em",
               lineHeight: 1,
@@ -61,10 +63,10 @@ export default async function OpenGraphImage() {
           {/* Le carré bleu repose sur la ligne de base des lettres. */}
           <span
             style={{
-              width: 8,
-              height: 8,
+              width: 10,
+              height: 10,
               marginLeft: 3,
-              marginBottom: 6,
+              marginBottom: 7,
               background: "#1769c2",
             }}
           />
@@ -73,7 +75,7 @@ export default async function OpenGraphImage() {
         <div style={{ display: "flex", flexDirection: "column" }}>
           <span
             style={{
-              fontSize: 76,
+              fontSize: 88,
               fontWeight: 600,
               letterSpacing: "-0.045em",
               lineHeight: 1,
@@ -83,35 +85,47 @@ export default async function OpenGraphImage() {
           </span>
           <span
             style={{
-              marginTop: 22,
-              fontSize: 32,
+              marginTop: 26,
+              fontSize: 42,
               fontWeight: 500,
-              color: "#4b5563",
+              lineHeight: 1.18,
+              color: "#1f2937",
             }}
           >
-            {nb("Ingénieur intégration & validation logicielle")}
+            {nb("Ingénieur intégration")}
           </span>
           <span
             style={{
-              marginTop: 34,
-              width: 56,
-              height: 4,
-              background: "#1769c2",
+              fontSize: 42,
+              fontWeight: 500,
+              lineHeight: 1.18,
+              color: "#1f2937",
             }}
-          />
-          <span style={{ marginTop: 26, fontSize: 24, color: "#4b5563" }}>
-            {nb("Médical · Automobile · 7+ ans d’expérience")}
+          >
+            {nb("& validation logicielle")}
           </span>
         </div>
 
-        <span style={{ fontSize: 22, color: "#6b7280" }}>hamzaghourabi.fr</span>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <span style={{ width: 48, height: 5, background: "#1769c2" }} />
+          <span
+            style={{
+              marginLeft: 20,
+              fontSize: 32,
+              fontWeight: 500,
+              color: "#374151",
+            }}
+          >
+            {nb("Médical · Automobile")}
+          </span>
+        </div>
       </div>
 
       <img
         src={`data:image/jpeg;base64,${portrait.toString("base64")}`}
         alt=""
-        width={360}
-        height={386}
+        width={340}
+        height={365}
         style={{ borderRadius: 28, objectFit: "cover" }}
       />
     </div>,
