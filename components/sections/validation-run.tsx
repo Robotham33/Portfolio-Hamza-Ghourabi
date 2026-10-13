@@ -74,7 +74,7 @@ export function ValidationRun({
           className={cn(
             "inline-flex items-center gap-2 rounded-full border px-2.5 py-1 font-mono text-[11px] whitespace-nowrap transition-colors duration-500",
             complete
-              ? "border-pass/30 bg-pass/10 text-pass"
+              ? "border-medical-bright/40 bg-medical-bright/15 text-medical-bright"
               : "border-medical-bright/30 bg-medical-bright/10 text-medical-bright",
           )}
         >
@@ -106,7 +106,7 @@ export function ValidationRun({
           />
           <span
             aria-hidden="true"
-            className="bg-pass/70 absolute top-5 left-[13px] w-px transition-[height] duration-700 ease-out"
+            className="bg-medical-bright/70 absolute top-5 left-[13px] w-px transition-[height] duration-700 ease-out"
             style={{
               height: `calc((100% - 2.5rem) * ${Math.max(passed - 1, 0) / (total - 1)})`,
             }}
@@ -128,7 +128,8 @@ export function ValidationRun({
                 <span
                   className={cn(
                     "bg-ink-2 grid size-7 place-items-center rounded-md border font-mono text-[11px] transition-colors duration-500",
-                    status === "passed" && "border-pass/50 text-pass",
+                    status === "passed" &&
+                      "border-medical-bright/60 text-medical-bright",
                     status === "running" &&
                       "border-medical-bright text-medical-bright shadow-[0_0_0_4px_rgba(90,166,255,0.12)]",
                     status === "pending" && "border-white/15 text-white/35",
@@ -159,7 +160,7 @@ export function ValidationRun({
             <div
               className={cn(
                 "ease-out-expo h-full rounded-full transition-[width,background-color] duration-700",
-                complete ? "bg-pass" : "bg-medical-bright",
+                "bg-medical-bright",
               )}
               style={{ width: `${(passed / total) * 100}%` }}
             />
